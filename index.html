@@ -4,23 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ruoshi Jiang</title>
-  <meta name="description" content="Ruoshi Jiang's personal academic homepage for condensed matter physics, quantum materials, and arXiv reading." />
+  <meta name="description" content="Ruoshi Jiang's academic homepage for condensed matter physics, quantum materials, and arXiv reading." />
   <style>
     :root {
       color-scheme: light;
       --bg: #ffffff;
-      --paper: #ffffff;
-      --paper-strong: #ffffff;
-      --ink: #19151f;
-      --muted: #6f6875;
-      --line: #e8e5ea;
-      --plum: #7c3a8d;
-      --violet: #8d4bd8;
-      --rose: #b84c88;
-      --teal: #0f766e;
-      --amber: #a16207;
-      --soft: #faf8fb;
-      --shadow: 0 10px 28px rgba(25, 21, 31, 0.06);
+      --ink: #222222;
+      --muted: #666666;
+      --soft: #f7f7f7;
+      --line: #dddddd;
+      --accent: #6c4f7d;
+      --accent-dark: #43304f;
+      --max: 1120px;
     }
 
     * {
@@ -35,823 +30,478 @@
       margin: 0;
       background: var(--bg);
       color: var(--ink);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.62;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
     }
 
     a {
-      color: var(--plum);
+      color: var(--accent);
       text-decoration: none;
     }
 
     a:hover {
+      color: var(--accent-dark);
       text-decoration: underline;
     }
 
-    .site-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 20;
+    .site-header {
       border-bottom: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(14px);
+      background: #fff;
     }
 
-    .nav-inner {
-      max-width: 1120px;
+    .header-inner {
+      width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
-      padding: 14px 24px;
+      min-height: 64px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 24px;
     }
 
-    .brand {
-      font-weight: 850;
+    .site-title {
       color: var(--ink);
+      font-size: 18px;
+      font-weight: 700;
       white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
       justify-content: flex-end;
-      gap: 10px 18px;
+      flex-wrap: wrap;
+      gap: 14px 22px;
       font-size: 14px;
     }
 
     .nav-links a {
-      color: #403746;
+      color: #444444;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .page {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 44px 0 56px;
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 54px;
+      align-items: start;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 28px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      color: var(--accent-dark);
+      font-size: 48px;
       font-weight: 700;
     }
 
-    .nav-links .reader-link {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 7px 10px;
-      background: #fff;
-    }
-
-    .hero {
-      min-height: 84vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
+    .sidebar h1 {
+      margin: 0 0 6px;
       color: var(--ink);
-      background: #fff;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(124, 58, 141, 0.07) 0 1px, transparent 1px 100%),
-        linear-gradient(180deg, rgba(124, 58, 141, 0.07) 0 1px, transparent 1px 100%);
-      background-size: 56px 56px;
-      mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.62) 42%, transparent 78%);
-      opacity: 0.44;
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      width: min(1120px, calc(100% - 48px));
-      margin: 0 auto;
-      padding: 126px 0 72px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .eyebrow {
-      margin: 0 0 14px;
-      color: var(--plum);
-      font-size: 14px;
-      font-weight: 850;
-      letter-spacing: 0;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 0;
-      max-width: 760px;
-      font-size: clamp(56px, 9vw, 112px);
-      line-height: 0.94;
+      font-size: 28px;
+      line-height: 1.16;
+      font-weight: 700;
       letter-spacing: 0;
     }
 
-    .hero-copy {
-      margin: 24px 0 0;
-      max-width: 670px;
-      font-size: clamp(18px, 2.1vw, 24px);
-      color: #4f4854;
+    .role {
+      margin: 0 0 18px;
+      color: #4f4f4f;
+      font-size: 15px;
     }
 
-    .hero-actions {
-      margin-top: 30px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      border-radius: 8px;
-      border: 1px solid var(--line);
-      padding: 10px 15px;
-      font-weight: 850;
-      color: var(--plum);
-      background: #fff;
-      box-shadow: none;
-    }
-
-    .button.primary {
-      color: #fff;
-      border-color: var(--plum);
-      background: var(--plum);
-    }
-
-    .hero-metrics {
-      margin-top: 58px;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 190px));
-      gap: 12px;
-    }
-
-    .metric {
-      border-left: 3px solid var(--rose);
-      background: #fff;
-      border-radius: 8px;
-      border-top: 1px solid var(--line);
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 12px 14px;
-    }
-
-    .metric strong {
-      display: block;
-      font-size: 26px;
-      line-height: 1.1;
-    }
-
-    .metric span {
-      display: block;
-      color: var(--muted);
-      font-size: 13px;
-      margin-top: 4px;
-    }
-
-    .band {
-      padding: 74px 24px;
-    }
-
-    .band.alt {
-      background: var(--soft);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-    }
-
-    .section-heading {
-      display: grid;
-      grid-template-columns: minmax(0, 0.72fr) minmax(280px, 1fr);
-      gap: 28px;
-      align-items: end;
-      margin-bottom: 28px;
-    }
-
-    .section-heading h2 {
-      margin: 0;
-      font-size: clamp(32px, 4vw, 54px);
-      line-height: 1.02;
-      letter-spacing: 0;
-    }
-
-    .section-heading p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.72fr);
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .bio {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      box-shadow: none;
-      padding: 24px;
-      font-size: 17px;
-    }
-
-    .bio p {
-      margin: 0 0 16px;
-    }
-
-    .bio p:last-child {
-      margin-bottom: 0;
-    }
-
-    .profile-panel {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: none;
-    }
-
-    .profile-visual {
-      min-height: 210px;
-      background:
-        linear-gradient(90deg, rgba(124, 58, 141, 0.08) 0 1px, transparent 1px 100%),
-        linear-gradient(180deg, rgba(124, 58, 141, 0.08) 0 1px, transparent 1px 100%),
-        var(--soft);
-      background-size: 34px 34px;
-      border-bottom: 1px solid var(--line);
-      position: relative;
-    }
-
-    .monogram {
-      position: absolute;
-      left: 20px;
-      bottom: 18px;
-      width: 88px;
-      height: 88px;
-      border-radius: 8px;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      background: var(--plum);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      font-size: 36px;
-      font-weight: 900;
-    }
-
-    .profile-list {
-      margin: 0;
-      padding: 18px 20px 20px;
-      display: grid;
-      gap: 12px;
+    .sidebar-list {
+      margin: 0 0 22px;
+      padding: 0;
       list-style: none;
-    }
-
-    .profile-list li {
       display: grid;
-      grid-template-columns: 108px 1fr;
-      gap: 12px;
-      color: var(--muted);
-      font-size: 14px;
+      gap: 8px;
     }
 
-    .profile-list b {
+    .sidebar-list strong {
+      display: block;
       color: var(--ink);
+      font-size: 13px;
     }
 
-    .theme-grid,
-    .project-grid,
-    .talk-grid {
+    .link-list {
+      margin: 0;
+      padding: 18px 0 0;
+      border-top: 1px solid var(--line);
+      list-style: none;
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+      gap: 8px;
     }
 
-    .theme,
-    .project,
-    .talk,
-    .paper {
-      background: var(--paper-strong);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      box-shadow: none;
-      padding: 20px;
+    .content {
+      max-width: 780px;
     }
 
-    .theme h3,
-    .project h3,
-    .talk h3,
-    .paper h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
-      line-height: 1.25;
+    .section {
+      padding: 0 0 34px;
+      margin: 0 0 34px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      color: var(--ink);
+      font-size: 28px;
+      line-height: 1.2;
+      font-weight: 650;
       letter-spacing: 0;
     }
 
-    .theme p,
-    .project p,
-    .talk p,
-    .paper p {
+    h3 {
+      margin: 22px 0 8px;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 650;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .lead {
+      color: #3f3f3f;
+      font-size: 17px;
+    }
+
+    .plain-list {
       margin: 0;
-      color: var(--muted);
+      padding-left: 21px;
     }
 
-    .theme .tag,
-    .project .tag,
-    .talk .tag {
-      display: inline-flex;
-      margin-bottom: 14px;
-      min-height: 24px;
-      align-items: center;
-      border-radius: 999px;
-      padding: 3px 9px;
-      background: #fdf2f8;
-      color: #9d174d;
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .theme:nth-child(2) .tag,
-    .project:nth-child(2) .tag {
-      background: #ecfdf5;
-      color: var(--teal);
-    }
-
-    .theme:nth-child(3) .tag,
-    .project:nth-child(3) .tag {
-      background: #fffbeb;
-      color: var(--amber);
-    }
-
-    .project {
-      display: grid;
-      gap: 14px;
-      align-content: start;
-    }
-
-    .project-link {
-      font-weight: 850;
+    .plain-list li {
+      margin: 6px 0;
     }
 
     .publication-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
       display: grid;
-      gap: 12px;
+      gap: 18px;
     }
 
     .publication {
       display: grid;
-      grid-template-columns: 84px minmax(0, 1fr);
+      grid-template-columns: 58px minmax(0, 1fr);
       gap: 16px;
-      align-items: start;
-      background: var(--paper-strong);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 18px 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .publication:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
     }
 
     .pub-year {
-      color: var(--plum);
-      font-size: 15px;
-      font-weight: 900;
-      line-height: 1.35;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.45;
     }
 
     .publication h3 {
-      margin: 0 0 7px;
-      font-size: 18px;
-      line-height: 1.35;
-      letter-spacing: 0;
+      margin: 0 0 5px;
+      font-size: 17px;
+      font-weight: 650;
     }
 
     .publication p {
-      margin: 0 0 5px;
+      margin: 0 0 4px;
       color: var(--muted);
+      font-size: 15px;
     }
 
     .publication small {
       color: var(--muted);
-      line-height: 1.45;
+      font-size: 14px;
     }
 
-    .publication-note {
-      margin: 18px 0 0;
+    .note-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .paper {
+      padding: 0 0 12px;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .paper:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .paper h3 {
+      margin: 0 0 5px;
+      font-size: 16px;
+    }
+
+    .paper p {
+      margin: 0 0 4px;
       color: var(--muted);
       font-size: 15px;
     }
 
-    .reader-strip {
-      display: grid;
-      grid-template-columns: minmax(240px, 0.34fr) minmax(0, 1fr);
-      gap: 16px;
-      align-items: stretch;
+    .paper small {
+      color: var(--muted);
+      font-size: 13px;
     }
 
     .reader-summary {
-      background: #391640;
-      color: #fff;
-      border-radius: 8px;
-      padding: 22px;
-      box-shadow: var(--shadow);
-    }
-
-    .reader-summary p {
-      margin: 8px 0 0;
-      color: rgba(255, 255, 255, 0.76);
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 15px;
     }
 
     .reader-summary strong {
-      display: block;
-      font-size: 44px;
-      line-height: 1;
+      color: var(--ink);
+      font-weight: 650;
     }
 
-    .paper-list {
-      display: grid;
-      gap: 10px;
-    }
-
-    .paper {
-      padding: 16px 18px;
-    }
-
-    .paper a {
-      font-weight: 850;
-    }
-
-    .paper small {
-      display: block;
-      color: var(--muted);
-      margin-top: 6px;
-      line-height: 1.45;
-    }
-
-    .contact {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 18px;
-      align-items: center;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      box-shadow: none;
-      padding: 24px;
-    }
-
-    .contact h2 {
-      margin: 0 0 8px;
-      font-size: clamp(28px, 3vw, 42px);
-      letter-spacing: 0;
-    }
-
-    .contact p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    footer {
-      padding: 28px 24px 36px;
+    .footer {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 38px;
+      border-top: 1px solid var(--line);
       color: var(--muted);
       font-size: 13px;
-      text-align: center;
     }
 
-    @media (max-width: 880px) {
-      .site-nav {
-        position: static;
-      }
-
-      .nav-inner {
+    @media (max-width: 820px) {
+      .header-inner {
         align-items: flex-start;
         flex-direction: column;
+        padding: 16px 0;
       }
 
       .nav-links {
         justify-content: flex-start;
       }
 
-      .hero {
-        min-height: auto;
-      }
-
-      .hero-inner {
-        padding-top: 64px;
-      }
-
-      .hero-metrics,
-      .section-heading,
-      .about-grid,
-      .theme-grid,
-      .project-grid,
-      .talk-grid,
-      .reader-strip,
-      .contact {
+      .page {
         grid-template-columns: 1fr;
+        gap: 30px;
+        padding-top: 30px;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .avatar {
+        width: 120px;
+        height: 120px;
+        font-size: 36px;
+      }
+
+      .content {
+        max-width: none;
       }
 
       .publication {
         grid-template-columns: 1fr;
-        gap: 6px;
-      }
-
-      .profile-list li {
-        grid-template-columns: 1fr;
-        gap: 2px;
+        gap: 4px;
       }
     }
   </style>
 </head>
 <body>
-  <nav class="site-nav" aria-label="Primary navigation">
-    <div class="nav-inner">
-      <a class="brand" href="#top">Ruoshi Jiang</a>
-      <div class="nav-links">
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="site-title" href="#top">Ruoshi Jiang</a>
+      <nav class="nav-links" aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
-        <a href="#projects">Projects</a>
-        <a href="#notes">Notes</a>
+        <a href="#arxiv">arXiv Reader</a>
         <a href="#contact">Contact</a>
-        <a class="reader-link" href="arxiv.html">arXiv Reader</a>
-      </div>
-    </div>
-  </nav>
-
-  <header class="hero" id="top">
-    <div class="hero-inner">
-      <p class="eyebrow">Condensed Matter Physics</p>
-      <h1>Ruoshi Jiang</h1>
-      <p class="hero-copy">
-        I work on quantum materials where lattice geometry, electronic interactions, and symmetry compete to produce
-        correlated phases, unconventional superconductivity, and rich low-energy dynamics.
-      </p>
-      <div class="hero-actions">
-        <a class="button primary" href="#research">Research Themes</a>
-        <a class="button" href="arxiv.html">Daily arXiv Reader</a>
-      </div>
-      <div class="hero-metrics" aria-label="Research focus summary">
-        <div class="metric">
-          <strong>str-el</strong>
-          <span>strongly correlated electrons</span>
-        </div>
-        <div class="metric">
-          <strong>supr-con</strong>
-          <span>unconventional superconductivity</span>
-        </div>
-        <div class="metric">
-          <strong>DFT + model</strong>
-          <span>materials-guided theory</span>
-        </div>
-      </div>
+      </nav>
     </div>
   </header>
 
-  <main>
-    <section class="band" id="about">
-      <div class="section-inner">
-        <div class="section-heading">
-          <h2>About</h2>
-          <p>
-            Research notes, current projects, talks, and a focused literature workflow around quantum materials.
-          </p>
-        </div>
-        <div class="about-grid">
-          <div class="bio">
-            <p>
-              I am a Postdoctoral Research Associate in the Materials Theory Group at the University of Cambridge. Before joining Cambridge, I received my PhD from the Tsung-Dao Lee Institute at Shanghai Jiao Tong University.
-            </p>
-            <p>
-              My research focuses on strongly correlated quantum materials and their emergent broken-symmetry phases, with particular interests in unconventional superconductivity, charge and orbital order, transport properties, electron–lattice dynamics, and disorder effects in materials. She develops and applies theoretical and computational approaches, including density functional theory, dynamical mean-field theory, exact diagonalization, numerical canonical transformations, and model analysis, to understand quantum many-body phenomena in realistic materials.
-            </p>
-          </div>
-          <aside class="profile-panel" aria-label="Profile summary">
-            <div class="profile-visual">
-              <div class="monogram">RJ</div>
-            </div>
-            <ul class="profile-list">
-              <li><b>Field</b><span>Condensed matter physics</span></li>
-              <li><b>Keywords</b><span>Quantum materials, kagome systems, superconductivity</span></li>
-              <li><b>Tools</b><span>Density functional theory, dynamical mean-field theory, exact diagonalization, numerical canonical transformations, and model analysis</span></li>
-              <li><b>MTG profile</b><span><a href="https://www.mtg.msm.cam.ac.uk/people/ruoshi-jiang">Materials Theory Group</a></span></li>
-              <li><b>Group page</b><span><a href="https://www.tcm.phy.cam.ac.uk/~bm418/team.html">Monserrat Lab team</a></span></li>
-              <li><b>Scholar</b><span><a href="https://scholar.google.com/citations?user=qEn2jAsAAAAJ&hl=zh-CN">Google Scholar</a></span></li>
-              <li><b>Repository</b><span><a href="https://github.com/RuoshiJiang">github.com/RuoshiJiang</a></span></li>
-            </ul>
-          </aside>
-        </div>
-      </div>
-    </section>
+  <div class="page">
+    <aside class="sidebar" aria-label="Profile summary">
+      <div class="avatar" aria-hidden="true">RJ</div>
+      <h1>Ruoshi Jiang</h1>
+      <p class="role">Postdoctoral Research Associate<br />University of Cambridge</p>
 
-    <section class="band alt" id="research">
-      <div class="section-inner">
-        <div class="section-heading">
-          <h2>Research Themes</h2>
-          <p>
-            I am drawn to materials where small changes in structure or symmetry reorganize the entire low-energy landscape.
-          </p>
-        </div>
-        <div class="theme-grid">
-          <article class="theme">
-            <span class="tag">Quantum materials</span>
-            <h3>Geometry and correlation</h3>
-            <p>Kagome, triangular, and layered systems where frustrated geometry reshapes electronic and magnetic order.</p>
-          </article>
-          <article class="theme">
-            <span class="tag">Superconductivity</span>
-            <h3>Competing and intertwined phases</h3>
-            <p>Pairing tendencies near charge order, magnetism, Mott physics, and other nearby correlated phases.</p>
-          </article>
-          <article class="theme">
-            <span class="tag">Theory workflow</span>
-            <h3>From materials to models</h3>
-            <p>DFT-informed analysis, tight-binding intuition, and effective Hamiltonians for concrete compounds.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+      <ul class="sidebar-list">
+        <li>
+          <strong>Field</strong>
+          Condensed matter theory
+        </li>
+        <li>
+          <strong>Group</strong>
+          Materials Theory Group
+        </li>
+        <li>
+          <strong>Interests</strong>
+          Strongly correlated quantum materials, unconventional superconductivity, charge and orbital order
+        </li>
+      </ul>
 
-    <section class="band" id="publications">
-      <div class="section-inner">
-        <div class="section-heading">
-          <h2>Publications</h2>
-          <p>
-            A publication list mirrored from my Google Scholar profile and linked to publisher or arXiv pages where available.
-          </p>
-        </div>
-        <div class="publication-list">
-          <article class="publication">
+      <ul class="link-list">
+        <li><a href="https://scholar.google.com/citations?user=qEn2jAsAAAAJ&hl=zh-CN">Google Scholar</a></li>
+        <li><a href="https://www.mtg.msm.cam.ac.uk/people/ruoshi-jiang">Cambridge MTG profile</a></li>
+        <li><a href="https://www.tcm.phy.cam.ac.uk/~bm418/team.html">Monserrat Lab team</a></li>
+        <li><a href="https://github.com/RuoshiJiang">GitHub</a></li>
+        <li><a href="arxiv.html">Ruoshi's arXiv Daily Reader</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <section class="section" id="about">
+        <h2>About Me</h2>
+        <p class="lead">
+          I am a Postdoctoral Research Associate in the Materials Theory Group at the University of Cambridge. Before joining Cambridge, I received my PhD from the Tsung-Dao Lee Institute at Shanghai Jiao Tong University.
+        </p>
+        <p>
+          My research focuses on strongly correlated quantum materials and their emergent broken-symmetry phases, with particular interests in unconventional superconductivity, charge and orbital order, transport properties, electron–lattice dynamics, and disorder effects in materials. She develops and applies theoretical and computational approaches, including density functional theory, dynamical mean-field theory, exact diagonalization, numerical canonical transformations, and model analysis, to understand quantum many-body phenomena in realistic materials.
+        </p>
+      </section>
+
+      <section class="section" id="research">
+        <h2>Research Interests</h2>
+        <ul class="plain-list">
+          <li>Strongly correlated quantum materials and emergent broken-symmetry phases.</li>
+          <li>Unconventional superconductivity, charge order, orbital order, and intertwined phases.</li>
+          <li>Transport properties, electron–lattice dynamics, and disorder effects in materials.</li>
+          <li>Density functional theory, dynamical mean-field theory, exact diagonalization, numerical canonical transformations, and model analysis.</li>
+        </ul>
+
+        <h3>Education</h3>
+        <ul class="plain-list">
+          <li>PhD, Tsung-Dao Lee Institute, Shanghai Jiao Tong University.</li>
+        </ul>
+      </section>
+
+      <section class="section" id="publications">
+        <h2>Publications</h2>
+        <ul class="publication-list">
+          <li class="publication">
             <span class="pub-year">2026</span>
             <div>
               <h3><a href="https://www.nature.com/articles/s41524-025-01904-y">‘Interaction annealing’ to determine effective quantized valence and orbital structure: an illustration with ferro-orbital order in WTe<sub>2</sub></a></h3>
-              <p><b>Ruoshi Jiang</b>, Fangyuan Gu, and Wei Ku</p>
+              <p><strong>Ruoshi Jiang</strong>, Fangyuan Gu, and Wei Ku</p>
               <small>npj Computational Materials 12, 39 (2026)</small>
             </div>
-          </article>
-          <article class="publication">
+          </li>
+          <li class="publication">
             <span class="pub-year">2025</span>
             <div>
               <h3><a href="https://pubs.rsc.org/en/content/articlehtml/2025/tc/d5tc00863h">Giant thermally induced band-gap renormalization in anharmonic silver chalcohalide antiperovskites</a></h3>
-              <p>Pol Benítez, Siyu Chen, <b>Ruoshi Jiang</b>, Cibrán López, Josep-Lluís Tamarit, Jorge Íñiguez-González, Edgardo Saucedo, Bartomeu Monserrat, and Claudio Cazorla</p>
+              <p>Pol Benítez, Siyu Chen, <strong>Ruoshi Jiang</strong>, Cibrán López, Josep-Lluís Tamarit, Jorge Íñiguez-González, Edgardo Saucedo, Bartomeu Monserrat, and Claudio Cazorla</p>
               <small>Journal of Materials Chemistry C 13, 10399-10412 (2025)</small>
             </div>
-          </article>
-          <article class="publication">
+          </li>
+          <li class="publication">
             <span class="pub-year">2025</span>
             <div>
               <h3><a href="https://arxiv.org/abs/2510.02289">Charge order through crystallization of Frenkel excitons: realization in kagome metals</a></h3>
-              <p><b>Ruoshi Jiang</b>, Bartomeu Monserrat, and Wei Ku</p>
+              <p><strong>Ruoshi Jiang</strong>, Bartomeu Monserrat, and Wei Ku</p>
               <small>arXiv:2510.02289 (2025)</small>
             </div>
-          </article>
-          <article class="publication">
+          </li>
+          <li class="publication">
             <span class="pub-year">2024</span>
             <div>
               <h3><a href="https://pubs.acs.org/doi/10.1021/acs.nanolett.4c01390">Geometric inhibition of superflow in single-layer graphene suggests a staggered-flux superconductivity in bilayer and trilayer graphene</a></h3>
-              <p>Xinyao Zhang, <b>Ruoshi Jiang</b>, Xingchen Shen, Xiaomo Huang, Qing-Dong Jiang, and Wei Ku</p>
+              <p>Xinyao Zhang, <strong>Ruoshi Jiang</strong>, Xingchen Shen, Xiaomo Huang, Qing-Dong Jiang, and Wei Ku</p>
               <small>Nano Letters 24, 10451-10457 (2024)</small>
             </div>
-          </article>
-          <article class="publication">
+          </li>
+          <li class="publication">
             <span class="pub-year">2024</span>
             <div>
               <h3><a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.132.126503">Pressure driven fractionalization of ionic spins results in cupratelike high-T<sub>c</sub> superconductivity in La<sub>3</sub>Ni<sub>2</sub>O<sub>7</sub></a></h3>
-              <p><b>Ruoshi Jiang</b>, Jinning Hou, Zhiyu Fan, Zi-Jian Lang, and Wei Ku</p>
+              <p><strong>Ruoshi Jiang</strong>, Jinning Hou, Zhiyu Fan, Zi-Jian Lang, and Wei Ku</p>
               <small>Physical Review Letters 132, 126503 (2024)</small>
             </div>
-          </article>
-          <article class="publication">
+          </li>
+          <li class="publication">
             <span class="pub-year">2024</span>
             <div>
               <h3><a href="https://arxiv.org/abs/2402.08730">Universal low-temperature fluctuation of unconventional superconductors revealed: “smoking gun” leaves proper bosonic superfluidity the last theory standing</a></h3>
-              <p>Anthony Hegg, <b>Ruoshi Jiang</b>, Jie Wang, Jinning Hou, Tao Zeng, Yucel Yildirim, and Wei Ku</p>
+              <p>Anthony Hegg, <strong>Ruoshi Jiang</strong>, Jie Wang, Jinning Hou, Tao Zeng, Yucel Yildirim, and Wei Ku</p>
               <small>arXiv:2402.08730 (2024)</small>
             </div>
-          </article>
-          <article class="publication">
+          </li>
+          <li class="publication">
             <span class="pub-year">2023</span>
             <div>
               <h3><a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.108.155126">Variation of carrier density in semimetals via short-range correlation: a case study with nickelate NdNiO<sub>2</sub></a></h3>
-              <p><b>Ruoshi Jiang</b>, Zi-Jian Lang, Tom Berlijn, and Wei Ku</p>
+              <p><strong>Ruoshi Jiang</strong>, Zi-Jian Lang, Tom Berlijn, and Wei Ku</p>
               <small>Physical Review B 108, 155126 (2023)</small>
             </div>
-          </article>
-          <article class="publication">
+          </li>
+          <li class="publication">
             <span class="pub-year">2021</span>
             <div>
               <h3><a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.103.L180502">Strongly correlated doped hole carriers in the superconducting nickelates: their location, local many-body state, and low-energy effective Hamiltonian</a></h3>
-              <p>Zi-Jian Lang, <b>Ruoshi Jiang</b>, and Wei Ku</p>
+              <p>Zi-Jian Lang, <strong>Ruoshi Jiang</strong>, and Wei Ku</p>
               <small>Physical Review B 103, L180502 (2021)</small>
             </div>
-          </article>
-        </div>
-        <p class="publication-note">
-          See the full profile on <a href="https://scholar.google.com/citations?user=qEn2jAsAAAAJ&hl=zh-CN">Google Scholar</a>.
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" id="arxiv">
+        <h2>arXiv Daily Reader</h2>
+        <p>
+          A focused daily archive for <strong>cond-mat.str-el</strong> and <strong>cond-mat.supr-con</strong>, organized by date with priority papers first.
         </p>
-      </div>
-    </section>
+        <p><a href="arxiv.html">Open Ruoshi's arXiv Daily Reader</a></p>
+        <div class="reader-summary">
+          <strong id="latestCount">0</strong> papers in the latest archive · <span id="latestDate">Latest archive</span>
+          <div id="latestNote">Loading the arXiv archive.</div>
+        </div>
+        <div class="note-list" id="paperList"></div>
+      </section>
 
-    <section class="band" id="projects">
-      <div class="section-inner">
-        <div class="section-heading">
-          <h2>Projects</h2>
-          <p>
-            Current working areas and public-facing tools. The arXiv reader stays as a live companion to the homepage.
-          </p>
-        </div>
-        <div class="project-grid">
-          <article class="project">
-            <span class="tag">Live tool</span>
-            <h3>Ruoshi's arXiv Daily Reader</h3>
-            <p>Daily archive for cond-mat.str-el and cond-mat.supr-con, with three priority papers surfaced first.</p>
-            <a class="project-link" href="arxiv.html">Open reader</a>
-          </article>
-          <article class="project">
-            <span class="tag">Materials</span>
-            <h3>Kagome and layered compounds</h3>
-            <p>Reading and modeling notes for systems with intertwined charge, magnetic, and superconducting behavior.</p>
-          </article>
-          <article class="project">
-            <span class="tag">Modeling</span>
-            <h3>Effective electronic models</h3>
-            <p>Hamiltonian construction, symmetry analysis, and comparisons between model expectations and material data.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+      <section class="section" id="contact">
+        <h2>Contact</h2>
+        <p>
+          For research discussions, papers, official profiles, or code, start from the links in the profile sidebar.
+        </p>
+      </section>
+    </main>
+  </div>
 
-    <section class="band alt" id="notes">
-      <div class="section-inner">
-        <div class="section-heading">
-          <h2>Latest arXiv Notes</h2>
-          <p>
-            A quick snapshot from the daily reader, generated from the current archive data.
-          </p>
-        </div>
-        <div class="reader-strip">
-          <div class="reader-summary">
-            <strong id="latestCount">0</strong>
-            <span id="latestDate">Latest archive</span>
-            <p id="latestNote">Loading the arXiv archive.</p>
-          </div>
-          <div class="paper-list" id="paperList"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="band">
-      <div class="section-inner">
-        <div class="section-heading">
-          <h2>Talks and Notes</h2>
-          <p>
-            A place for seminar slides, paper discussions, and compact explanations of ongoing calculations.
-          </p>
-        </div>
-        <div class="talk-grid">
-          <article class="talk">
-            <span class="tag">Discussion</span>
-            <h3>Charge order and superconductivity</h3>
-            <p>Short-form notes connecting electronic instabilities to experimental signatures.</p>
-          </article>
-          <article class="talk">
-            <span class="tag">Reading</span>
-            <h3>Strong-correlation papers</h3>
-            <p>Structured paper summaries with the question, result, method, and why-it-matters logic.</p>
-          </article>
-          <article class="talk">
-            <span class="tag">Figures</span>
-            <h3>Band structures and models</h3>
-            <p>Visual comparisons for tight-binding intuition, DFT outputs, and symmetry-guided simplifications.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="band" id="contact">
-      <div class="section-inner">
-        <div class="contact">
-          <div>
-            <h2>Contact</h2>
-            <p>
-              For research discussions, papers, official profiles, or code, start from these links.
-            </p>
-          </div>
-          <div class="hero-actions">
-            <a class="button primary" href="https://github.com/RuoshiJiang">GitHub</a>
-            <a class="button" href="https://scholar.google.com/citations?user=qEn2jAsAAAAJ&hl=zh-CN">Google Scholar</a>
-            <a class="button" href="https://www.mtg.msm.cam.ac.uk/people/ruoshi-jiang">MTG Profile</a>
-            <a class="button" href="https://www.tcm.phy.cam.ac.uk/~bm418/team.html">Monserrat Lab</a>
-            <a class="button" href="arxiv.html">arXiv Reader</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
+  <footer class="footer">
     © <span id="year"></span> Ruoshi Jiang. Built for GitHub Pages.
   </footer>
 
