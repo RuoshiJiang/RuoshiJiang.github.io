@@ -105,14 +105,11 @@
       width: 160px;
       height: 160px;
       border-radius: 50%;
-      display: grid;
-      place-items: center;
+      display: block;
       margin-bottom: 22px;
       border: 1px solid var(--line);
-      background: var(--soft);
-      color: var(--accent-dark);
-      font-size: 48px;
-      font-weight: 700;
+      object-fit: cover;
+      object-position: center;
     }
 
     .sidebar h1 {
@@ -355,7 +352,7 @@
 
   <div class="page">
     <aside class="sidebar" aria-label="Profile summary">
-      <div class="avatar" aria-hidden="true">RJ</div>
+      <img class="avatar" src="assets/profile.jpg" alt="Ruoshi Jiang" />
       <h1>Ruoshi Jiang</h1>
       <p class="role">Postdoctoral Research Associate<br />University of Cambridge</p>
 
