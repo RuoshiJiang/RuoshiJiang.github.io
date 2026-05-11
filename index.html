@@ -744,6 +744,11 @@
       return `${year}.${String(month).padStart(2, "0")}.${String(day).padStart(2, "0")}`;
     }
 
+    function categoriesOf(paper) {
+      if (paper.categories?.length) return paper.categories;
+      return (paper.category || []).map(category => category.startsWith("cond-mat.") ? category : `cond-mat.${category}`);
+    }
+
     if (latest) {
       const important = (latest.papers || []).filter(paper => paper.important).slice(0, 3);
       document.getElementById("latestCount").textContent = latest.papers.length;
@@ -753,8 +758,8 @@
         ? important.map(paper => `
           <article class="paper">
             <h3><a href="${paper.url || `https://arxiv.org/abs/${paper.id}`}" target="_blank" rel="noreferrer">${escapeHtml(paper.title)}</a></h3>
-            <p>${escapeHtml(paper.summary || paper.priorityReason || "")}</p>
-            <small>${escapeHtml((paper.categories || []).join(" · "))}</small>
+            <p>${escapeHtml(paper.oneLine || paper.summary || paper.why || "")}</p>
+            <small>${escapeHtml(categoriesOf(paper).join(" · "))}</small>
           </article>
         `).join("")
         : `<article class="paper"><h3>No priority papers yet</h3><p>The next arXiv update will populate this section.</p></article>`;

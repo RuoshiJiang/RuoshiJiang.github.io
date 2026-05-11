@@ -7,6 +7,10 @@ The reader lives at `arxiv.html` and reads `data/papers.js`. The archive is refr
 `.github/workflows/update-arxiv.yml` every day at 09:00 Europe/London, with a
 manual `workflow_dispatch` button for immediate updates.
 
+Each paper is stored with `oneLine`, `problem`, `result`, `methods`, and `why`
+fields so the reader can show the same structured Chinese summary format every
+day.
+
 To refresh locally:
 
 ```bash

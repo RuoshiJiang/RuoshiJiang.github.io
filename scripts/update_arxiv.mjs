@@ -275,6 +275,134 @@ function firstSentence(text = "") {
   return match ? match[1] : clean.slice(0, 260);
 }
 
+function sentenceList(text = "") {
+  return text
+    .replace(/\s+/g, " ")
+    .trim()
+    .split(/(?<=[.!?])\s+(?=[A-Z0-9$])/)
+    .map(sentence => sentence.trim())
+    .filter(Boolean);
+}
+
+function trimSentence(text = "", limit = 210) {
+  const clean = text
+    .replace(/\s+/g, " ")
+    .replace(/\s+([,.;:!?])/g, "$1")
+    .trim();
+  if (clean.length <= limit) return clean;
+  return `${clean.slice(0, limit).replace(/\s+\S*$/, "")}...`;
+}
+
+function withoutTerminalPunctuation(text = "") {
+  return trimSentence(text, 240).replace(/[。.!?？]+$/g, "").trim();
+}
+
+function chineseSentence(prefix, text, limit = 210) {
+  const body = withoutTerminalPunctuation(text);
+  if (!body) return "";
+  return `${prefix}${trimSentence(body, limit)}。`;
+}
+
+function sentenceAfterLead(sentence = "") {
+  const clean = trimSentence(sentence, 220);
+  return clean
+    .replace(/^We\s+(investigate|study|analyze|analyse|demonstrate|show|present|report|explore|consider|develop|propose)\s+/i, "")
+    .replace(/^Here,\s+we\s+(investigate|study|analyze|analyse|demonstrate|show|present|report|explore|consider|develop|propose)\s+/i, "")
+    .replace(/^This\s+(paper|work|study)\s+(investigates|studies|analyzes|analyses|demonstrates|shows|presents|reports|explores|considers|develops|proposes)\s+/i, "")
+    .replace(/^Our\s+results\s+(show|demonstrate|reveal|suggest)\s+that\s+/i, "")
+    .replace(/^that\s+/i, "")
+    .trim();
+}
+
+function findSentence(sentences, patterns, fallbackIndex = 0) {
+  return sentences.find(sentence => patterns.some(pattern => pattern.test(sentence))) || sentences[fallbackIndex] || sentences[0] || "";
+}
+
+function methodFromText(paper, sentences) {
+  const haystack = `${paper.title} ${paper.abstract} ${paper.comments}`.toLowerCase();
+  const methodHints = [
+    ["density functional", "DFT 计算"],
+    ["dft", "DFT 计算"],
+    ["monte carlo", "Monte Carlo 模拟"],
+    ["exact diagonal", "精确对角化"],
+    ["dmft", "DMFT 分析"],
+    ["renormalization", "重整化群分析"],
+    ["mean-field", "平均场理论"],
+    ["mean field", "平均场理论"],
+    ["tight-binding", "紧束缚模型"],
+    ["tight binding", "紧束缚模型"],
+    ["hubbard", "Hubbard 模型分析"],
+    ["neutron", "中子散射实验"],
+    ["nmr", "NMR 谱学"],
+    ["mu sr", "muSR 测量"],
+    ["µsr", "muSR 测量"],
+    ["arpes", "ARPES 谱学"],
+    ["stm", "STM/隧穿谱"],
+    ["transport", "输运测量"],
+    ["spectroscopy", "谱学分析"],
+    ["x-ray", "X 射线表征"],
+    ["raman", "Raman 光谱"],
+    ["josephson", "Josephson 谱学"],
+    ["first-principles", "第一性原理计算"]
+  ];
+  const hints = methodHints
+    .filter(([keyword]) => haystack.includes(keyword))
+    .map(([, label]) => label);
+  if (hints.length) {
+    return `${[...new Set(hints)].slice(0, 3).join("、")}。`;
+  }
+
+  const methodSentence = findSentence(sentences, [
+    /\busing\b/i,
+    /\bbased on\b/i,
+    /\bby\b/i,
+    /\bwe measure\b/i,
+    /\bwe compute\b/i,
+    /\bwe calculate\b/i,
+    /\bexperiment/i,
+    /\bsimulation/i
+  ], 2);
+  return methodSentence ? chineseSentence("方法上，", sentenceAfterLead(methodSentence) || methodSentence, 190) : "结合理论分析、数值计算或实验表征。";
+}
+
+function buildChineseSummary(paper, ranking) {
+  const sentences = sentenceList(paper.abstract);
+  const first = sentences[0] || paper.title || `arXiv:${paper.id}`;
+  const resultSentence = findSentence(sentences, [
+    /\bshow\b/i,
+    /\bdemonstrate\b/i,
+    /\breveal\b/i,
+    /\bfind\b/i,
+    /\bidentify\b/i,
+    /\bestablish\b/i,
+    /\bresults?\b/i,
+    /\bsuggest\b/i
+  ], 1);
+  const topic = sentenceAfterLead(first) || paper.title;
+  const categories = paper.categories || [];
+  const hasStr = categories.includes("cond-mat.str-el");
+  const hasSupr = categories.includes("cond-mat.supr-con");
+
+  let why = ranking.reason;
+  if (!why || why.includes("候选")) {
+    if (hasStr && hasSupr) {
+      why = "连接强关联电子与超导两个栏目，适合优先判断相竞争和配对机制。";
+    } else if (hasSupr) {
+      why = "有助于跟踪超导材料、配对机制或临界性质的新进展。";
+    } else {
+      why = "有助于跟踪强关联体系中的新材料、新模型或新实验线索。";
+    }
+  }
+
+  return {
+    oneLine: chineseSentence("本文研究 ", sentenceAfterLead(first) || first, 190),
+    problem: `这篇论文关注：${withoutTerminalPunctuation(topic)}？`,
+    result: resultSentence ? chineseSentence("结果表明，", sentenceAfterLead(resultSentence) || resultSentence, 210) : "摘要中给出了新的结果或解释框架，值得结合原文进一步判断。",
+    methods: methodFromText(paper, sentences),
+    why
+  };
+}
+
 function scorePaper(paper) {
   const haystack = `${paper.title} ${paper.abstract} ${paper.subjects}`.toLowerCase();
   let score = 0;
@@ -307,16 +435,24 @@ function scorePaper(paper) {
 
 function normalizePaper(paper, importantIds) {
   const ranking = scorePaper(paper);
+  const structured = buildChineseSummary(paper, ranking);
+  const categories = paper.categories.filter(category => CATEGORIES.includes(category));
   return {
     id: paper.id,
     title: paper.title || `arXiv:${paper.id}`,
     authors: paper.authors || "",
-    categories: paper.categories.filter(category => CATEGORIES.includes(category)),
+    category: categories.map(category => category.replace("cond-mat.", "")),
+    categories,
     important: importantIds.has(paper.id),
     score: ranking.score,
-    summary: firstSentence(paper.abstract) || "arXiv 页面暂未提供摘要文本。",
+    oneLine: structured.oneLine,
+    problem: structured.problem,
+    result: structured.result,
+    methods: structured.methods,
+    why: structured.why,
+    summary: structured.oneLine || firstSentence(paper.abstract) || "arXiv 页面暂未提供摘要文本。",
     abstract: paper.abstract || "",
-    priorityReason: ranking.reason,
+    priorityReason: structured.why,
     comments: paper.comments || "",
     journalRef: paper.journalRef || "",
     subjects: paper.subjects || "",
@@ -340,7 +476,7 @@ function buildNote(day) {
   const count = day.papers.length;
   const str = day.papers.filter(p => p.categories.includes("cond-mat.str-el")).length;
   const supr = day.papers.filter(p => p.categories.includes("cond-mat.supr-con")).length;
-  return `从 arXiv recent 页面抓取并去重：共 ${count} 篇，str-el ${str} 篇，supr-con ${supr} 篇。`;
+  return `今日 arXiv recent 中文整理：共 ${count} 篇，str-el ${str} 篇，supr-con ${supr} 篇。`;
 }
 
 async function writeData(nextData) {
@@ -398,10 +534,17 @@ async function main() {
 
   const day = {
     date: targetDate,
+    title: formatChineseDate(targetDate),
     note: "",
+    stats: { total: 0, str: 0, supr: 0 },
     sourcePages: CATEGORIES.map(category => `https://arxiv.org/list/${category}/recent`),
     focusCount: importantIds.size,
     papers
+  };
+  day.stats = {
+    total: day.papers.length,
+    str: day.papers.filter(p => p.categories.includes("cond-mat.str-el")).length,
+    supr: day.papers.filter(p => p.categories.includes("cond-mat.supr-con")).length
   };
   day.note = buildNote(day);
 
@@ -430,6 +573,11 @@ function readRequestedDate() {
     throw new Error(`Invalid date "${value}". Use YYYY-MM-DD.`);
   }
   return value;
+}
+
+function formatChineseDate(iso) {
+  const [year, month, day] = iso.split("-").map(Number);
+  return `${year} 年 ${month} 月 ${day} 日`;
 }
 
 main().catch(error => {
