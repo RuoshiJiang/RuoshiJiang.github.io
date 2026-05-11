@@ -1,5 +1,5 @@
 window.ARXIV_DAILY_DATA = {
-  "updatedAt": "2026-05-11T20:48:40.408Z",
+  "updatedAt": "2026-05-11T21:15:12.227Z",
   "timezone": "Europe/London",
   "categories": [
     {
