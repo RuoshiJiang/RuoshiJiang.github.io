@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ruoshi's arXiv Daily Reader</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #e4e7ec;
+      --accent: #2457d6;
+      --accent-soft: #eef4ff;
+      --str: #7c3aed;
+      --supr: #087f5b;
+      --focus: #b54708;
+      --shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.58;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+    }
+
+    .topbar {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(26px, 3vw, 42px);
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 6px 0 0;
+      color: var(--muted);
+      max-width: 780px;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 9px 12px;
+      font-weight: 800;
+    }
+
+    input,
+    select {
+      width: 220px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      outline: none;
+      padding: 10px 12px;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(36, 87, 214, 0.12);
+    }
+
+    .layout {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 22px 24px 54px;
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 22px;
+    }
+
+    aside {
+      align-self: start;
+      position: sticky;
+      top: 104px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 14px;
+    }
+
+    .side-title {
+      font-weight: 800;
+      margin: 0 0 10px;
+    }
+
+    .archive-list {
+      display: grid;
+      gap: 8px;
+      max-height: calc(100vh - 220px);
+      overflow: auto;
+      padding-right: 2px;
+    }
+
+    .date-btn {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+      padding: 10px 11px;
+      text-align: left;
+    }
+
+    .date-btn:hover,
+    .date-btn.active {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .date-btn strong,
+    .date-btn span {
+      display: block;
+    }
+
+    .date-btn strong {
+      font-size: 14px;
+      line-height: 1.3;
+    }
+
+    .date-btn span {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 3px;
+    }
+
+    .legend {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .legend-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex: 0 0 auto;
+    }
+
+    .dot.str { background: var(--str); }
+    .dot.supr { background: var(--supr); }
+    .dot.focus { background: var(--focus); }
+
+    main {
+      min-width: 0;
+    }
+
+    .daily-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(26px, 3vw, 38px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .date-note {
+      margin: 7px 0 0;
+      color: var(--muted);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 92px);
+      gap: 8px;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 10px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 14px;
+      margin: 22px 0 10px;
+    }
+
+    .section-title h3 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    .section-title span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .spotlight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .paper,
+    .spot {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+    }
+
+    .spot {
+      padding: 14px;
+      border-top: 3px solid var(--focus);
+    }
+
+    .spot h4 {
+      margin: 8px 0 6px;
+      font-size: 15px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .spot p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .category-group {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.55);
+      margin-top: 14px;
+      overflow: hidden;
+    }
+
+    .category-group > summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      font-weight: 800;
+      background: #fff;
+    }
+
+    .category-group > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .category-meta {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      text-align: right;
+    }
+
+    .cards {
+      display: grid;
+      gap: 12px;
+      padding: 12px;
+    }
+
+    .paper {
+      padding: 16px;
+    }
+
+    .paper-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #f2f4f7;
+      color: #475467;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .tag.str {
+      background: #f5f3ff;
+      color: var(--str);
+    }
+
+    .tag.supr {
+      background: #ecfdf3;
+      color: var(--supr);
+    }
+
+    .tag.focus {
+      background: #fff7ed;
+      color: var(--focus);
+    }
+
+    .arxiv {
+      white-space: nowrap;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .paper h4 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .authors {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .one-line {
+      margin: 0 0 12px;
+      color: #344054;
+    }
+
+    .paper details {
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+    }
+
+    .paper summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .explain {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .box {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fafbff;
+      color: #475467;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .box b {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+
+    .empty,
+    .error {
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--muted);
+      padding: 36px 18px;
+      text-align: center;
+      margin-top: 18px;
+    }
+
+    .error {
+      color: #b42318;
+      border-color: #fecdca;
+      background: #fffbfa;
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 26px;
+      text-align: center;
+    }
+
+    @media (max-width: 940px) {
+      header {
+        position: static;
+      }
+
+      .topbar,
+      .layout,
+      .daily-head {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        position: static;
+      }
+
+      .archive-list {
+        max-height: none;
+      }
+
+      .controls {
+        justify-content: flex-start;
+      }
+
+      input,
+      select {
+        width: min(100%, 320px);
+      }
+
+      .stats,
+      .spotlight-grid,
+      .explain {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div>
+        <h1>Ruoshi's arXiv Daily Reader</h1>
+        <p class="subtitle">按日期归档，只保留 <b>cond-mat.str-el</b> 和 <b>cond-mat.supr-con</b>。先看重点推荐，再按栏目展开阅读。</p>
+      </div>
+      <div class="controls">
+        <a class="home-link" href="index.html">Home</a>
+        <input id="search" type="search" placeholder="搜索标题、作者、摘要" />
+        <select id="categoryFilter" aria-label="栏目筛选">
+          <option value="all">全部栏目</option>
+          <option value="cond-mat.str-el">cond-mat.str-el</option>
+          <option value="cond-mat.supr-con">cond-mat.supr-con</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside>
+      <p class="side-title">日期归档</p>
+      <div class="archive-list" id="archive"></div>
+      <div class="legend">
+        <div class="legend-row"><span class="dot str"></span>Strongly Correlated Electrons</div>
+        <div class="legend-row"><span class="dot supr"></span>Superconductivity</div>
+        <div class="legend-row"><span class="dot focus"></span>重点推荐</div>
+      </div>
+    </aside>
+
+    <main>
+      <section class="daily-head">
+        <div>
+          <h2 id="dateTitle">加载中</h2>
+          <p class="date-note" id="dateNote"></p>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong id="totalCount">0</strong><span>去重论文</span></div>
+          <div class="stat"><strong id="strCount">0</strong><span>str-el</span></div>
+          <div class="stat"><strong id="suprCount">0</strong><span>supr-con</span></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h3>今日重点推荐</h3>
+          <span id="updatedAt"></span>
+        </div>
+        <div class="spotlight-grid" id="spotlight"></div>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h3>按栏目展开</h3>
+          <span id="resultCount"></span>
+        </div>
+        <div id="content"></div>
+      </section>
+
+      <div class="empty" id="empty" hidden>没有匹配结果。可以清空搜索词，或切换栏目。</div>
+      <div class="error" id="error" hidden></div>
+
+      <footer>
+        数据来自 arXiv recent 页面；GitHub Actions 每天 09:00 Europe/London 自动更新，可手动运行 workflow 立即刷新。
+      </footer>
+    </main>
+  </div>
+
+  <script src="data/papers.js"></script>
+  <script>
+    const CATEGORY_NAMES = {
+      "cond-mat.str-el": "Strongly Correlated Electrons",
+      "cond-mat.supr-con": "Superconductivity"
+    };
+
+    const CATEGORY_ZH = {
+      "cond-mat.str-el": "强关联电子",
+      "cond-mat.supr-con": "超导"
+    };
+
+    const CATEGORY_ORDER = ["cond-mat.str-el", "cond-mat.supr-con"];
+    const data = window.ARXIV_DAILY_DATA || { days: [] };
+    const days = [...(data.days || [])].sort((a, b) => b.date.localeCompare(a.date));
+    let currentDate = days[0]?.date || "";
+
+    const archive = document.getElementById("archive");
+    const q = document.getElementById("search");
+    const catFilter = document.getElementById("categoryFilter");
+    const content = document.getElementById("content");
+    const spotlight = document.getElementById("spotlight");
+    const empty = document.getElementById("empty");
+    const error = document.getElementById("error");
+
+    function escapeHtml(value) {
+      return String(value || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function arxivUrl(id) {
+      return `https://arxiv.org/abs/${encodeURIComponent(id)}`;
+    }
+
+    function formatDate(iso) {
+      const [year, month, day] = iso.split("-").map(Number);
+      return `${year} 年 ${month} 月 ${day} 日`;
+    }
+
+    function formatUpdated(iso) {
+      if (!iso) return "";
+      try {
+        return `更新于 ${new Intl.DateTimeFormat("zh-CN", {
+          dateStyle: "medium",
+          timeStyle: "short",
+          timeZone: "Europe/London"
+        }).format(new Date(iso))}`;
+      } catch {
+        return "";
+      }
+    }
+
+    function paperText(paper) {
+      return [
+        paper.id,
+        paper.title,
+        paper.authors,
+        paper.abstract,
+        paper.summary,
+        paper.priorityReason,
+        ...(paper.categories || [])
+      ].join(" ").toLowerCase();
+    }
+
+    function counts(day) {
+      const papers = day?.papers || [];
+      return {
+        total: papers.length,
+        str: papers.filter(p => p.categories?.includes("cond-mat.str-el")).length,
+        supr: papers.filter(p => p.categories?.includes("cond-mat.supr-con")).length
+      };
+    }
+
+    function renderArchive() {
+      archive.innerHTML = days.map(day => {
+        const stat = counts(day);
+        return `
+          <button class="date-btn${day.date === currentDate ? " active" : ""}" type="button" data-date="${day.date}">
+            <strong>${formatDate(day.date)}</strong>
+            <span>${stat.total} 篇去重 · ${day.focusCount || Math.min(3, stat.total)} 篇重点</span>
+          </button>
+        `;
+      }).join("");
+
+      archive.querySelectorAll(".date-btn").forEach(button => {
+        button.addEventListener("click", () => {
+          currentDate = button.dataset.date;
+          renderArchive();
+          render();
+        });
+      });
+    }
+
+    function getFilteredPapers(day) {
+      const query = q.value.trim().toLowerCase();
+      const filter = catFilter.value;
+      return (day?.papers || []).filter(paper => {
+        const byCat = filter === "all" || paper.categories?.includes(filter);
+        const byQuery = !query || paperText(paper).includes(query);
+        return byCat && byQuery;
+      });
+    }
+
+    function renderSpotlight(day, filteredPapers) {
+      const visibleIds = new Set(filteredPapers.map(p => p.id));
+      const important = (day.papers || [])
+        .filter(p => p.important && visibleIds.has(p.id))
+        .slice(0, 3);
+
+      spotlight.innerHTML = important.length
+        ? important.map(paper => `
+          <article class="spot">
+            <a href="${arxivUrl(paper.id)}" target="_blank" rel="noreferrer">arXiv:${escapeHtml(paper.id)}</a>
+            <h4>${escapeHtml(paper.title)}</h4>
+            <p>${escapeHtml(paper.priorityReason || paper.summary || firstSentence(paper.abstract))}</p>
+          </article>
+        `).join("")
+        : `<article class="spot"><p>当前筛选下没有重点推荐。</p></article>`;
+    }
+
+    function firstSentence(text) {
+      const clean = String(text || "").replace(/\s+/g, " ").trim();
+      const match = clean.match(/^(.{40,260}?[.!?])\s/);
+      return match ? match[1] : clean.slice(0, 260);
+    }
+
+    function renderCategory(group, filteredPapers) {
+      const papers = filteredPapers.filter(p => p.categories?.includes(group));
+      if (!papers.length) return "";
+
+      const open = group === "cond-mat.str-el" ? " open" : "";
+      return `
+        <details class="category-group"${open}>
+          <summary>
+            <span>${CATEGORY_ZH[group]} · ${group}</span>
+            <span class="category-meta">${papers.length} 篇</span>
+          </summary>
+          <div class="cards">
+            ${papers.map(renderPaper).join("")}
+          </div>
+        </details>
+      `;
+    }
+
+    function renderPaper(paper) {
+      const tags = (paper.categories || []).map(category => {
+        const cls = category === "cond-mat.str-el" ? "str" : "supr";
+        return `<span class="tag ${cls}">${CATEGORY_ZH[category] || category}</span>`;
+      }).join("");
+
+      return `
+        <article class="paper">
+          <div class="paper-top">
+            <div class="tags">
+              ${tags}
+              ${paper.important ? '<span class="tag focus">优先阅读</span>' : ""}
+            </div>
+            <a class="arxiv" href="${arxivUrl(paper.id)}" target="_blank" rel="noreferrer">arXiv:${escapeHtml(paper.id)}</a>
+          </div>
+          <h4>${escapeHtml(paper.title)}</h4>
+          <p class="authors">${escapeHtml(paper.authors || "Unknown authors")}</p>
+          <p class="one-line">${escapeHtml(paper.summary || firstSentence(paper.abstract))}</p>
+          <details>
+            <summary>展开摘要与推荐理由</summary>
+            <div class="explain">
+              <div class="box"><b>arXiv 摘要</b>${escapeHtml(paper.abstract || "暂无摘要。")}</div>
+              <div class="box"><b>推荐理由</b>${escapeHtml(paper.priorityReason || "按关键词相关度与栏目交叉情况排序。")}</div>
+              <div class="box"><b>栏目</b>${(paper.categories || []).map(c => escapeHtml(CATEGORY_NAMES[c] || c)).join("<br>")}</div>
+              <div class="box"><b>备注</b>${escapeHtml(paper.comments || paper.journalRef || "无")}</div>
+            </div>
+          </details>
+        </article>
+      `;
+    }
+
+    function render() {
+      if (!days.length) {
+        error.hidden = false;
+        error.textContent = "还没有归档数据。请运行 scripts/update_arxiv.mjs 生成 data/papers.js。";
+        return;
+      }
+
+      const day = days.find(item => item.date === currentDate) || days[0];
+      currentDate = day.date;
+      const stat = counts(day);
+      const filteredPapers = getFilteredPapers(day);
+
+      document.getElementById("dateTitle").textContent = formatDate(day.date);
+      document.getElementById("dateNote").textContent = day.note || "按 arXiv recent 页面生成的每日阅读归档。";
+      document.getElementById("totalCount").textContent = stat.total;
+      document.getElementById("strCount").textContent = stat.str;
+      document.getElementById("suprCount").textContent = stat.supr;
+      document.getElementById("updatedAt").textContent = formatUpdated(data.updatedAt);
+      document.getElementById("resultCount").textContent = `${filteredPapers.length} 篇匹配`;
+
+      renderSpotlight(day, filteredPapers);
+      content.innerHTML = CATEGORY_ORDER.map(category => renderCategory(category, filteredPapers)).join("");
+      empty.hidden = filteredPapers.length > 0;
+    }
+
+    q.addEventListener("input", render);
+    catFilter.addEventListener("change", render);
+    renderArchive();
+    render();
+  </script>
+</body>
+</html>
