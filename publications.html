@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Publications | Ruoshi Jiang</title>
+  <meta name="description" content="Publications by Ruoshi Jiang." />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #ffffff;
+      --ink: #222222;
+      --muted: #666666;
+      --line: #dddddd;
+      --accent: #6c4f7d;
+      --accent-dark: #43304f;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent-dark);
+      text-decoration: underline;
+    }
+
+    .site-header {
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .header-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .site-title {
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 14px 22px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: #444444;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent-dark);
+    }
+
+    .nav-links a.active {
+      font-weight: 650;
+    }
+
+    main {
+      width: min(900px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 44px 0 58px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-size: 34px;
+      line-height: 1.18;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      margin: 0 0 34px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .publication-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 20px;
+    }
+
+    .publication {
+      display: grid;
+      grid-template-columns: 58px minmax(0, 1fr);
+      gap: 16px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .publication:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .pub-year {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .publication h2 {
+      margin: 0 0 5px;
+      font-size: 17px;
+      line-height: 1.38;
+      font-weight: 650;
+      letter-spacing: 0;
+    }
+
+    .publication p {
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .publication small {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 38px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 720px) {
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 0;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .publication {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-title" href="index.html">Ruoshi Jiang</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a class="active" href="publications.html">Publications</a>
+        <a href="arxiv.html">arXiv Daily Reader</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Publications</h1>
+    <p class="intro">
+      Selected journal articles and preprints. See the full profile on <a href="https://scholar.google.com/citations?user=qEn2jAsAAAAJ&hl=zh-CN">Google Scholar</a>.
+    </p>
+
+    <ul class="publication-list">
+      <li class="publication">
+        <span class="pub-year">2026</span>
+        <div>
+          <h2><a href="https://www.nature.com/articles/s41524-025-01904-y">‘Interaction annealing’ to determine effective quantized valence and orbital structure: an illustration with ferro-orbital order in WTe<sub>2</sub></a></h2>
+          <p><strong>Ruoshi Jiang</strong>, Fangyuan Gu, and Wei Ku</p>
+          <small>npj Computational Materials 12, 39 (2026)</small>
+        </div>
+      </li>
+      <li class="publication">
+        <span class="pub-year">2025</span>
+        <div>
+          <h2><a href="https://pubs.rsc.org/en/content/articlehtml/2025/tc/d5tc00863h">Giant thermally induced band-gap renormalization in anharmonic silver chalcohalide antiperovskites</a></h2>
+          <p>Pol Benítez, Siyu Chen, <strong>Ruoshi Jiang</strong>, Cibrán López, Josep-Lluís Tamarit, Jorge Íñiguez-González, Edgardo Saucedo, Bartomeu Monserrat, and Claudio Cazorla</p>
+          <small>Journal of Materials Chemistry C 13, 10399-10412 (2025)</small>
+        </div>
+      </li>
+      <li class="publication">
+        <span class="pub-year">2025</span>
+        <div>
+          <h2><a href="https://arxiv.org/abs/2510.02289">Charge order through crystallization of Frenkel excitons: realization in kagome metals</a></h2>
+          <p><strong>Ruoshi Jiang</strong>, Bartomeu Monserrat, and Wei Ku</p>
+          <small>arXiv:2510.02289 (2025)</small>
+        </div>
+      </li>
+      <li class="publication">
+        <span class="pub-year">2024</span>
+        <div>
+          <h2><a href="https://pubs.acs.org/doi/10.1021/acs.nanolett.4c01390">Geometric inhibition of superflow in single-layer graphene suggests a staggered-flux superconductivity in bilayer and trilayer graphene</a></h2>
+          <p>Xinyao Zhang, <strong>Ruoshi Jiang</strong>, Xingchen Shen, Xiaomo Huang, Qing-Dong Jiang, and Wei Ku</p>
+          <small>Nano Letters 24, 10451-10457 (2024)</small>
+        </div>
+      </li>
+      <li class="publication">
+        <span class="pub-year">2024</span>
+        <div>
+          <h2><a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.132.126503">Pressure driven fractionalization of ionic spins results in cupratelike high-T<sub>c</sub> superconductivity in La<sub>3</sub>Ni<sub>2</sub>O<sub>7</sub></a></h2>
+          <p><strong>Ruoshi Jiang</strong>, Jinning Hou, Zhiyu Fan, Zi-Jian Lang, and Wei Ku</p>
+          <small>Physical Review Letters 132, 126503 (2024)</small>
+        </div>
+      </li>
+      <li class="publication">
+        <span class="pub-year">2024</span>
+        <div>
+          <h2><a href="https://arxiv.org/abs/2402.08730">Universal low-temperature fluctuation of unconventional superconductors revealed: “smoking gun” leaves proper bosonic superfluidity the last theory standing</a></h2>
+          <p>Anthony Hegg, <strong>Ruoshi Jiang</strong>, Jie Wang, Jinning Hou, Tao Zeng, Yucel Yildirim, and Wei Ku</p>
+          <small>arXiv:2402.08730 (2024)</small>
+        </div>
+      </li>
+      <li class="publication">
+        <span class="pub-year">2023</span>
+        <div>
+          <h2><a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.108.155126">Variation of carrier density in semimetals via short-range correlation: a case study with nickelate NdNiO<sub>2</sub></a></h2>
+          <p><strong>Ruoshi Jiang</strong>, Zi-Jian Lang, Tom Berlijn, and Wei Ku</p>
+          <small>Physical Review B 108, 155126 (2023)</small>
+        </div>
+      </li>
+      <li class="publication">
+        <span class="pub-year">2021</span>
+        <div>
+          <h2><a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.103.L180502">Strongly correlated doped hole carriers in the superconducting nickelates: their location, local many-body state, and low-energy effective Hamiltonian</a></h2>
+          <p>Zi-Jian Lang, <strong>Ruoshi Jiang</strong>, and Wei Ku</p>
+          <small>Physical Review B 103, L180502 (2021)</small>
+        </div>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="footer">
+    © <span id="year"></span> Ruoshi Jiang. Built for GitHub Pages.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

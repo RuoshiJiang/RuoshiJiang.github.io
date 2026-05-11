@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Ruoshi Jiang</title>
+  <meta name="description" content="Contact and academic profile links for Ruoshi Jiang." />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #ffffff;
+      --ink: #222222;
+      --muted: #666666;
+      --line: #dddddd;
+      --accent: #6c4f7d;
+      --accent-dark: #43304f;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent-dark);
+      text-decoration: underline;
+    }
+
+    .site-header {
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .header-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .site-title {
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 14px 22px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: #444444;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent-dark);
+    }
+
+    .nav-links a.active {
+      font-weight: 650;
+    }
+
+    main {
+      width: min(780px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 44px 0 58px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-size: 34px;
+      line-height: 1.18;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 18px;
+    }
+
+    .intro {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .contact-list {
+      margin: 30px 0 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-list li {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      gap: 18px;
+      padding: 15px 0;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .contact-list strong {
+      color: var(--ink);
+      font-weight: 650;
+    }
+
+    .contact-list span {
+      color: var(--muted);
+    }
+
+    .footer {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 38px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 720px) {
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 0;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .contact-list li {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-title" href="index.html">Ruoshi Jiang</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="arxiv.html">arXiv Daily Reader</a>
+        <a class="active" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Contact</h1>
+    <p class="intro">
+      For research discussions, papers, official profiles, or code, the links below are the best starting points.
+    </p>
+
+    <ul class="contact-list">
+      <li>
+        <strong>Cambridge profile</strong>
+        <span><a href="https://www.mtg.msm.cam.ac.uk/people/ruoshi-jiang">Materials Theory Group profile</a></span>
+      </li>
+      <li>
+        <strong>Research group</strong>
+        <span><a href="https://www.tcm.phy.cam.ac.uk/~bm418/team.html">Monserrat Lab team page</a></span>
+      </li>
+      <li>
+        <strong>Publications</strong>
+        <span><a href="https://scholar.google.com/citations?user=qEn2jAsAAAAJ&hl=zh-CN">Google Scholar</a></span>
+      </li>
+      <li>
+        <strong>Code</strong>
+        <span><a href="https://github.com/RuoshiJiang">GitHub</a></span>
+      </li>
+      <li>
+        <strong>Reader</strong>
+        <span><a href="arxiv.html">Ruoshi's arXiv Daily Reader</a></span>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="footer">
+    © <span id="year"></span> Ruoshi Jiang. Built for GitHub Pages.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -93,6 +93,12 @@
       font-weight: 800;
     }
 
+    .home-link.active {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
     input,
     select {
       width: 220px;
@@ -552,6 +558,9 @@
       </div>
       <div class="controls">
         <a class="home-link" href="index.html">Home</a>
+        <a class="home-link" href="publications.html">Publications</a>
+        <a class="home-link active" href="arxiv.html">arXiv Daily Reader</a>
+        <a class="home-link" href="contact.html">Contact</a>
         <input id="search" type="search" placeholder="搜索标题、作者、摘要" />
         <select id="categoryFilter" aria-label="栏目筛选">
           <option value="all">全部栏目</option>
