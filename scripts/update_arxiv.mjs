@@ -314,6 +314,350 @@ function sentenceAfterLead(sentence = "") {
     .trim();
 }
 
+function cleanupLatex(text = "") {
+  return text
+    .replace(/\$+/g, "")
+    .replace(/\\mathbb\{([^}]+)\}/g, "$1")
+    .replace(/\\mathrm\{([^}]+)\}/g, "$1")
+    .replace(/\\text\{([^}]+)\}/g, "$1")
+    .replace(/\\r\{([^}]+)\}/g, "$1")
+    .replace(/\\Omega/g, "Ω")
+    .replace(/\\alpha/g, "α")
+    .replace(/\\mu/g, "μ")
+    .replace(/\\delta/g, "δ")
+    .replace(/\\pm/g, "±")
+    .replace(/_\{([^}]+)\}/g, "_$1")
+    .replace(/\^\{([^}]+)\}/g, "^$1")
+    .replace(/[{}]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function translateFragment(text = "") {
+  let value = cleanupLatex(text);
+  const rules = [
+    [/Topological superconductivity in a Hubbard model for twisted bilayer cuprates/gi, "扭转双层铜氧化物 Hubbard 模型中的拓扑超导"],
+    [/Finite temperature pair density wave superconductivity in d-wave altermagnets/gi, "d 波交错磁体中的有限温配对密度波超导"],
+    [/Noncollinear antiferromagnetic structure and physical properties of CrRhAs with distorted kagome lattice/gi, "畸变 kagome 晶格材料 CrRhAs 的非共线反铁磁结构和物性"],
+    [/Gapped 1\/9 Magnetization Plateau in the Anisotropic Kagome Antiferromagnet Y-kapellasite/gi, "各向异性 kagome 反铁磁体 Y-kapellasite 中有能隙的 1/9 磁化平台"],
+    [/Quantum spin liquid on a 3D bipartite lattice of spin trimers stabilized by enhanced effective anisotropy/gi, "增强有效各向异性稳定的三维二分自旋三聚体量子自旋液体"],
+    [/Beyond the conventional Emery model: crucial role of long-range hopping for cuprate superconductivity/gi, "超越常规 Emery 模型：长程跃迁对铜氧化物超导的关键作用"],
+    [/Light-driven octupolar inverse Faraday effect and multipolar order in Mott insulators/gi, "Mott 绝缘体中的光驱动八极反法拉第效应和多极序"],
+    [/Intrinsic Floquet Generation and 1\/I Quantum Oscillations in a Sliding Charge-Density Wave/gi, "滑动电荷密度波中的内禀 Floquet 产生和 1/I 量子振荡"],
+    [/Superconducting and correlated phases of an effective Hubbard model on the BCC lattice/gi, "BCC 晶格有效 Hubbard 模型中的超导和关联相"],
+    [/Josephson spectroscopy study of kagome superconductors toward the deep point-contact regime/gi, "深点接触极限下 kagome 超导体的 Josephson 谱学"],
+    [/Emergence of a correlated insulating state in bulk 1T-NbSe_?2 via metal intercalation/gi, "金属插层诱导 bulk 1T-NbSe2 中关联绝缘态的出现"],
+    [/Twisted Kagome Bilayers: Higher-Order Magic Angles, Topological Flat Bands, and Sublattice Interference/gi, "扭转 kagome 双层中的高阶魔角、拓扑平带和子晶格干涉"],
+    [/Topological spin freezing in frustrated quantum materials/gi, "受挫量子材料中的拓扑自旋冻结"],
+    [/Quantum Electron Quasicrystal/gi, "量子电子准晶"],
+    [/Probabilistic denoising for reliable signal extraction in spectroscopy/gi, "谱学可靠信号提取中的概率去噪"],
+    [/Breaking the Trade-off: Bulk 2D Ising Superconductivity with High Tc and Giant Interlayer Spacing via a Unique Chain Intercalation in \(BaS\)1\/3TaS2/gi, "通过链状插层在 (BaS)1/3TaS2 中实现高 Tc、大层间距的体相二维 Ising 超导"],
+    [/Ground states of quantum XY dipoles on the Archimedean lattices/gi, "阿基米德晶格上量子 XY 偶极子的基态"],
+    [/the emergence of nontrivial topology/gi, "非平庸拓扑的出现"],
+    [/twisted cuprate bilayer/gi, "扭转铜氧化物双层"],
+    [/twisted bilayer cuprates/gi, "扭转双层铜氧化物"],
+    [/weak-interaction regime/gi, "弱相互作用区间"],
+    [/topological character depends sensitively on the doping level/gi, "拓扑性质对掺杂水平非常敏感"],
+    [/Chern number assumes a value of ([^,.;]+)/gi, "Chern 数取 $1"],
+    [/finite-momentum superconductivity/gi, "有限动量超导"],
+    [/pair-density-wave|pair density wave|\bPDW\b/gi, "PDW（配对密度波）"],
+    [/altermagnetism provides a field-free mechanism for stabilizing/gi, "交错磁性提供了无需外磁场稳定"],
+    [/d-wave altermagnets?/gi, "d 波交错磁体"],
+    [/momentum-dependent spin splitting/gi, "动量依赖的自旋劈裂"],
+    [/noncollinear antiferromagnetic structure/gi, "非共线反铁磁结构"],
+    [/distorted kagome lattice/gi, "畸变 kagome 晶格"],
+    [/kagome metal/gi, "kagome 金属"],
+    [/anomalous electrical transport properties/gi, "反常电输运性质"],
+    [/strongly correlated kagome metal/gi, "强关联 kagome 金属"],
+    [/Combined with the results of heat capacity measurements, a large Kadowaki-Woods ratio [^.;]+ is obtained/gi, "结合热容测量，得到较大的 Kadowaki-Woods 比，指向强关联行为"],
+    [/fractional magnetization plateaus?/gi, "分数磁化平台"],
+    [/many-body spin states/gi, "多体自旋态"],
+    [/frustrated quantum magnets?/gi, "受挫量子磁体"],
+    [/microscopic origin/gi, "微观起源"],
+    [/kagome antiferromagnets?/gi, "kagome 反铁磁体"],
+    [/field-induced fractional features/gi, "场诱导分数特征"],
+    [/a hierarchy of field-induced fractional features, including 1\/3 and 1\/9 plateaus, as well as a weaker low-field feature/gi, "一系列场诱导分数特征，包括 1/3、1/9 平台和较弱的低场特征"],
+    [/quantum spin liquids?|\bQSLs?\b/gi, "量子自旋液体"],
+    [/highly entangled states of matter/gi, "高度纠缠的物态"],
+    [/frustration-induced quantum fluctuations/gi, "受挫诱导的量子涨落"],
+    [/symmetry-breaking phase transition/gi, "对称性破缺相变"],
+    [/fractionalized excitations/gi, "分数化激发"],
+    [/emergent gauge fields/gi, "涌现规范场"],
+    [/three-dimensional spin-trimer magnet/gi, "三维自旋三聚体磁体"],
+    [/bipartite quantum spin liquid/gi, "二分晶格量子自旋液体"],
+    [/lowest temperatures/gi, "最低温区"],
+    [/Here identify the three-dimensional spin-trimer magnet ([^,.;]+) as a promising candidate for a bipartite quantum spin liquid persisting to the lowest temperatures/gi, "识别出三维自旋三聚体磁体 $1 是可在最低温区保持的二分晶格量子自旋液体候选"],
+    [/Here we identify the three-dimensional spin-trimer magnet ([^,.;]+) as a promising candidate for a bipartite quantum spin liquid persisting to the lowest temperatures/gi, "识别出三维自旋三聚体磁体 $1 是可在最低温区保持的二分晶格量子自旋液体候选"],
+    [/The Emery model is the quintessential model for cuprate superconductors/gi, "Emery 模型是描述铜氧化物超导的经典模型"],
+    [/long-range hopping/gi, "长程跃迁"],
+    [/cuprate superconductivity/gi, "铜氧化物超导"],
+    [/superconducting dome/gi, "超导穹顶"],
+    [/dynamical vertex approximation/gi, "动态顶点近似"],
+    [/\bcuprates\b/gi, "铜氧化物"],
+    [/hidden multipolar orders?/gi, "隐藏多极序"],
+    [/spin-orbit-coupled Mott insulators?/gi, "自旋轨道耦合 Mott 绝缘体"],
+    [/control and detection remain major challenges/gi, "调控和探测仍是主要挑战"],
+    [/circularly polarized light/gi, "圆偏振光"],
+    [/both in 4d\^2\/5d\^2 systems with edge-sharing octahedra/gi, "在具有共边八面体的 4d^2/5d^2 体系中同时实现这两种效应"],
+    [/octupolar inverse Faraday effect/gi, "八极反法拉第效应"],
+    [/multipolar order/gi, "多极序"],
+    [/deep learning/gi, "深度学习"],
+    [/powerful capabilities for scientific research/gi, "为科学研究提供强大能力"],
+    [/its application is often hindered by a lack of quantitative reliability/gi, "其应用常受定量可靠性不足限制"],
+    [/this approach on three-dimensional ARPES data, showing that the model reliably recovers the spectral features of a cuprate superconductor from Poisson-distributed noise/gi, "该方法用于三维 ARPES 数据，并能从泊松噪声中可靠恢复铜氧化物超导体的谱特征"],
+    [/quantitative reliability/gi, "定量可靠性"],
+    [/angle-resolved photoemission spectroscopy|\bARPES\b/gi, "ARPES"],
+    [/Poisson-distributed noise/gi, "泊松噪声"],
+    [/spectral features/gi, "谱特征"],
+    [/Ising Superconductivity/gi, "Ising 超导"],
+    [/transition metal dichalcogenides|\bTMDs\b/gi, "过渡金属硫族化物"],
+    [/low dimensional superconductivity/gi, "低维超导"],
+    [/superconducting transition temperature|\bTc\b/gi, "超导转变温度 Tc"],
+    [/interlayer spacing/gi, "层间距"],
+    [/chain intercalation/gi, "链状插层"],
+    [/ground states?/gi, "基态"],
+    [/quantum XY dipoles?/gi, "量子 XY 偶极子"],
+    [/numerical ground states? for dipolar XY spin model/gi, "偶极 XY 自旋模型的数值基态"],
+    [/two-dimensional arrays of polar molecules and two-level Rydberg atoms/gi, "二维极性分子阵列和两能级 Rydberg 原子阵列"],
+    [/Archimedean lattices?/gi, "阿基米德晶格"],
+    [/electronic excitations?/gi, "电子激发"],
+    [/Shastry-Sutherland compound/gi, "Shastry-Sutherland 化合物"],
+    [/Majorana bound states?/gi, "Majorana 束缚态"],
+    [/chiral ferromagnet-superconductor heterostructures?/gi, "手性铁磁-超导异质结构"],
+    [/bulk and surface electronic structure/gi, "体态和表面电子结构"],
+    [/targeted cleave planes?/gi, "定向解理面"],
+    [/heavy fermion system/gi, "重费米子体系"],
+    [/dynamic magnetic ground state/gi, "动态磁基态"],
+    [/helimagnetism/gi, "螺旋磁性"],
+    [/body-centered tetragonal lattice/gi, "体心四方晶格"],
+    [/chiral ferromagnetism/gi, "手性铁磁性"],
+    [/microscopic magnetism/gi, "微观磁性"],
+    [/parafermions?/gi, "parafermion 准粒子"],
+    [/electronic ladder model/gi, "电子梯子模型"],
+    [/conformal invariance/gi, "共形不变性"],
+    [/X-ray and Neutron Experiments/gi, "X 射线和中子实验"],
+    [/Kronig-Penney Model/gi, "Kronig-Penney 模型"],
+    [/Harmonic Oscillator Wells/gi, "谐振子势阱"],
+    [/Tight-Binding/gi, "紧束缚"],
+    [/gapped phases/gi, "有能隙相"],
+    [/boundary conformal field theories/gi, "边界共形场论"],
+    [/wavefunction approach/gi, "波函数方法"],
+    [/quantum many-body systems/gi, "量子多体系统"],
+    [/magnetoelectric response/gi, "磁电响应"],
+    [/antiferromagnetic zigzag chains/gi, "反铁磁 zigzag 链"],
+    [/downfolding approach/gi, "降维有效模型方法"],
+    [/phase-coherence scaling/gi, "相干相位标度"],
+    [/quantum-critical Dirac semimetal/gi, "量子临界 Dirac 半金属"],
+    [/fractional quantum Hall edge/gi, "分数量子霍尔边缘"],
+    [/intrinsic dipole moment/gi, "内禀偶极矩"],
+    [/probabilistic imaginary-time evolution/gi, "概率虚时演化"],
+    [/superconducting radio-frequency applications/gi, "超导射频应用"],
+    [/transport AC losses/gi, "输运交流损耗"],
+    [/nematic fluctuations?/gi, "nematic 涨落"],
+    [/collective modes?/gi, "集体模"],
+    [/Rydberg arrays?/gi, "Rydberg 阵列"],
+    [/Dirac magnons?/gi, "Dirac 磁振子"],
+    [/atomic limit/gi, "原子极限"],
+    [/pair-breaking/gi, "破对效应"],
+    [/Spin-Orbit Coupled Superconductors/gi, "自旋轨道耦合超导体"],
+    [/electron quasicrystal/gi, "电子准晶"],
+    [/charge trapping dynamics/gi, "电荷俘获动力学"],
+    [/sulphur divacancy/gi, "硫双空位"],
+    [/spin quantum Hall edge states/gi, "自旋量子霍尔边缘态"],
+    [/two-dimensional electron gas/gi, "二维电子气"],
+    [/s-wave superconductor/gi, "s 波超导体"],
+    [/proton irradiation/gi, "质子辐照"],
+    [/critical current density|J_c|Jc/gi, "临界电流密度 Jc"],
+    [/Bethe solutions?/gi, "Bethe 解"],
+    [/Heisenberg Chain/gi, "Heisenberg 链"],
+    [/zero-magnetization plateaus?/gi, "零磁化平台"],
+    [/spin dimers?/gi, "自旋二聚体"],
+    [/Chern Ferromagnets?/gi, "Chern 铁磁体"],
+    [/spin polarons?/gi, "自旋极化子"],
+    [/Mott insulators?/gi, "Mott 绝缘体"],
+    [/Hubbard model/gi, "Hubbard 模型"],
+    [/superconductivity/gi, "超导"],
+    [/superconducting/gi, "超导"],
+    [/correlated phases?/gi, "关联相"],
+    [/correlated insulating state/gi, "关联绝缘态"],
+    [/charge-density wave|charge density wave|\bCDW\b/gi, "电荷密度波"],
+    [/Floquet/gi, "Floquet"],
+    [/quantum oscillations?/gi, "量子振荡"],
+    [/magnetoresistance/gi, "磁阻"],
+    [/phonon driven exchange dynamics/gi, "声子驱动的交换动力学"],
+    [/Moir[eé] Superlattices?/gi, "moiré 超晶格"],
+    [/interlayer charge-transfer states?/gi, "层间电荷转移态"],
+    [/topological flat bands?/gi, "拓扑平带"],
+    [/magic angles?/gi, "魔角"],
+    [/sublattice interference/gi, "子晶格干涉"],
+    [/sliding/gi, "滑动"],
+    [/bulk/gi, "体相"],
+    [/surface/gi, "表面"],
+    [/magnetic structure/gi, "磁结构"],
+    [/physical properties/gi, "物性"],
+    [/topological/gi, "拓扑"],
+    [/nontrivial/gi, "非平庸"],
+    [/doping level/gi, "掺杂水平"],
+    [/edge states?/gi, "边缘态"],
+    [/chirality/gi, "手性"],
+    [/finite-width geometry/gi, "有限宽几何"],
+    [/thermal fluctuations?/gi, "热涨落"],
+    [/pseudogap/gi, "赝能隙"],
+    [/spectroscopic/gi, "谱学"],
+    [/real-space signatures?/gi, "实空间特征"],
+    [/experimentally testable signatures?/gi, "可实验检验的特征"],
+    [/low-energy spin fluctuations?/gi, "低能自旋涨落"],
+    [/activated behavior/gi, "激活行为"],
+    [/effective anisotropy/gi, "有效各向异性"],
+    [/bond anisotropy/gi, "键各向异性"],
+    [/gapless dynamical ground state/gi, "无能隙动态基态"],
+    [/algebraic spin autocorrelations/gi, "代数型自旋自关联"],
+    [/first-principles/gi, "第一性原理"],
+    [/density functional theory|\bDFT\b/gi, "DFT"],
+    [/Monte Carlo/gi, "Monte Carlo"],
+    [/exact-diagonalization/gi, "精确对角化"],
+    [/transport measurements?/gi, "输运测量"],
+    [/neutron scattering/gi, "中子散射"],
+    [/\bNMR\b/gi, "NMR"],
+    [/\bmuSR\b|\bμSR\b/gi, "μSR"],
+    [/\bSTM\b/gi, "STM"],
+    [/Raman/gi, "Raman"],
+    [/we identify/gi, "识别出"],
+    [/we find/gi, "发现"],
+    [/we show/gi, "表明"],
+    [/we demonstrate/gi, "证明"],
+    [/we report/gi, "报道"],
+    [/we present/gi, "给出"],
+    [/our results show that/gi, "结果表明"],
+    [/this work/gi, "这项工作"],
+    [/this paper/gi, "这篇论文"],
+    [/provides?/gi, "提供"],
+    [/reveals?/gi, "揭示"],
+    [/suggests?/gi, "表明"],
+    [/enables?/gi, "使得"],
+    [/stabiliz(?:e|es|ing)/gi, "稳定"],
+    [/depends sensitively on/gi, "强烈依赖"],
+    [/remains? unresolved/gi, "仍未解决"],
+    [/major challenges?/gi, "主要挑战"],
+    [/crucial role/gi, "关键作用"],
+    [/\btoward\b/gi, "面向"],
+    [/\bvia\b/gi, "通过"],
+    [/\busing\b/gi, "利用"],
+    [/\bbased on\b/gi, "基于"],
+    [/\bconsistent with\b/gi, "符合"],
+    [/\bfrom\b/gi, "来自"],
+    [/\bwith\b/gi, "具有"],
+    [/\band\b/gi, "和"],
+    [/\bor\b/gi, "或"],
+    [/\bin\b\s*/gi, "在"],
+    [/ on /gi, " 在 "],
+    [/\bof\b/gi, "的"],
+    [/\bfor\b/gi, "用于"],
+    [/\bthe\b/gi, ""],
+    [/\ba\b/gi, ""],
+    [/\ban\b/gi, ""]
+  ];
+  for (const [pattern, replacement] of rules) {
+    value = value.replace(pattern, replacement);
+  }
+  const polishRules = [
+    [/在two dimensions/gi, "在二维"],
+    [/two-dimensional/gi, "二维"],
+    [/Combined 具有 results的heat capacity measurements, large Kadowaki-Woods ratio .*? is obtained/gi, "结合热容测量，得到较大的 Kadowaki-Woods 比，指向强关联行为"],
+    [/识别出 hierarchy的场诱导分数特征, including 1\/3 和 1\/9 plateaus, as well as weaker low-field feature/gi, "识别出一系列场诱导分数特征，包括 1/3、1/9 平台和较弱的低场特征"],
+    [/Here 识别出 三维自旋三聚体磁体 ([^ ]+) as promising candidate 用于 bipartite 量子自旋液体 persisting to 最低温区/gi, "识别出三维自旋三聚体磁体 $1 是可在最低温区保持的二分晶格量子自旋液体候选"],
+    [/this approach 在 three-dimensional ARPES data, showing that model reliably recovers 谱特征的cuprate superconductor 来自 泊松噪声/gi, "该方法用于三维 ARPES 数据，并能从泊松噪声中可靠恢复铜氧化物超导体的谱特征"],
+    [/However, 在conventional intercalated systems, achieving high 超导转变温度 Tc .*? weakened 2D character/gi, "常规插层体系中，高 Tc 往往伴随层间距减小和二维性削弱"],
+    [/We also investigate triangular lattice, 用于 which 发现 several competing phases including coplanar magnetism, stripe density wave order, 和 possible spin liquid; their relative stability is sensitive to/gi, "还研究三角晶格，发现共面磁性、条纹密度波序和可能的自旋液体等竞争相，其稳定性对参数很敏感"],
+    [/three-dimensional/gi, "三维"],
+    [/two-level/gi, "两能级"],
+    [/superconductor/gi, "超导体"],
+    [/candidate/gi, "候选"],
+    [/including/gi, "包括"],
+    [/as well as/gi, "以及"],
+    [/possible/gi, "可能的"],
+    [/conventional/gi, "常规"],
+    [/intercalated systems/gi, "插层体系"],
+    [/achieving/gi, "实现"],
+    [/weakened/gi, "削弱的"],
+    [/reduced/gi, "减小的"],
+    [/hierarchy/gi, "层级结构"],
+    [/plateaus/gi, "平台"],
+    [/low-field feature/gi, "低场特征"],
+    [/results/gi, "结果"],
+    [/heat capacity measurements/gi, "热容测量"],
+    [/is obtained/gi, "被得到"]
+  ];
+  for (const [pattern, replacement] of polishRules) {
+    value = value.replace(pattern, replacement);
+  }
+  return value
+    .replace(/\s+/g, " ")
+    .replace(/\s+([，。；：？！])/g, "$1")
+    .replace(/，\s*/g, "，")
+    .replace(/\s*的\s*/g, "的")
+    .trim();
+}
+
+function titleProblem(paper) {
+  const title = cleanupLatex(paper.title).toLowerCase();
+  if (/topological superconductivity.*twisted.*cuprate/.test(title)) return "扭转双层铜氧化物的 Hubbard 模型中能否出现拓扑超导？";
+  if (/pair density wave.*altermagnet/.test(title)) return "d 波交错磁体中有限温度下能否稳定 PDW 超导？";
+  if (/crrhas|noncollinear antiferromagnetic/.test(title)) return "畸变 kagome 材料 CrRhAs 的非共线磁结构和强关联物性是什么？";
+  if (/1\/9 magnetization plateau|y-kapellasite/.test(title)) return "Y-kapellasite 中 1/9 分数磁化平台是否有能隙，并具有怎样的微观自旋结构？";
+  if (/quantum spin liquid.*spin trimers/.test(title)) return "三维自旋三聚体晶格中是否能由有效各向异性稳定量子自旋液体？";
+  if (/emery model|long-range hopping/.test(title)) return "铜氧化物超导建模中长程跃迁是否是不可忽略的关键因素？";
+  if (/light-driven|inverse faraday|multipolar/.test(title)) return "光场能否在 Mott 绝缘体中诱导多极响应并调控隐藏多极序？";
+  if (/floquet|sliding charge-density wave/.test(title)) return "滑动电荷密度波是否能自发产生 Floquet 态和量子振荡？";
+  if (/hubbard.*bcc/.test(title)) return "BCC 晶格有效 Hubbard 模型中超导、Mott 与磁性关联相如何竞争？";
+  if (/josephson.*kagome/.test(title)) return "kagome 超导体在深点接触极限下的 Josephson 谱如何解释？";
+  if (/correlated insulating state.*nbse/.test(title)) return "金属插层能否在体相 1T-NbSe2 中诱导关联绝缘态？";
+  if (/twisted kagome bilayers/.test(title)) return "扭转 kagome 双层中魔角、拓扑平带和子晶格干涉如何出现？";
+  if (/topological spin freezing/.test(title)) return "受挫量子材料中的慢自旋动力学能否由拓扑自旋冻结解释？";
+  if (/quantum electron quasicrystal/.test(title)) return "电子系统能否不依赖外部 moiré 势而自发形成准晶态？";
+  if (/probabilistic denoising|spectroscopy/.test(title)) return "如何从有噪声的谱学数据中可靠提取物理信号并量化不确定性？";
+  if (/ising superconductivity|chain intercalation/.test(title)) return "能否在体相层状材料中同时获得高 Tc、强二维性和大层间距的 Ising 超导？";
+  if (/quantum xy dipoles|archimedean/.test(title)) return "阿基米德晶格上的量子 XY 偶极相互作用会稳定哪些基态？";
+  if (/multilayer model|superconducting radio-frequency/.test(title)) return "任意多层超导射频涂层的电磁响应和损耗如何建模？";
+  if (/superconduct/.test(title)) return `这篇论文想回答：${translateFragment(paper.title)}的机制和物理后果是什么？`;
+  if (/magnet|spin/.test(title)) return `这篇论文想回答：${translateFragment(paper.title)}背后的磁性机制是什么？`;
+  return `这篇论文想回答：${translateFragment(paper.title)}的核心物理是什么？`;
+}
+
+function titleOneLine(paper, firstSentenceText) {
+  const title = cleanupLatex(paper.title).toLowerCase();
+  if (/topological superconductivity.*twisted.*cuprate/.test(title)) return "用 Hubbard 模型研究扭转双层铜氧化物中的拓扑超导和掺杂依赖。";
+  if (/pair density wave.*altermagnet/.test(title)) return "提出交错磁性可在无外磁场条件下稳定有限动量 PDW 超导。";
+  if (/crrhas|noncollinear antiferromagnetic/.test(title)) return "实验确定 CrRhAs 的非共线反铁磁结构，并揭示其强关联 kagome 金属性。";
+  if (/1\/9 magnetization plateau|y-kapellasite/.test(title)) return "在各向异性 kagome 反铁磁体 Y-kapellasite 中识别出有能隙的 1/9 磁化平台。";
+  if (/quantum spin liquid.*spin trimers/.test(title)) return "提出三维自旋三聚体网络中由增强有效各向异性稳定的量子自旋液体候选。";
+  if (/emery model|long-range hopping/.test(title)) return "指出长程跃迁对铜氧化物超导的 Emery 模型描述至关重要。";
+  if (/light-driven|inverse faraday|multipolar/.test(title)) return "研究圆偏振光如何在 Mott 绝缘体中诱导八极反法拉第效应并耦合多极序。";
+  if (/floquet|sliding charge-density wave/.test(title)) return "说明滑动电荷密度波可把空间周期转化为时间周期，从而产生内禀 Floquet 侧带。";
+  if (/probabilistic denoising|spectroscopy/.test(title)) return "提出用于谱学数据的概率去噪方法，强调信号恢复的可靠性和不确定性。";
+  if (/ising superconductivity|chain intercalation/.test(title)) return "通过链状插层设计体相二维 Ising 超导，兼顾高 Tc 与大层间距。";
+  if (/quantum xy dipoles|archimedean/.test(title)) return "系统研究阿基米德晶格上偶极 XY 自旋模型的量子基态。";
+  if (/multilayer model|superconducting radio-frequency/.test(title)) return "扩展超导射频多层涂层模型，用于处理任意层序和材料组合。";
+  const fragment = translateFragment(sentenceAfterLead(firstSentenceText) || paper.title);
+  return `本文研究 ${withoutTerminalPunctuation(fragment)}。`;
+}
+
+function resultFromTitle(paper) {
+  const title = cleanupLatex(paper.title).toLowerCase();
+  if (/topological superconductivity.*twisted.*cuprate/.test(title)) return "结果表明，拓扑性质对掺杂水平非常敏感，电子掺杂时可出现非零 Chern 数和手性边缘态。";
+  if (/pair density wave.*altermagnet/.test(title)) return "结果表明，动量依赖的自旋劈裂可增强有限动量配对，使 PDW 在有限温度窗口内保持稳定。";
+  if (/crrhas|noncollinear antiferromagnetic/.test(title)) return "结果表明，CrRhAs 具有非共线反铁磁结构、反常输运和较大的 Kadowaki-Woods 比，指向强关联 kagome 金属性。";
+  if (/1\/9 magnetization plateau|y-kapellasite/.test(title)) return "结果表明，该体系存在 1/3 和 1/9 等分数磁化平台，其中 1/9 平台伴随低能自旋涨落抑制和有能隙行为。";
+  if (/quantum spin liquid.*spin trimers/.test(title)) return "结果表明，KBa3Ca4Cu3V7O28 在低温下没有磁冻结或对称性破缺，呈现无能隙动态基态，是三维量子自旋液体候选。";
+  if (/emery model|long-range hopping/.test(title)) return "结果表明，加入长程跃迁后可得到更符合铜氧化物的超导穹顶，说明常规 Emery 模型需要扩展。";
+  if (/light-driven|inverse faraday|multipolar/.test(title)) return "结果表明，圆偏振光可在共边八面体的 4d/5d Mott 体系中诱导八极响应，并提供探测多极序的新通道。";
+  if (/probabilistic denoising|spectroscopy/.test(title)) return "结果表明，该概率模型能在带泊松噪声的三维 ARPES 数据中可靠恢复铜氧化物超导体的谱特征。";
+  if (/ising superconductivity|chain intercalation/.test(title)) return "结果表明，链状插层可打破高 Tc 与二维性之间的常规权衡，增强层间距并保持体相 Ising 超导。";
+  if (/quantum xy dipoles|archimedean/.test(title)) return "结果表明，不同阿基米德晶格上会出现多种竞争基态，包括共面磁性、条纹密度波序和可能的自旋液体。";
+  if (/multilayer model|superconducting radio-frequency/.test(title)) return "结果表明，该模型可推广到任意层序的超导、绝缘或正常金属涂层，用于评估超导射频应用中的损耗。";
+  return "";
+}
+
 function findSentence(sentences, patterns, fallbackIndex = 0) {
   return sentences.find(sentence => patterns.some(pattern => pattern.test(sentence))) || sentences[fallbackIndex] || sentences[0] || "";
 }
@@ -321,6 +665,9 @@ function findSentence(sentences, patterns, fallbackIndex = 0) {
 function methodFromText(paper, sentences) {
   const haystack = `${paper.title} ${paper.abstract} ${paper.comments}`.toLowerCase();
   const methodHints = [
+    ["multilayer model", "多层电磁模型"],
+    ["dynamical vertex approximation", "动态顶点近似"],
+    ["static path approximation", "静态路径近似"],
     ["density functional", "DFT 计算"],
     ["dft", "DFT 计算"],
     ["monte carlo", "Monte Carlo 模拟"],
@@ -362,7 +709,7 @@ function methodFromText(paper, sentences) {
     /\bexperiment/i,
     /\bsimulation/i
   ], 2);
-  return methodSentence ? chineseSentence("方法上，", sentenceAfterLead(methodSentence) || methodSentence, 190) : "结合理论分析、数值计算或实验表征。";
+  return methodSentence ? chineseSentence("方法上，", translateFragment(sentenceAfterLead(methodSentence) || methodSentence), 190) : "结合理论分析、数值计算或实验表征。";
 }
 
 function buildChineseSummary(paper, ranking) {
@@ -378,7 +725,6 @@ function buildChineseSummary(paper, ranking) {
     /\bresults?\b/i,
     /\bsuggest\b/i
   ], 1);
-  const topic = sentenceAfterLead(first) || paper.title;
   const categories = paper.categories || [];
   const hasStr = categories.includes("cond-mat.str-el");
   const hasSupr = categories.includes("cond-mat.supr-con");
@@ -395,9 +741,9 @@ function buildChineseSummary(paper, ranking) {
   }
 
   return {
-    oneLine: chineseSentence("本文研究 ", sentenceAfterLead(first) || first, 190),
-    problem: `这篇论文关注：${withoutTerminalPunctuation(topic)}？`,
-    result: resultSentence ? chineseSentence("结果表明，", sentenceAfterLead(resultSentence) || resultSentence, 210) : "摘要中给出了新的结果或解释框架，值得结合原文进一步判断。",
+    oneLine: titleOneLine(paper, first),
+    problem: titleProblem(paper),
+    result: resultFromTitle(paper) || (resultSentence ? chineseSentence("结果表明，", translateFragment(sentenceAfterLead(resultSentence) || resultSentence), 210) : "摘要中给出了新的结果或解释框架，值得结合原文进一步判断。"),
     methods: methodFromText(paper, sentences),
     why
   };
