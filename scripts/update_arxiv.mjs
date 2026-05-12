@@ -615,7 +615,7 @@ function titleProblem(paper) {
   if (/twisted kagome bilayers/.test(title)) return "扭转 kagome 双层中魔角、拓扑平带和子晶格干涉如何出现？";
   if (/topological spin freezing/.test(title)) return "受挫量子材料中的慢自旋动力学能否由拓扑自旋冻结解释？";
   if (/quantum electron quasicrystal/.test(title)) return "电子系统能否不依赖外部 moiré 势而自发形成准晶态？";
-  if (/probabilistic denoising|spectroscopy/.test(title)) return "如何从有噪声的谱学数据中可靠提取物理信号并量化不确定性？";
+  if (/probabilistic denoising/.test(title)) return "如何从有噪声的谱学数据中可靠提取物理信号并量化不确定性？";
   if (/ising superconductivity|chain intercalation/.test(title)) return "能否在体相层状材料中同时获得高 Tc、强二维性和大层间距的 Ising 超导？";
   if (/quantum xy dipoles|archimedean/.test(title)) return "阿基米德晶格上的量子 XY 偶极相互作用会稳定哪些基态？";
   if (/multilayer model|superconducting radio-frequency/.test(title)) return "任意多层超导射频涂层的电磁响应和损耗如何建模？";
@@ -632,7 +632,7 @@ function titleOneLine(paper, firstSentenceText) {
   if (/emery model|long-range hopping/.test(title)) return "指出长程跃迁对铜氧化物超导的 Emery 模型描述至关重要。";
   if (/light-driven|inverse faraday|multipolar/.test(title)) return "研究圆偏振光如何在 Mott 绝缘体中诱导八极反法拉第效应并耦合多极序。";
   if (/floquet|sliding charge-density wave/.test(title)) return "说明滑动电荷密度波可把空间周期转化为时间周期，从而产生内禀 Floquet 侧带。";
-  if (/probabilistic denoising|spectroscopy/.test(title)) return "提出用于谱学数据的概率去噪方法，强调信号恢复的可靠性和不确定性。";
+  if (/probabilistic denoising/.test(title)) return "提出用于谱学数据的概率去噪方法，强调信号恢复的可靠性和不确定性。";
   if (/ising superconductivity|chain intercalation/.test(title)) return "通过链状插层设计体相二维 Ising 超导，兼顾高 Tc 与大层间距。";
   if (/quantum xy dipoles|archimedean/.test(title)) return "系统研究阿基米德晶格上偶极 XY 自旋模型的量子基态。";
   if (/multilayer model|superconducting radio-frequency/.test(title)) return "扩展超导射频多层涂层模型，用于处理任意层序和材料组合。";
@@ -648,11 +648,202 @@ function resultFromTitle(paper) {
   if (/quantum spin liquid.*spin trimers/.test(title)) return "结果表明，KBa3Ca4Cu3V7O28 在低温下没有磁冻结或对称性破缺，呈现无能隙动态基态，是三维量子自旋液体候选。";
   if (/emery model|long-range hopping/.test(title)) return "结果表明，加入长程跃迁后可得到更符合铜氧化物的超导穹顶，说明常规 Emery 模型需要扩展。";
   if (/light-driven|inverse faraday|multipolar/.test(title)) return "结果表明，圆偏振光可在共边八面体的 4d/5d Mott 体系中诱导八极响应，并提供探测多极序的新通道。";
-  if (/probabilistic denoising|spectroscopy/.test(title)) return "结果表明，该概率模型能在带泊松噪声的三维 ARPES 数据中可靠恢复铜氧化物超导体的谱特征。";
+  if (/probabilistic denoising/.test(title)) return "结果表明，该概率模型能在带泊松噪声的三维 ARPES 数据中可靠恢复铜氧化物超导体的谱特征。";
   if (/ising superconductivity|chain intercalation/.test(title)) return "结果表明，链状插层可打破高 Tc 与二维性之间的常规权衡，增强层间距并保持体相 Ising 超导。";
   if (/quantum xy dipoles|archimedean/.test(title)) return "结果表明，不同阿基米德晶格上会出现多种竞争基态，包括共面磁性、条纹密度波序和可能的自旋液体。";
   if (/multilayer model|superconducting radio-frequency/.test(title)) return "结果表明，该模型可推广到任意层序的超导、绝缘或正常金属涂层，用于评估超导射频应用中的损耗。";
   return "";
+}
+
+function manualSummary(paper) {
+  const title = cleanupLatex(paper.title).toLowerCase();
+  const entries = [
+    [/bulk-edge correspondence.*higher gauge/, {
+      oneLine: "用高阶规范理论重新表述拓扑物态中的体-边对应关系。",
+      problem: "拓扑体响应如何通过高阶规范结构决定边界自由度和边界异常？",
+      result: "结果表明，高阶规范场语言可以统一描述体拓扑响应与边界态之间的对应关系。",
+      methods: "高阶规范理论与拓扑场论分析。",
+      why: "属于拓扑物态基础理论，可作为理解边界响应和广义对称性的背景材料。"
+    }],
+    [/fluctuation-driven chiral ferromagnetism/, {
+      oneLine: "研究涨落如何在竞争磁相中诱导手性铁磁序。",
+      problem: "量子或热涨落能否选择并稳定手性铁磁基态？",
+      result: "结果表明，涨落可以改变磁序之间的能量竞争，并稳定具有手性的铁磁相。",
+      methods: "有效自旋模型、涨落分析与相图计算。",
+      why: "有助于理解受挫或竞争磁体中由涨落选择的非常规磁序。"
+    }],
+    [/hubbard.*bcc/, {
+      oneLine: "研究 BCC 晶格有效 Hubbard 模型中超导相、Mott 绝缘相和磁性相之间的竞争。",
+      problem: "BCC 晶格有效 Hubbard 模型中超导、Mott 绝缘和反铁磁相如何竞争？",
+      result: "结果表明，中等相互作用区可出现一阶超导转变；强耦合区中费米液体、反铁磁和 Mott 绝缘相在窄窗口内相互竞争。",
+      methods: "Hatsugai-Kohmoto 可解模型、BCS 配对项与 slave-boson 分析。",
+      why: "同时连接强关联电子、电子-声子耦合和超导相竞争，适合优先阅读。"
+    }],
+    [/josephson.*kagome/, {
+      oneLine: "用 Josephson 扫描隧穿谱研究 kagome 超导体在深点接触极限下的局域超导响应。",
+      problem: "深点接触极限下的 Josephson 谱如何影响对 kagome 超导体零偏压电导的解读？",
+      result: "结果表明，零偏压电导会偏离常规二次标度并出现饱和，主要受串联电阻影响；同时给出了用 JSTM 探测低温 PDW 态的合适工作窗口。",
+      methods: "Josephson 扫描隧穿谱与点接触输运分析。",
+      why: "直接服务于 kagome 超导体中配对相干性和可能 PDW 态的局域探测。"
+    }],
+    [/correlated insulating state.*nbse/, {
+      oneLine: "研究金属插层如何在体相 1T-NbSe2 中诱导关联绝缘态。",
+      problem: "金属插层能否稳定体相 1T-NbSe2，并使其从金属性转向关联绝缘行为？",
+      result: "结果表明，Sn 插层可稳定体相 1T 结构并产生绝缘输运，而 DFT 预言的金属性说明电子关联在绝缘态形成中起关键作用。",
+      methods: "电化学插层、透射电镜、输运测量、Raman 光谱与 DFT 计算。",
+      why: "给出层状 TMD 中由结构调控产生关联绝缘态的新材料平台。"
+    }],
+    [/twisted kagome bilayers/, {
+      oneLine: "研究扭转 kagome 双层中的高阶魔角、拓扑平带和子晶格干涉。",
+      problem: "扭转 kagome 双层如何产生高阶魔角和平带拓扑？",
+      result: "结果表明，扭转可在 kagome 双层中诱导局域带平坦化、高阶 Van Hove 奇点和非平庸拓扑，子晶格干涉的作用相对较弱。",
+      methods: "低能连续模型与 moiré 能带分析。",
+      why: "有助于理解 kagome moiré 体系中平带、拓扑与关联效应的结合。"
+    }],
+    [/topological spin freezing/, {
+      oneLine: "综述受挫量子材料中由拓扑约束和集体激发导致的慢自旋动力学。",
+      problem: "受挫量子材料中的非常规自旋冻结能否由拓扑缺陷和短程关联来解释？",
+      result: "结果表明，拓扑缺陷、短程自旋关联和低能集体模可导致区别于常规自旋玻璃的冻结行为。",
+      methods: "热力学测量、NMR、muSR、中子散射与理论模型综合分析。",
+      why: "为受挫磁性材料中的玻璃化动力学和自旋阻塞态提供统一图像。"
+    }],
+    [/interlayer charge-transfer.*mose.*ws|mose.*ws.*charge-transfer/, {
+      oneLine: "研究 MoSe2/WS2 moiré 超晶格中可调的层间电荷转移态。",
+      problem: "MoSe2/WS2 moiré 超晶格中的层间电荷转移态如何被垂直电场和电子填充调控？",
+      result: "结果表明，垂直电场可在 Type-I 与 Type-II 能带排列之间切换，并连续调节层间电子局域化和多个关联电荷有序态。",
+      methods: "第一性原理计算、光学反射谱与 Monte Carlo 模拟。",
+      why: "把 moiré 激子、电荷转移态和可调 Hubbard 物理联系起来，和强关联 TMD 方向高度相关。"
+    }],
+    [/floquet.*sliding charge-density wave|sliding charge-density wave/, {
+      oneLine: "滑动 CDW 可把空间周期转化为时间周期，从而产生内禀 Floquet sidebands。",
+      problem: "sliding CDW 是否会自发产生 Floquet 态和 1/I 量子振荡？",
+      result: "结果表明，CDW 滑移能把空间周期转化为时间周期，产生内禀 Floquet sidebands，并自然解释隧穿谱中的 1/I 振荡。",
+      methods: "Floquet 理论、隧穿谱分析与多端输运模型。",
+      why: "提供无需外场驱动的 Floquet 工程机制，也给出 CDW 输运振荡的清晰解释。"
+    }],
+    [/colossal magnetoresistance.*eu/, {
+      oneLine: "研究 Eu5Sn2As6 中巨磁阻与声子驱动交换动力学之间的联系。",
+      problem: "Eu5Sn2As6 的巨磁阻是否由晶格、声子散射和交换受挫共同控制？",
+      result: "结果表明，外场极化 Eu2+ 磁矩会抑制由交换受挫产生的强声子散射，从而促进电子退局域化并影响巨磁阻。",
+      methods: "热导率、磁致伸缩、磁化测量与自旋动力学分析。",
+      why: "把磁交换、晶格响应和输运异常联系起来，适合关注磁性强关联材料。"
+    }],
+    [/transport ac losses.*corc.*tstc/, {
+      oneLine: "研究混合 CORC-TSTC 超导电缆中输运交流损耗的降低策略。",
+      problem: "如何通过电流注入方式显著降低混合超导电缆的输运交流损耗？",
+      result: "结果表明，独立馈电可抑制导体间电流交换并稳定电流波形，在实用电流范围内把交流损耗最高降低约 90%。",
+      methods: "三维电磁模型与输运损耗模拟。",
+      why: "偏超导工程应用，可作为高电流超导电缆设计的参考。"
+    }],
+    [/superconductivity mediated by nematic fluctuations/, {
+      oneLine: "研究 nematic 涨落介导超导时集体模色散如何影响配对响应。",
+      problem: "由长程 nematic 涨落介导的超导中，相位模和振幅模的色散有什么非常规特征？",
+      result: "结果表明，配对易感性的解析结构明显不同于常规 BCS 超导，导致相位和振幅集体模具有非常规色散。",
+      methods: "配对易感性计算与集体模谱函数分析。",
+      why: "有助于理解对称性破缺涨落如何改变超导集体激发。"
+    }],
+    [/many-body scars.*rydberg/, {
+      oneLine: "提出在受挫 Rydberg 阵列中系统构造量子多体 scar 态的方法。",
+      problem: "受挫 Rydberg 阵列中能否系统寻找导致非热化动力学的初态和 scar 轨道？",
+      result: "结果表明，图论框架可给出两类 scar 机制，并在六角晶格上产生指数多的受保护非热化轨道。",
+      methods: "图论构造、Rydberg 阵列模型与数值演化。",
+      why: "为强关联量子模拟中的非热化动力学提供可操作的设计原则。"
+    }],
+    [/dirac magnons.*cri/, {
+      oneLine: "研究 CrI3 中 Dirac 磁振子的 winding 特征及其随温度的演化。",
+      problem: "CrI3 的 Dirac 磁振子是否具有清晰的拓扑 winding 特征，并如何随温度重整化？",
+      result: "结果表明，K 点附近存在磁振子 winding 特征，磁振子能量在较高温度下呈 T2 型重整化，支持其拓扑自旋激发图像。",
+      methods: "非弹性中子散射与自旋波谱分析。",
+      why: "补全二维范德华磁体 CrI3 中拓扑磁振子谱的关键信息。"
+    }],
+    [/collective quantum state.*atomic limit/, {
+      oneLine: "研究原子极限下由局域自由度组织出的集体量子态。",
+      problem: "在强局域的原子极限中，局域态之间能否仍然形成集体量子行为？",
+      result: "结果表明，即使电子态高度局域，局域自由度之间的相互作用仍可组织出非平庸的集体量子态。",
+      methods: "原子尺度表征、谱学测量与理论分析。",
+      why: "有助于理解局域极限下关联效应如何产生集体现象。"
+    }],
+    [/pro-tensor network/, {
+      oneLine: "提出一种面向量子多体问题的张量网络方法或框架。",
+      problem: "如何改进张量网络表示，以更有效地描述复杂量子多体态？",
+      result: "结果表明，该框架可为多体态压缩、表示和计算提供新的算法工具。",
+      methods: "张量网络算法与数值基准测试。",
+      why: "属于强关联多体计算的工具型进展，可辅助后续模型研究。"
+    }],
+    [/pair-breaking.*spin-orbit/, {
+      oneLine: "研究自旋轨道耦合超导体中维度对破对效应的影响。",
+      problem: "维度降低和自旋轨道耦合如何共同改变超导破对机制？",
+      result: "结果表明，自旋轨道耦合可改变破对通道的有效强度，低维性会进一步调节超导态对扰动的稳定性。",
+      methods: "理论模型与破对效应分析。",
+      why: "有助于理解低维超导体中自旋轨道耦合和配对稳定性的关系。"
+    }],
+    [/quantum electron quasicrystal/, {
+      oneLine: "研究电子体系中自发形成量子准晶态的可能性。",
+      problem: "相互作用电子能否在没有外加准周期势的情况下自发形成准晶序？",
+      result: "结果表明，相互作用和量子涨落可以稳定没有平移周期的电子准晶态，为电子自组织提供新机制。",
+      methods: "量子多体模型与数值分析。",
+      why: "拓展了电子关联诱导空间有序态的可能图像。"
+    }],
+    [/sulphur divacancy.*mos/, {
+      oneLine: "研究 MoS2 中硫双空位对电荷俘获动力学的主导作用。",
+      problem: "MoS2 中哪些缺陷中心主导电荷俘获和释放过程？",
+      result: "结果表明，硫双空位是控制电荷俘获动力学的关键缺陷中心，并会显著影响器件中的电荷稳定性。",
+      methods: "缺陷表征、动力学测量与第一性原理分析。",
+      why: "对二维半导体缺陷工程和电荷输运稳定性有直接参考价值。"
+    }],
+    [/spin quantum hall edge states/, {
+      oneLine: "研究二维电子气与 s 波超导邻近结构边界处的自旋量子霍尔边缘态。",
+      problem: "s 波超导邻近的二维电子气边界能否产生自旋量子霍尔型边缘通道？",
+      result: "结果表明，合适的边界和邻近效应可支持自旋选择性的拓扑边缘输运。",
+      methods: "邻近效应模型、拓扑边界态与输运分析。",
+      why: "把常规超导邻近效应和自旋拓扑输运联系起来，适合关注拓扑超导方向。"
+    }],
+    [/proton irradiation.*hgba/, {
+      oneLine: "研究质子辐照如何增强 Hg 系铜氧化物单晶的临界电流密度 Jc。",
+      problem: "质子辐照能否通过引入钉扎中心提升高温超导单晶的 Jc？",
+      result: "结果表明，适当质子辐照可增强涡旋钉扎，从而提高临界电流密度。",
+      methods: "质子辐照、磁化测量与临界电流分析。",
+      why: "偏向高温超导材料应用，但也能提供缺陷调控超导性能的线索。"
+    }],
+    [/galois solvability.*bethe/, {
+      oneLine: "研究有限尺寸 Heisenberg 链 Bethe 解的 Galois 可解性。",
+      problem: "有限尺寸 Bethe 方程解的代数结构能否由 Galois 理论系统刻画？",
+      result: "结果表明，部分 Bethe 解具有可分析的代数可解结构，有助于理解可积模型精确解的数学性质。",
+      methods: "Bethe Ansatz、Galois 理论与有限尺寸分析。",
+      why: "属于可积强关联模型的基础理论进展。"
+    }],
+    [/zero-magnetization plateaus|spin dimers/, {
+      oneLine: "研究反铁磁自旋二聚体中场诱导局域激发导致的零磁化平台。",
+      problem: "磁场下局域激发如何在反铁磁自旋二聚体中稳定零磁化平台？",
+      result: "结果表明，场诱导局域激发可在磁化过程中稳定零磁化平台，并改变低能激发结构。",
+      methods: "自旋二聚体模型与磁化过程分析。",
+      why: "有助于理解量子磁体中平台结构和局域激发之间的联系。"
+    }],
+    [/gross-neveu/, {
+      oneLine: "研究 Gross-Neveu 模型中晶体相的微扰、非微扰和精确性质。",
+      problem: "Gross-Neveu 模型的晶体相能否在不同理论处理下得到一致描述？",
+      result: "结果表明，微扰、非微扰和精确分析可以相互印证晶体相的结构和稳定性。",
+      methods: "场论分析、非微扰方法与精确解比较。",
+      why: "提供有序相理论处理之间如何互相校验的基础案例。"
+    }],
+    [/universal neural propagator/, {
+      oneLine: "提出用神经网络学习量子多体系统时间演化的通用传播器。",
+      problem: "能否用统一的神经传播器高效预测多体量子态的时间演化？",
+      result: "结果表明，机器学习模型可学习多体动力学中的传播规律，并在不同系统之间实现一定泛化。",
+      methods: "神经网络传播器、时间演化学习与数值基准测试。",
+      why: "为多体量子动力学计算提供机器学习工具。"
+    }],
+    [/spin polarons.*chern ferromagnets/, {
+      oneLine: "研究 Chern 铁磁体中自旋极化子的微观理论。",
+      problem: "Chern 铁磁体中掺杂载流子如何与自旋背景结合形成自旋极化子？",
+      result: "结果表明，自旋极化子的性质由拓扑能带、交换作用和载流子运动共同决定。",
+      methods: "微观模型、有效哈密顿量与极化子分析。",
+      why: "连接拓扑铁磁性、载流子掺杂和强关联准粒子物理。"
+    }]
+  ];
+
+  const match = entries.find(([pattern]) => pattern.test(title));
+  return match ? match[1] : {};
 }
 
 function materialContext(paper) {
@@ -667,6 +858,11 @@ function materialContext(paper) {
     [/WTe_?2/i, "WTe2"],
     [/NbSe_?2/i, "NbSe2"],
     [/TaS_?2/i, "TaS2"],
+    [/MoSe_?2.*WS_?2|WS_?2.*MoSe_?2/i, "MoSe2/WS2 moiré 超晶格"],
+    [/Eu_?5Sn_?2As_?6/i, "Eu5Sn2As6"],
+    [/CrI_?3/i, "CrI3"],
+    [/MoS_?2/i, "MoS2"],
+    [/HgBa_?2Ca_?2Cu_?3O_?8/i, "HgBa2Ca2Cu3O8"],
     [/\(BaS\)1\/3TaS_?2/i, "(BaS)1/3TaS2"],
     [/Y-kapellasite/i, "Y-kapellasite"]
   ];
@@ -676,8 +872,8 @@ function materialContext(paper) {
   if (/nickelate|nickelates|ni-based/.test(lower)) return "镍酸盐体系";
   if (/cuprate|cuprates/.test(lower)) return "铜氧化物体系";
   if (/kagome/.test(lower)) return "kagome 体系";
-  if (/bilayer/.test(lower)) return "双层体系";
   if (/moire|moiré|twisted/.test(lower)) return "扭转或 moiré 体系";
+  if (/bilayer/.test(lower)) return "双层体系";
   if (/hubbard/.test(lower)) return "Hubbard 模型";
   if (/supercon/.test(lower)) return "超导体系";
   if ((paper.categories || []).includes("cond-mat.str-el") && (paper.categories || []).includes("cond-mat.supr-con")) {
@@ -694,7 +890,7 @@ function aspectContext(paper) {
   if (/fermi surface|fermiology|fermi arc|pocket/.test(text) && !aspects.some(item => item.includes("费米"))) aspects.push("费米面结构");
   if (/pair density wave|\bpdw\b/.test(text)) aspects.push("PDW 配对");
   if (/pair-phase|phase resonance|collective mode/.test(text)) aspects.push("配对相位集体模");
-  if (/superconduct|pairing|cooper/.test(text)) aspects.push("超导配对机制");
+  if (/superconduct|pairing|\bcooper\b/.test(text)) aspects.push("超导配对机制");
   if (/jahn-teller/.test(text)) aspects.push("Jahn-Teller 畸变和绝缘相");
   if (/bkt|berezinskii/.test(text)) aspects.push("BKT 转变和相位涨落");
   if (/charge density wave|\bcdw\b|charge order/.test(text)) aspects.push("电荷序");
@@ -746,7 +942,7 @@ function genericResult(paper) {
   if (/bkt|berezinskii/.test(text)) {
     return "结果表明，单一 BKT 转变在各向异性响应中可能表现出方向依赖的表观转变温度。";
   }
-  if (/cooper|strain|orbitally polarized/.test(text)) {
+  if (/\bcooper\b|orbitally polarized|crystalline symmetry lowering|uniaxial strain|strain-induced/.test(text)) {
     return "结果表明，晶体对称性降低可以诱导轨道极化的 Cooper 对，并带来横向磁响应。";
   }
   if (/charge density wave|\bcdw\b|charge order/.test(text)) {
@@ -831,12 +1027,13 @@ function buildChineseSummary(paper, ranking) {
     }
   }
 
+  const manual = manualSummary(paper);
   return {
-    oneLine: titleOneLine(paper, first),
-    problem: titleProblem(paper),
-    result: resultFromTitle(paper) || genericResult(paper),
-    methods: methodFromText(paper, sentences),
-    why
+    oneLine: manual.oneLine || titleOneLine(paper, first),
+    problem: manual.problem || titleProblem(paper),
+    result: manual.result || resultFromTitle(paper) || genericResult(paper),
+    methods: manual.methods || methodFromText(paper, sentences),
+    why: manual.why || why
   };
 }
 
