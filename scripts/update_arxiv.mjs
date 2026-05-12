@@ -619,9 +619,7 @@ function titleProblem(paper) {
   if (/ising superconductivity|chain intercalation/.test(title)) return "能否在体相层状材料中同时获得高 Tc、强二维性和大层间距的 Ising 超导？";
   if (/quantum xy dipoles|archimedean/.test(title)) return "阿基米德晶格上的量子 XY 偶极相互作用会稳定哪些基态？";
   if (/multilayer model|superconducting radio-frequency/.test(title)) return "任意多层超导射频涂层的电磁响应和损耗如何建模？";
-  if (/superconduct/.test(title)) return `这篇论文想回答：${translateFragment(paper.title)}的机制和物理后果是什么？`;
-  if (/magnet|spin/.test(title)) return `这篇论文想回答：${translateFragment(paper.title)}背后的磁性机制是什么？`;
-  return `这篇论文想回答：${translateFragment(paper.title)}的核心物理是什么？`;
+  return genericProblem(paper);
 }
 
 function titleOneLine(paper, firstSentenceText) {
@@ -638,8 +636,7 @@ function titleOneLine(paper, firstSentenceText) {
   if (/ising superconductivity|chain intercalation/.test(title)) return "通过链状插层设计体相二维 Ising 超导，兼顾高 Tc 与大层间距。";
   if (/quantum xy dipoles|archimedean/.test(title)) return "系统研究阿基米德晶格上偶极 XY 自旋模型的量子基态。";
   if (/multilayer model|superconducting radio-frequency/.test(title)) return "扩展超导射频多层涂层模型，用于处理任意层序和材料组合。";
-  const fragment = translateFragment(sentenceAfterLead(firstSentenceText) || paper.title);
-  return `本文研究 ${withoutTerminalPunctuation(fragment)}。`;
+  return genericOneLine(paper);
 }
 
 function resultFromTitle(paper) {
@@ -656,6 +653,118 @@ function resultFromTitle(paper) {
   if (/quantum xy dipoles|archimedean/.test(title)) return "结果表明，不同阿基米德晶格上会出现多种竞争基态，包括共面磁性、条纹密度波序和可能的自旋液体。";
   if (/multilayer model|superconducting radio-frequency/.test(title)) return "结果表明，该模型可推广到任意层序的超导、绝缘或正常金属涂层，用于评估超导射频应用中的损耗。";
   return "";
+}
+
+function materialContext(paper) {
+  const text = cleanupLatex(`${paper.title} ${paper.abstract}`);
+  const lower = text.toLowerCase();
+  const materials = [
+    [/La_?3Ni_?2O_?7/i, "La3Ni2O7"],
+    [/La_?4Ni_?3O_?10/i, "La4Ni3O10"],
+    [/RNiO_?3/i, "RNiO3"],
+    [/NdNiO_?2/i, "NdNiO2"],
+    [/CrRhAs/i, "CrRhAs"],
+    [/WTe_?2/i, "WTe2"],
+    [/NbSe_?2/i, "NbSe2"],
+    [/TaS_?2/i, "TaS2"],
+    [/\(BaS\)1\/3TaS_?2/i, "(BaS)1/3TaS2"],
+    [/Y-kapellasite/i, "Y-kapellasite"]
+  ];
+  for (const [pattern, label] of materials) {
+    if (pattern.test(text)) return label;
+  }
+  if (/nickelate|nickelates|ni-based/.test(lower)) return "镍酸盐体系";
+  if (/cuprate|cuprates/.test(lower)) return "铜氧化物体系";
+  if (/kagome/.test(lower)) return "kagome 体系";
+  if (/bilayer/.test(lower)) return "双层体系";
+  if (/moire|moiré|twisted/.test(lower)) return "扭转或 moiré 体系";
+  if (/hubbard/.test(lower)) return "Hubbard 模型";
+  if (/supercon/.test(lower)) return "超导体系";
+  if ((paper.categories || []).includes("cond-mat.str-el") && (paper.categories || []).includes("cond-mat.supr-con")) {
+    return "强关联超导体系";
+  }
+  if ((paper.categories || []).includes("cond-mat.supr-con")) return "超导体系";
+  return "强关联电子体系";
+}
+
+function aspectContext(paper) {
+  const text = cleanupLatex(`${paper.title} ${paper.abstract}`).toLowerCase();
+  const aspects = [];
+  if (/orbital-selective|orbital selective|orbital/.test(text) && /fermi|fermiology/.test(text)) aspects.push("轨道选择性费米面重构");
+  if (/fermi surface|fermiology|fermi arc|pocket/.test(text) && !aspects.some(item => item.includes("费米"))) aspects.push("费米面结构");
+  if (/pair density wave|\bpdw\b/.test(text)) aspects.push("PDW 配对");
+  if (/pair-phase|phase resonance|collective mode/.test(text)) aspects.push("配对相位集体模");
+  if (/superconduct|pairing|cooper/.test(text)) aspects.push("超导配对机制");
+  if (/jahn-teller/.test(text)) aspects.push("Jahn-Teller 畸变和绝缘相");
+  if (/bkt|berezinskii/.test(text)) aspects.push("BKT 转变和相位涨落");
+  if (/charge density wave|\bcdw\b|charge order/.test(text)) aspects.push("电荷序");
+  if (/magnet|spin|antiferro|ferro/.test(text)) aspects.push("磁性和自旋涨落");
+  if (/topolog|chern|majorana/.test(text)) aspects.push("拓扑性质");
+  if (/flat band|magic angle/.test(text)) aspects.push("平带和魔角效应");
+  if (/phonon|electron-phonon|lattice/.test(text)) aspects.push("电子-晶格耦合");
+  if (/transport|resistivity|hall/.test(text)) aspects.push("输运性质");
+  if (/spectroscopy|arpes|raman|stm|josephson/.test(text)) aspects.push("谱学响应");
+  if (/hubbard|emery|tight-binding|model/.test(text)) aspects.push("有效模型");
+
+  const unique = [...new Set(aspects)];
+  if (unique.length >= 2) return `${unique[0]}与${unique[1]}`;
+  return unique[0] || "低能电子结构和相行为";
+}
+
+function summaryContext(paper) {
+  return {
+    material: materialContext(paper),
+    aspect: aspectContext(paper)
+  };
+}
+
+function genericOneLine(paper) {
+  const { material, aspect } = summaryContext(paper);
+  return `本文关注${material}中的${aspect}。`;
+}
+
+function genericProblem(paper) {
+  const { material, aspect } = summaryContext(paper);
+  if (/机制/.test(aspect)) return `${material}中的${aspect}由哪些相互作用或对称性因素控制？`;
+  if (/谱学/.test(aspect)) return `${material}中的${aspect}能否揭示低能自由度和相干性质？`;
+  if (/输运/.test(aspect)) return `${material}中的${aspect}如何反映关联效应和对称性破缺？`;
+  return `${material}中的${aspect}如何由相互作用、晶格效应或对称性共同决定？`;
+}
+
+function genericResult(paper) {
+  const text = cleanupLatex(`${paper.title} ${paper.abstract}`).toLowerCase();
+  const { material, aspect } = summaryContext(paper);
+  if (/orbital-selective|fermi surface|fermi arc|pocket/.test(text) && /correlation|hubbard|dmrg|cpt/.test(text)) {
+    return "结果表明，电子关联会显著重构低能谱和费米面，并可能改变主导配对通道。";
+  }
+  if (/pair-phase|phase resonance|collective mode/.test(text)) {
+    return "结果表明，相对相位自由度可以形成可观测的集体模，并为谱学探测提供特征信号。";
+  }
+  if (/jahn-teller/.test(text)) {
+    return "结果表明，Jahn-Teller 畸变与电子-晶格耦合可以稳定非磁性绝缘相。";
+  }
+  if (/bkt|berezinskii/.test(text)) {
+    return "结果表明，单一 BKT 转变在各向异性响应中可能表现出方向依赖的表观转变温度。";
+  }
+  if (/cooper|strain|orbitally polarized/.test(text)) {
+    return "结果表明，晶体对称性降低可以诱导轨道极化的 Cooper 对，并带来横向磁响应。";
+  }
+  if (/charge density wave|\bcdw\b|charge order/.test(text)) {
+    return "结果表明，电荷序与低能电子结构之间存在紧密耦合，并可能影响相邻的超导或磁性态。";
+  }
+  if (/topolog|chern|majorana/.test(text)) {
+    return "结果表明，该体系的拓扑性质会受到相互作用、几何结构或配对通道的显著调控。";
+  }
+  if (/magnet|spin|antiferro|ferro/.test(text)) {
+    return "结果表明，磁性相互作用和低能自旋涨落会显著影响该体系的相行为。";
+  }
+  if (/phonon|electron-phonon|lattice/.test(text)) {
+    return "结果表明，电子-晶格耦合会改变低能电子结构，并可能推动有序相或能隙重整化。";
+  }
+  if (/superconduct|pairing/.test(text)) {
+    return "结果表明，配对通道和相干性质对相互作用强度、能带结构或对称性条件较为敏感。";
+  }
+  return `结果给出了${material}中${aspect}与相互作用、晶格效应或对称性之间关系的具体判断。`;
 }
 
 function findSentence(sentences, patterns, fallbackIndex = 0) {
@@ -699,32 +808,14 @@ function methodFromText(paper, sentences) {
     return `${[...new Set(hints)].slice(0, 3).join("、")}。`;
   }
 
-  const methodSentence = findSentence(sentences, [
-    /\busing\b/i,
-    /\bbased on\b/i,
-    /\bby\b/i,
-    /\bwe measure\b/i,
-    /\bwe compute\b/i,
-    /\bwe calculate\b/i,
-    /\bexperiment/i,
-    /\bsimulation/i
-  ], 2);
-  return methodSentence ? chineseSentence("方法上，", translateFragment(sentenceAfterLead(methodSentence) || methodSentence), 190) : "结合理论分析、数值计算或实验表征。";
+  if (/experiment|measure|sample|single crystal|thin film/.test(haystack)) return "实验测量与数据分析。";
+  if (/model|theory|analytical|calculation|simulation|numerical/.test(haystack)) return "模型分析与数值计算。";
+  return "结合理论分析、数值计算或实验表征。";
 }
 
 function buildChineseSummary(paper, ranking) {
   const sentences = sentenceList(paper.abstract);
   const first = sentences[0] || paper.title || `arXiv:${paper.id}`;
-  const resultSentence = findSentence(sentences, [
-    /\bshow\b/i,
-    /\bdemonstrate\b/i,
-    /\breveal\b/i,
-    /\bfind\b/i,
-    /\bidentify\b/i,
-    /\bestablish\b/i,
-    /\bresults?\b/i,
-    /\bsuggest\b/i
-  ], 1);
   const categories = paper.categories || [];
   const hasStr = categories.includes("cond-mat.str-el");
   const hasSupr = categories.includes("cond-mat.supr-con");
@@ -743,7 +834,7 @@ function buildChineseSummary(paper, ranking) {
   return {
     oneLine: titleOneLine(paper, first),
     problem: titleProblem(paper),
-    result: resultFromTitle(paper) || (resultSentence ? chineseSentence("结果表明，", translateFragment(sentenceAfterLead(resultSentence) || resultSentence), 210) : "摘要中给出了新的结果或解释框架，值得结合原文进一步判断。"),
+    result: resultFromTitle(paper) || genericResult(paper),
     methods: methodFromText(paper, sentences),
     why
   };
@@ -926,7 +1017,17 @@ function formatChineseDate(iso) {
   return `${year} 年 ${month} 月 ${day} 日`;
 }
 
-main().catch(error => {
-  console.error(error);
-  process.exitCode = 1;
-});
+export {
+  CATEGORIES,
+  CATEGORY_LABELS,
+  buildNote,
+  normalizePaper,
+  scorePaper
+};
+
+if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
+  main().catch(error => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+}
