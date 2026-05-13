@@ -658,6 +658,216 @@ function resultFromTitle(paper) {
 function manualSummary(paper) {
   const title = cleanupLatex(paper.title).toLowerCase();
   const entries = [
+    [/unbiased large.*vestigial orders/, {
+      oneLine: "提出无偏 large-N 方法，研究密度波和超导不稳定性产生的 vestigial order 竞争。",
+      problem: "多分量主序的复合序参量在 large-N 解耦中是否会引入人为偏置？",
+      result: "结果表明，无偏处理可以同时保留多个 vestigial 通道，并给出密度波与超导相关剩余序之间的竞争关系。",
+      methods: "Ginzburg-Landau 理论与 large-N 分析。",
+      why: "有助于理解铁基、铜氧化物和扭转体系中的复合序与相竞争。"
+    }],
+    [/nonsymmorphic superconductor/, {
+      oneLine: "报道非点式空间群超导体 PtPb4 中的自发旋转对称性破缺和零能模。",
+      problem: "非点式空间群材料能否实现带有旋转对称性破缺和非平庸零能模的超导态？",
+      result: "结果表明，PtPb4 同时具有超导、二重各向异性和非平庸零能模，是实验研究拓扑超导的候选平台。",
+      methods: "输运测量、谱学表征与能带拓扑分析。",
+      why: "直接关联拓扑超导、Majorana 候选激发和晶体对称性保护机制。"
+    }],
+    [/altermagnons.*metal-insulator/, {
+      oneLine: "研究 Hubbard 模型金属-绝缘转变附近的 altermagnon 动力学。",
+      problem: "关联强度从金属区推向 Mott 绝缘区时，altermagnon 的色散和寿命如何演化？",
+      result: "结果表明，体系会从手性选择的耗散磁振子模式跨越到相干但强烈变形的手性磁振子分支。",
+      methods: "Hubbard 模型、slave-boson 理论与动态自旋易感性计算。",
+      why: "为关联 altermagnet 中集体自旋动力学提供可计算图像。"
+    }],
+    [/ambient-pressure superconducting bilayer nickelate/, {
+      oneLine: "综述常压双层镍酸盐薄膜超导的实验进展。",
+      problem: "外延应变和薄膜制备能否在常压下复现高压双层镍酸盐超导的关键结构条件？",
+      result: "结果表明，常压薄膜平台已经使输运、谱学、显微和器件测量成为可能，并正在重塑镍酸盐超导实验图景。",
+      methods: "薄膜合成、输运测量、谱学和显微表征综述。",
+      why: "与非常规高温超导和镍酸盐材料设计高度相关。"
+    }],
+    [/doping-induced in-gap states.*kitaev-hubbard/, {
+      oneLine: "研究 Kitaev-Hubbard 模型中掺杂诱导的能隙内态与自旋激发之间的关系。",
+      problem: "Mott 绝缘体中的掺杂能隙内态是否直接反映底层自旋激发谱？",
+      result: "结果表明，能隙内态的动量色散会随 Kitaev 各向异性改变，并与对应自旋激发能隙和分支结构相匹配。",
+      methods: "Kitaev-Hubbard 模型与 cluster perturbation theory。",
+      why: "连接掺杂载流子谱和自旋背景，有助于解读关联绝缘体的低能谱。"
+    }],
+    [/superconductivity reinforces charge-density-wave/, {
+      oneLine: "发现铜氧化物中超导会增强 CDW 的相位相干性。",
+      problem: "铜氧化物中超导一定削弱 CDW，还是会同时增强其相位相干？",
+      result: "结果表明，多类铜氧化物在 Tc 以下出现系统性的 CDW 相位相干增强，并表现出波矢锁定和峰宽不展宽。",
+      methods: "共振软 X 射线散射与动量峰形相干性分析。",
+      why: "修正了超导和 CDW 只相互竞争的简单图像。"
+    }],
+    [/bcs-bec crossover.*fermi-hubbard/, {
+      oneLine: "用 DMRG 和有效配对理论研究受限一维 Fermi-Hubbard 链中的 BCS-BEC crossover。",
+      problem: "空间囚禁如何改变一维 Fermi-Hubbard 链中配对、纠缠和 BCS-BEC crossover 的判据？",
+      result: "结果表明，囚禁势会重塑关联和纠缠分布，使 crossover 的识别需要结合局域配对、密度分布和纠缠特征。",
+      methods: "DMRG、有效配对理论与关联函数分析。",
+      why: "为冷原子模拟强关联配对和超流 crossover 提供诊断工具。"
+    }],
+    [/nematicity in lafeaso/, {
+      oneLine: "用弹阻、热膨胀和剪切模量测量研究 LaFeAsO 单晶中的 nematicity。",
+      problem: "LaFeAsO 的 nematicity 主要来自电子自由度，还是由晶格驱动？",
+      result: "结果表明，剪切模量软化和 nematic 易感性的 Curie-Weiss 型发散支持电子起源的 nematicity。",
+      methods: "高分辨热膨胀、剪切模量和弹阻测量。",
+      why: "为铁基超导母体材料中的 nematic 机制提供实验约束。"
+    }],
+    [/outstanding tc enhancement.*y2niiro6/, {
+      oneLine: "研究压缩如何显著提升双钙钛矿 Y2NiIrO6 的磁转变温度。",
+      problem: "压力如何通过改变 Ni-Ir 超交换路径来调控 5d-3d 双钙钛矿的磁性？",
+      result: "结果表明，压缩 Ni/Ir-O 键长和 Ni-O-Ir 键角可增强超交换，使 Curie 温度从 192 K 提升到 240 K。",
+      methods: "高压实验、结构分析与磁性测量。",
+      why: "展示了压力调控 5d-3d 关联磁体超交换的清晰案例。"
+    }],
+    [/phase-slip residual-order.*fese/, {
+      oneLine: "提出 FeSe 中由相位滑移缺陷组成的 residual-order spin state。",
+      problem: "FeSe 中没有长程磁序但存在强自旋涨落的现象应如何统一理解？",
+      result: "结果表明，FeSe 的低能磁性可由近简并的相位滑移缺陷集合描述，局域保留 stripe-like 反铁磁关联但丧失长程相干。",
+      methods: "PBE 和 r2SCAN 计算、静态自旋结构因子模拟。",
+      why: "为 FeSe 的磁基态和自旋涨落配对理论提供新的起点。"
+    }],
+    [/h-linear magnetoresistance.*nbse/, {
+      oneLine: "研究 2H-NbSe2 中由受阻回旋运动导致的 H 线性磁阻。",
+      problem: "NbSe2 的线性磁阻是否可由无序和受阻回旋运动解释？",
+      result: "结果表明，磁阻与包含受阻回旋运动的 Boltzmann 输运分析高度一致，强散射中心是关键来源。",
+      methods: "磁输运测量与 Boltzmann 输运建模。",
+      why: "为 CDW 金属中线性磁阻的微观来源提供材料特定解释。"
+    }],
+    [/emergent vortex ordering.*geco/, {
+      oneLine: "在多味 pyrochlore 化合物 GeCo2O4 中识别出涡旋晶格序。",
+      problem: "自旋和轨道多味自由度能否在三维受挫磁体中稳定涡旋序？",
+      result: "结果表明，近邻 Kitaev 相互作用与几何受挫协同稳定涡旋晶格序。",
+      methods: "中子散射实验、正则化回归和哈密顿量反演。",
+      why: "提供三维 Kitaev-frustrated 磁体中非常规磁序的实验例子。"
+    }],
+    [/exciton-roton mode.*fractional chern/, {
+      oneLine: "提出 moiré fractional Chern insulator 中的 exciton-roton 集体模。",
+      problem: "moiré FCI 中是否存在不同于连续 FQH 体系的长波长集体激发？",
+      result: "结果表明，magneto-roton 与 moiré 带间激发的杂化会产生低能 exciton-roton 模，并带有可观测的光学响应。",
+      methods: "精确对角化与变分 Bethe-Salpeter 方程。",
+      why: "有助于理解 moiré 拓扑平带中的分数量子霍尔类集体激发。"
+    }],
+    [/staggered spin susceptibility.*quantum critical/, {
+      oneLine: "研究二维反铁磁量子临界点处交错自旋易感性的有限温度行为。",
+      problem: "零点自旋涨落如何改变二维反铁磁量子临界点附近的温度标度？",
+      result: "结果表明，模式耦合常数约 0.1 可区分 Curie 型、Curie-Weiss 型和幂律型温度依赖。",
+      methods: "自洽重整化理论与有限温度自旋涨落分析。",
+      why: "为量子临界反铁磁涨落的实验判据提供理论参考。"
+    }],
+    [/real-space embedding.*superconducting proximity/, {
+      oneLine: "提出超导邻近效应的第一性原理实空间嵌入理论。",
+      problem: "如何在真实界面和介观尺度上预测超导邻近效应？",
+      result: "结果表明，基于 Green 函数的动态嵌入框架可以分离正常和反常自能，并定量描述邻近诱导超导。",
+      methods: "第一性原理计算、实空间动态嵌入和 Green 函数方法。",
+      why: "为超导器件和拓扑平台中的真实界面建模提供工具。"
+    }],
+    [/automated multiphase identification.*powder diffraction/, {
+      oneLine: "提出用于粉末衍射多相识别和精修的 mismatch-tolerant 机器学习框架。",
+      problem: "如何在 X 射线和中子粉末衍射中自动识别多相并减少人工精修依赖？",
+      result: "结果表明，RADAR-PD 可结合粗粒度指纹、晶格微调和 Rietveld 验证生成可靠相组成假设。",
+      methods: "机器学习、自动 Rietveld 精修与粉末衍射分析。",
+      why: "偏材料表征自动化，可提高复杂样品相识别效率。"
+    }],
+    [/magnetism and spin dynamics.*na.*yb.*mo/, {
+      oneLine: "研究稀土 stretched diamond lattice 材料 Na5Yb(MoO4)4 的磁性和自旋动力学。",
+      problem: "弱相互作用的 Yb stretched diamond lattice 是否形成长程磁序或保持动态基态？",
+      result: "结果表明，该体系低温下没有长程磁序迹象，磁性主要由有效 Jeff = 1/2 Kramers 双重态控制。",
+      methods: "中子粉末衍射、磁化率、比热和 DFT 计算。",
+      why: "为稀土受挫晶格中的低能磁性和晶场自由度提供材料信息。"
+    }],
+    [/optical signatures.*quantum hall.*mose/, {
+      oneLine: "用光学谱识别强相互作用 MoSe2 单层中量子霍尔态的反铁磁关联。",
+      problem: "强相互作用电子液体中的量子霍尔态是否偏向未极化或反铁磁关联？",
+      result: "结果表明，激子 polaron 能量随磁场振荡揭示了非常规关联，支持未极化和反铁磁倾向的量子霍尔态。",
+      methods: "强磁场磁光谱与激子 polaron 分析。",
+      why: "连接 TMD 单层、量子霍尔物理和强关联自旋结构。"
+    }],
+    [/mean-field theory.*vortex states.*neutron stars/, {
+      oneLine: "建立中子星外核中超流-超导涡旋态的平均场理论。",
+      problem: "质子和中子配对临界温度不同时，外核涡旋态如何随压力和温度变化？",
+      result: "结果表明，扩展平均场理论可以描述不同压力下配对能隙、临界温度和热力学磁场对涡旋态的影响。",
+      methods: "平均场理论、有效手征场理论和配对能隙建模。",
+      why: "属于致密物质超导/超流理论，对凝聚态配对形式也有参考价值。"
+    }],
+    [/contrasting structural reversibility.*crcl.*rucl/, {
+      oneLine: "比较蜂窝磁体 CrCl3 和 α-RuCl3 的结构可逆性与磁关联。",
+      problem: "同构层状卤化物在结构转变和磁关联上为何表现出不同可逆性？",
+      result: "结果表明，α-RuCl3 在热循环中出现滞后和晶体退化，而 CrCl3 的面内晶格演化更平滑且结构保持更稳定。",
+      methods: "中子单晶衍射与磁结构分析。",
+      why: "为 Kitaev 候选材料和蜂窝磁体的结构-磁性耦合提供对照。"
+    }],
+    [/anomalous spin-pumping.*d-wave superconductor/, {
+      oneLine: "研究半金属铁磁体/d 波超导异质结构中的异常 spin pumping 行为。",
+      problem: "d 波超导的取向和能隙结构如何影响铁磁共振中的自旋吸收？",
+      result: "结果表明，YBCO/LSMO 异质结构的 Gilbert 阻尼在 Tc 以下呈取向依赖的非常规温度演化。",
+      methods: "铁磁共振、外延异质结构制备与温度依赖阻尼分析。",
+      why: "连接高温超导、铁磁异质结构和自旋输运。"
+    }],
+    [/local topological quantum order.*aklt/, {
+      oneLine: "证明六角晶格和 Lieb 晶格 AKLT 模型满足局域拓扑量子序条件。",
+      problem: "这些二维 AKLT 模型的基态是否满足 LTQO，并由此保证谱隙稳定？",
+      result: "结果表明，有限体积基态在远离边界处指数接近唯一无限体积极限，从而推出小扰动下谱隙稳定。",
+      methods: "AKLT 模型严格证明、有限体积近似与谱隙稳定性分析。",
+      why: "为量子自旋模型中拓扑序和稳定谱隙提供严格结果。"
+    }],
+    [/certify-ed/, {
+      oneLine: "提出用于量子多体精确对角化结果验证的 CERTIFY-ED 框架。",
+      problem: "如何为 ED 计算结果提供可机器检查的数值正确性证据？",
+      result: "结果表明，多 oracle eigensolver 和多层验证流程可与现有 ED 软件配合，报告误差并增强结果可信度。",
+      methods: "精确对角化、多路径 LAPACK 验证与数值证明框架。",
+      why: "有助于提高多体数值计算结果的可复现性和可靠性。"
+    }],
+    [/euler topology.*superconducting honeycomb/, {
+      oneLine: "研究超导蜂窝晶格中的 Euler 拓扑。",
+      problem: "具有时空反演对称性的超导蜂窝晶格能否实现 Euler 拓扑超导？",
+      result: "结果表明，s 波自旋单态和 f 波自旋三态配对可分别产生 valley-Euler 和 Euler 超导，并支持镜面对称保护的螺旋畴壁模。",
+      methods: "Bogoliubov-de Gennes 模型与拓扑能带分析。",
+      why: "展示超导不稳定性实现非平庸 Euler 拓扑的自然路径。"
+    }],
+    [/low-rank compression.*two-electron/, {
+      oneLine: "提出二电子约化密度矩阵的低秩压缩方案。",
+      problem: "如何在保留物理对称性和 wedge-product 结构的同时降低 2RDM 存储成本？",
+      result: "结果表明，该分解可耦合 Coulomb 与 exchange 通道，并在关联态中实现接近化学精度的高比例压缩。",
+      methods: "低秩分解、2RDM 压缩与量子化学基准测试。",
+      why: "为关联电子结构计算提供降低存储和后处理成本的工具。"
+    }],
+    [/quantum tunneling.*classical action/, {
+      oneLine: "讨论用经典作用量分支重构量子波函数在隧穿和全局相位问题中的局限。",
+      problem: "纯实经典作用量分支能否完整重构包含隧穿的量子波函数？",
+      result: "结果表明，在经典禁阻区不存在全局实作用量，波函数重构必须引入量子势或复作用量。",
+      methods: "Hamilton-Jacobi 分析、矩形势垒和 Coulomb 势垒隧穿例子。",
+      why: "澄清经典作用量表述与量子隧穿之间的边界。"
+    }],
+    [/meissner effect.*radial charge flow/, {
+      oneLine: "论证 Meissner 效应不需要径向电荷流。",
+      problem: "Meissner 持久电流是否必须由径向电荷流和 Lorentz 力产生？",
+      result: "结果表明，常规角动量量子化图像无需引入径向电荷流即可解释 Meissner 电流。",
+      methods: "超导电动力学与理论一致性分析。",
+      why: "有助于澄清超导基本电磁响应中的概念争议。"
+    }],
+    [/dominant fock-state patterns/, {
+      oneLine: "提出从主导 Fock 态模式构造多体序参量的方法。",
+      problem: "拓扑不变量之外，能否用实空间 Fock 态模式更细致地区分量子相？",
+      result: "结果表明，该序参量可揭示 SSH 类模型中传统 winding number 无法区分的隐藏子结构，并可用于有限尺寸诊断。",
+      methods: "多体基态 Fock 态分析与扩展 SSH 模型数值计算。",
+      why: "为拓扑相和有序相分类提供更直观的多体诊断。"
+    }],
+    [/scalable measurement-based quantum simulation/, {
+      oneLine: "发布面向基准测试的测量型量子模拟 pattern 库。",
+      problem: "如何为测量型量子计算中的大规模量子模拟生成可扩展 pattern？",
+      result: "结果表明，QPatLib 提供了执行 Pauli-string 幺正演化的 pattern 生成流程和基准数据集。",
+      methods: "测量型量子计算 pattern 生成与基准测试。",
+      why: "偏量子计算工具，可用于评估近中期量子模拟资源需求。"
+    }],
+    [/geometry-enabled magnetic resilience/, {
+      oneLine: "研究几何设计如何增强超导纳米线单光子探测器的抗磁场能力。",
+      problem: "SNSPD 在磁场中性能下降能否通过器件几何设计缓解？",
+      result: "结果表明，磁场对探测效率的影响依赖偏置电流和器件几何，合理几何可提高磁场环境下的工作鲁棒性。",
+      methods: "NbTiN SNSPD 器件测量与磁场依赖性能分析。",
+      why: "面向超导光子器件应用，也提供几何调控超导器件性能的案例。"
+    }],
     [/bulk-edge correspondence.*higher gauge/, {
       oneLine: "用高阶规范理论重新表述拓扑物态中的体-边对应关系。",
       problem: "拓扑体响应如何通过高阶规范结构决定边界自由度和边界异常？",
@@ -942,7 +1152,7 @@ function genericResult(paper) {
   if (/bkt|berezinskii/.test(text)) {
     return "结果表明，单一 BKT 转变在各向异性响应中可能表现出方向依赖的表观转变温度。";
   }
-  if (/\bcooper\b|orbitally polarized|crystalline symmetry lowering|uniaxial strain|strain-induced/.test(text)) {
+  if (/orbitally polarized cooper pairs|transverse magnetic response/.test(text)) {
     return "结果表明，晶体对称性降低可以诱导轨道极化的 Cooper 对，并带来横向磁响应。";
   }
   if (/charge density wave|\bcdw\b|charge order/.test(text)) {
