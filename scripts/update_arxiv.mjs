@@ -658,6 +658,153 @@ function resultFromTitle(paper) {
 function manualSummary(paper) {
   const title = cleanupLatex(paper.title).toLowerCase();
   const entries = [
+    [/nagaoka supermetal/, {
+      oneLine: "研究粒子掺杂三角晶格 Hubbard 模型中的 Nagaoka supermetal。",
+      problem: "几何受挫 Mott 绝缘体在粒子掺杂后会形成怎样的非常规金属态？",
+      result: "结果表明，粒子掺杂可产生相互作用驱动的 Nagaoka supermetal，其直流电阻率呈亚线性温度依赖，并伴随电荷压缩率和零频谱重的奇异行为。",
+      methods: "三角晶格 Hubbard 模型、低能有效模型与输运分析。",
+      why: "直接关联受挫 Hubbard 模型、掺杂 Mott 物理和 strange metal 行为。"
+    }],
+    [/nodal topological superconductivity.*altermagnets/, {
+      oneLine: "研究 altermagnet 中由晶体反幺正对称性驱动的节点拓扑超导。",
+      problem: "altermagnet 的晶体反幺正对称性是否能选择并稳定节点拓扑超导配对？",
+      result: "结果表明，TC4z 对称性会限制纯自旋单态配对，并产生带 Majorana flat band 或手性 Majorana 边缘态的节点拓扑相。",
+      methods: "Bogoliubov-de Gennes 模型、对称性分析与拓扑分类。",
+      why: "把 altermagnet、自发配对结构和拓扑超导联系起来，适合优先关注。"
+    }],
+    [/singular spin fluctuations.*la2-xsrxcuo4/, {
+      oneLine: "研究 La2-xSrxCuO4 strange-metal 相中的奇异自旋涨落。",
+      problem: "过掺杂铜氧化物中的 strange-metal 输运是否仍与低能自旋涨落有关？",
+      result: "结果表明，在 x=0.25 的 La2-xSrxCuO4 中，低能自旋易感性会持续增强到最低温，并呈现空间不均匀性。",
+      methods: "高磁场抑制超导、NMR 谱学与输运分析。",
+      why: "为过掺杂铜氧化物中 strange metal 与量子临界涨落的关系提供实验线索。"
+    }],
+    [/conditional probability density functional theory/, {
+      oneLine: "把 conditional probability density functional theory 推广到周期性固体。",
+      problem: "CP-DFT 能否在固体中直接给出交换关联空穴，并捕捉标准 DFT 忽略的关联效应？",
+      result: "结果表明，CP-DFT 可处理 Na、Si 等弱关联材料，并在 kagome 材料 CsV3Sb5 中揭示标准 DFT 未捕捉的 d 轨道关联和增强 CDW 信号。",
+      methods: "CP-DFT、周期性边界条件计算与关联函数分析。",
+      why: "为强关联固体中的交换关联空穴和电荷序研究提供新的第一性原理工具。"
+    }],
+    [/interface controlled spin filtering.*altermagnet.*ising/, {
+      oneLine: "研究 altermagnet/Ising 超导结中界面控制的自旋过滤和非互易输运。",
+      problem: "自旋活性界面如何调控 AM/ISC 结中的自旋选择 Andreev 反射和非互易响应？",
+      result: "结果表明，内禀自旋轨道耦合、altermagnet 自旋纹理和界面散射共同产生强各向异性的电荷与自旋电导，并可实现有限自旋过滤。",
+      methods: "修正 Bogoliubov-de Gennes 框架与散射理论。",
+      why: "连接 altermagnet、Ising 超导和超导自旋电子学器件。"
+    }],
+    [/incommensurate spin-density waves.*maple-leaf/, {
+      oneLine: "研究受挫 maple-leaf 晶格铁磁体中的非公度自旋密度波。",
+      problem: "maple-leaf 晶格中铁磁相如何被反铁磁相互作用破坏？",
+      result: "结果表明，铁磁边界附近没有明显零场 spin-nematic 相，而是出现扩展的非公度自旋密度波关联区。",
+      methods: "自旋 1/2 Heisenberg 模型、精确对角化和变分 Gutzwiller 投影波函数。",
+      why: "为混合铁磁-反铁磁受挫晶格中的相竞争提供模型图像。"
+    }],
+    [/multiband superconductivity.*hatsugai-kohmoto/, {
+      oneLine: "研究可精确求解 Hatsugai-Kohmoto 模型中的多带超导。",
+      problem: "强关联、轨道结构和配对对称性如何共同决定多带 HK 模型中的超导态？",
+      result: "结果表明，两轨道 HK 模型允许多种由 D4h 对称性约束的超导能隙结构，并可系统计算不同配对通道的 Tc 和序参量。",
+      methods: "多带 Hatsugai-Kohmoto 模型、群论分类与平均场计算。",
+      why: "为强关联多轨道体系中的超导配对分类提供可解模型。"
+    }],
+    [/magnetic fields.*rucl.*rhombohedral inclusions/, {
+      oneLine: "研究单斜 α-RuCl3 中菱方夹杂如何导致表观磁场振荡。",
+      problem: "α-RuCl3 中被解读为自旋液体信号的磁场振荡是否可能来自结构夹杂？",
+      result: "结果表明，在结构明确的单斜微晶中，表观振荡可由菱方夹杂解释，需要谨慎区分结构无序和本征 Kitaev 物理。",
+      methods: "高分辨 magnetotropic susceptibility 测量与结构分析。",
+      why: "对 α-RuCl3 中量子自旋液体证据的判读很关键。"
+    }],
+    [/lieb-schultz-mattis theorem.*gauge constraints/, {
+      oneLine: "从规范约束出发构造 Lieb-Schultz-Mattis 型定理。",
+      problem: "Gauss law 子空间中的规范约束能否生成禁止平庸有隙基态的新机制？",
+      result: "结果表明，规范约束诱导的 U(1) 对称性与反射算符反对易，从而在平移和反射对称下排除平庸有隙基态。",
+      methods: "Z2 x Z2 格点规范理论、Gauss law 约束与 LSM 定理分析。",
+      why: "为强关联格点模型中对称性、规范约束和无隙性之间的关系提供新视角。"
+    }],
+    [/correlation-driven tunability.*ruo/, {
+      oneLine: "研究电子关联如何调控 RuO2 中的 altermagnetism。",
+      problem: "RuO2 的磁基态为何对实验条件和外部扰动高度敏感？",
+      result: "结果表明，DFT+DMFT 将 RuO2 放在顺磁-altermagnetic 相边界和巡游-局域 crossover 附近，解释了其磁性可调性。",
+      methods: "DFT+DMFT、谱函数和光学电导计算。",
+      why: "为 RuO2 作为 altermagnet 候选材料的争议提供关联效应解释。"
+    }],
+    [/reentrant behavior.*2\/3.*magnetization plateau/, {
+      oneLine: "研究 double-trillium langbeinite K2Ni2(SO4)3 的重入行为和可能的 2/3 磁化平台。",
+      problem: "强受挫 double-trillium 晶格在磁场中会出现哪些磁化过程和平台结构？",
+      result: "结果表明，脉冲高场磁化和 Monte Carlo 计算揭示多个场诱导相变，并给出可能的 2/3 磁化平台信号。",
+      methods: "脉冲磁场磁化测量与经典 Monte Carlo 模拟。",
+      why: "为三维受挫 S=1 磁体中的磁化平台和重入相行为提供实验材料。"
+    }],
+    [/frustrated magnetism.*trillium-lattice oxide/, {
+      oneLine: "研究 S=1 trillium 晶格氧化物 Li2NiGe3O8 的受挫磁性。",
+      problem: "Li2NiGe3O8 中 Ni2+ 形成的三维 trillium 晶格是否表现出受挫磁性和短程关联？",
+      result: "结果表明，该材料具有很弱的 Curie-Weiss 温度和宽阔的低温热容峰，指向低能短程磁关联而非简单长程有序。",
+      methods: "磁化率、热容、粉末 X 射线衍射与 Monte Carlo 比较。",
+      why: "补充了三维 trillium 晶格受挫磁体的材料实例。"
+    }],
+    [/yu-shiba-rusinov states.*ising superconductors/, {
+      oneLine: "研究 Ising 超导体中的 Yu-Shiba-Rusinov 束缚态。",
+      problem: "磁性杂质能否作为局域探针区分 Ising 超导的配对结构？",
+      result: "结果表明，Ising 自旋轨道耦合和面内磁场会在 YSR 谱和隧穿响应中留下区别于常规超导的特征。",
+      methods: "磁性杂质模型、YSR 束缚态谱和隧穿响应分析。",
+      why: "为二维 TMD Ising 超导态的局域谱学判据提供理论依据。"
+    }],
+    [/parallel scan recurrent neural quantum states/, {
+      oneLine: "提出可并行扫描的 recurrent neural quantum states，用于可扩展变分 Monte Carlo。",
+      problem: "recurrent neural quantum state 是否可以摆脱顺序瓶颈并扩展到更大多体系统？",
+      result: "结果表明，parallel scan recurrent ansatz 可在一维和二维中高效训练，并通过迭代再训练获得准确基准结果。",
+      methods: "自回归 recurrent 波函数、parallel scan recurrence 与变分 Monte Carlo。",
+      why: "为强关联多体问题的神经网络变分计算提供可扩展算法。"
+    }],
+    [/non-uniform cellular automata.*translationally invariant/, {
+      oneLine: "提出平移不变晶格上非均匀 cellular automata 的通用设计方法。",
+      problem: "如何在欧氏和双曲晶格中构造适合非平凡几何的 cellular automata？",
+      result: "结果表明，高阶非均匀 CA 可通过格点形变把几何数据纳入更新规则，并适用于 directed percolation 等物理问题。",
+      methods: "非均匀 cellular automata 算法与双曲/欧氏晶格构造。",
+      why: "偏理论工具，但展示了晶格几何如何进入动力学模型。"
+    }],
+    [/invertible symmetry.*duality breaking.*ising/, {
+      oneLine: "研究横场 Ising 模型中的可逆对称性和自发对偶破缺。",
+      problem: "横场 Ising 模型的自对偶性在什么边界条件下可以由可逆算符精确实现？",
+      result: "结果表明，开放边界可实现精确可逆对偶，并伴随异常边界自由度，形成基于对偶性的体-边对应。",
+      methods: "横场 Ising 模型、对偶变换与边界对称性分析。",
+      why: "有助于理解非可逆对称性、对偶性和边界异常之间的关系。"
+    }],
+    [/grassmann tensor networks/, {
+      oneLine: "系统介绍用于费米子多体系统的 Grassmann 张量网络方法。",
+      problem: "如何用 Grassmann 代数构造适合费米子路径积分的非微扰张量网络算法？",
+      result: "结果表明，Grassmann 张量操作可系统嵌入典型张量网络算法，并在凝聚态和粒子物理模型中得到验证。",
+      methods: "Grassmann 张量代数、张量网络算法和模型基准测试。",
+      why: "为费米子强关联体系的非微扰数值模拟提供方法教程。"
+    }],
+    [/imaging interacting two-dimensional anisotropic electrons/, {
+      oneLine: "直接成像二维各向异性电子形成的 Wigner 晶体及其量子熔化。",
+      problem: "有效质量各向异性的二维电子会形成怎样的 Wigner 晶格，并如何随密度熔化？",
+      result: "结果表明，单层 1T-ReSe2 中电子波函数沿轻质量方向拉长，低密度时形成斜方 Wigner 晶格，升高密度后发生各向异性量子熔化。",
+      methods: "非侵入式 STM 成像、门控单层 ReSe2 与密度调控。",
+      why: "提供相互作用二维电子晶化和熔化的直接实空间证据。"
+    }],
+    [/lattice gauging interfaces.*noninvertible defects/, {
+      oneLine: "研究高维格点模型中的 gauging interface 和 noninvertible defect。",
+      problem: "高维和高形式对称性下，gauging interface 的拓扑移动性如何在格点 Hilbert 空间中实现？",
+      result: "结果表明，引入 movement operator 可在共同未约束 Hilbert 空间中移动界面哈密顿量和约束，并构造凝聚缺陷。",
+      methods: "格点模型、广义对称性、gauging interface 和缺陷构造。",
+      why: "为非可逆缺陷和高形式对称性在格点系统中的实现提供显式框架。"
+    }],
+    [/coherent control of spinmons/, {
+      oneLine: "提出并分析由 transmon 与 Andreev 准粒子自旋纠缠形成的 spinmon。",
+      problem: "能否把量子信息编码在 transmon 和被俘获 Andreev 准粒子自旋的纠缠态中，并实现相干控制？",
+      result: "结果表明，Zeeman 场可解除 Kramers 简并，静电门和 AC 磁通驱动可实现完整 qubit 控制，同时保持对磁通和电荷噪声的鲁棒性。",
+      methods: "spinmon 有效模型、门控控制方案和退相干时间计算。",
+      why: "为超导 qubit 和 Andreev 自旋自由度结合提供新器件概念。"
+    }],
+    [/in-situ tunable superconducting diode/, {
+      oneLine: "研究可原位调控、无外磁场工作的超导二极管。",
+      problem: "多端 Josephson 结能否实现无需外磁场且可重构的超导非互易器件？",
+      result: "结果表明，四端 Nb 平面 Josephson 结可通过原位调参实现极性重构和近似无限非互易性，并可作为 Gauss neuron 运行。",
+      methods: "多端 Josephson 结实验、非互易输运测量与参数调控。",
+      why: "面向超导电子学和无磁场二极管器件，应用相关性高。"
+    }],
     [/unbiased large.*vestigial orders/, {
       oneLine: "提出无偏 large-N 方法，研究密度波和超导不稳定性产生的 vestigial order 竞争。",
       problem: "多分量主序的复合序参量在 large-N 解耦中是否会引入人为偏置？",
@@ -1126,15 +1273,15 @@ function summaryContext(paper) {
 
 function genericOneLine(paper) {
   const { material, aspect } = summaryContext(paper);
-  return `本文关注${material}中的${aspect}。`;
+  return `本文关注 ${material} 中的${aspect}。`;
 }
 
 function genericProblem(paper) {
   const { material, aspect } = summaryContext(paper);
-  if (/机制/.test(aspect)) return `${material}中的${aspect}由哪些相互作用或对称性因素控制？`;
-  if (/谱学/.test(aspect)) return `${material}中的${aspect}能否揭示低能自由度和相干性质？`;
-  if (/输运/.test(aspect)) return `${material}中的${aspect}如何反映关联效应和对称性破缺？`;
-  return `${material}中的${aspect}如何由相互作用、晶格效应或对称性共同决定？`;
+  if (/机制/.test(aspect)) return `${material} 中的${aspect}由哪些相互作用或对称性因素控制？`;
+  if (/谱学/.test(aspect)) return `${material} 中的${aspect}能否揭示低能自由度和相干性质？`;
+  if (/输运/.test(aspect)) return `${material} 中的${aspect}如何反映关联效应和对称性破缺？`;
+  return `${material} 中的${aspect}如何由相互作用、晶格效应或对称性共同决定？`;
 }
 
 function genericResult(paper) {
@@ -1156,21 +1303,21 @@ function genericResult(paper) {
     return "结果表明，晶体对称性降低可以诱导轨道极化的 Cooper 对，并带来横向磁响应。";
   }
   if (/charge density wave|\bcdw\b|charge order/.test(text)) {
-    return "结果表明，电荷序与低能电子结构之间存在紧密耦合，并可能影响相邻的超导或磁性态。";
+    return "结果围绕电荷序的形成、相干性或低能电子结构耦合展开。";
   }
   if (/topolog|chern|majorana/.test(text)) {
-    return "结果表明，该体系的拓扑性质会受到相互作用、几何结构或配对通道的显著调控。";
+    return "结果给出了拓扑结构、边界态或对称性约束的具体判据。";
   }
   if (/magnet|spin|antiferro|ferro/.test(text)) {
-    return "结果表明，磁性相互作用和低能自旋涨落会显著影响该体系的相行为。";
+    return "结果分析了磁性相互作用、自旋涨落或磁有序结构对低能行为的影响。";
   }
   if (/phonon|electron-phonon|lattice/.test(text)) {
-    return "结果表明，电子-晶格耦合会改变低能电子结构，并可能推动有序相或能隙重整化。";
+    return "结果讨论了晶格自由度、结构效应或电子-晶格耦合与低能性质之间的关系。";
   }
   if (/superconduct|pairing/.test(text)) {
-    return "结果表明，配对通道和相干性质对相互作用强度、能带结构或对称性条件较为敏感。";
+    return "结果分析了配对通道、相干性质或对称性条件对超导态的影响。";
   }
-  return `结果给出了${material}中${aspect}与相互作用、晶格效应或对称性之间关系的具体判断。`;
+  return `结果给出了 ${material} 中${aspect}与相互作用、晶格效应或对称性之间关系的具体判断。`;
 }
 
 function findSentence(sentences, patterns, fallbackIndex = 0) {
