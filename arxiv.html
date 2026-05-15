@@ -3,6 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>Ruoshi's arXiv Daily Reader</title>
   <style>
     :root {
@@ -655,7 +658,9 @@
     </main>
   </div>
 
-  <script src="data/papers.js"></script>
+  <script>
+    document.write('<script src="data/papers.js?v=' + Date.now() + '"><\\/script>');
+  </script>
   <script>
     const CATEGORY_NAMES = {
       "cond-mat.str-el": "Strongly Correlated Electrons",
