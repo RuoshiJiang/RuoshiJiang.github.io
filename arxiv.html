@@ -659,9 +659,6 @@
   </div>
 
   <script>
-    document.write('<script src="data/papers.js?v=' + Date.now() + '"><\\/script>');
-  </script>
-  <script>
     const CATEGORY_NAMES = {
       "cond-mat.str-el": "Strongly Correlated Electrons",
       "cond-mat.supr-con": "Superconductivity"
@@ -673,9 +670,9 @@
     };
 
     const CATEGORY_ORDER = ["cond-mat.str-el", "cond-mat.supr-con"];
-    const data = window.ARXIV_DAILY_DATA || { days: [] };
-    const days = [...(data.days || [])].sort((a, b) => b.date.localeCompare(a.date));
-    let currentDate = days[0]?.date || "";
+    let data = { days: [] };
+    let days = [];
+    let currentDate = "";
 
     const archive = document.getElementById("archive");
     const q = document.getElementById("search");
@@ -886,10 +883,28 @@
       empty.hidden = filteredPapers.length > 0;
     }
 
+    async function loadArchiveData() {
+      try {
+        const response = await fetch(`data/papers.js?v=${Date.now()}`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const text = await response.text();
+        const match = text.match(/window\.ARXIV_DAILY_DATA\s*=\s*([\s\S]*?);\s*$/);
+        if (!match) throw new Error("Cannot parse data/papers.js");
+        data = JSON.parse(match[1]);
+      } catch (err) {
+        console.error("Failed to load arXiv archive data", err);
+        data = window.ARXIV_DAILY_DATA || { days: [] };
+      }
+
+      days = [...(data.days || [])].sort((a, b) => b.date.localeCompare(a.date));
+      currentDate = days[0]?.date || "";
+      renderArchive();
+      render();
+    }
+
     q.addEventListener("input", render);
     catFilter.addEventListener("change", render);
-    renderArchive();
-    render();
+    loadArchiveData();
   </script>
 </body>
 </html>
