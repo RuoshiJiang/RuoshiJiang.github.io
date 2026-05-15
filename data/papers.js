@@ -1,5 +1,5 @@
 window.ARXIV_DAILY_DATA = {
-  "updatedAt": "2026-05-14T09:33:38.498Z",
+  "updatedAt": "2026-05-15T10:34:09.658Z",
   "timezone": "Europe/London",
   "categories": [
     {
@@ -12,6 +12,782 @@ window.ARXIV_DAILY_DATA = {
     }
   ],
   "days": [
+    {
+      "date": "2026-05-15",
+      "title": "2026 年 5 月 15 日",
+      "note": "今日 arXiv recent 中文整理：共 27 篇，str-el 22 篇，supr-con 6 篇。",
+      "stats": {
+        "total": 27,
+        "str": 22,
+        "supr": 6
+      },
+      "sourcePages": [
+        "https://arxiv.org/list/cond-mat.str-el/recent",
+        "https://arxiv.org/list/cond-mat.supr-con/recent"
+      ],
+      "focusCount": 3,
+      "papers": [
+        {
+          "id": "2605.15059",
+          "title": "Quantum criticality in the two-dimensional Hubbard model",
+          "authors": "Mathias Pelz , Gabriel Kotliar , Jan von Delft , Andreas Gleis",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": true,
+          "score": 15,
+          "oneLine": "本文关注 铜氧化物体系 中的费米面结构与超导配对机制。",
+          "problem": "铜氧化物体系 中的费米面结构与超导配对机制由哪些相互作用或对称性因素控制？",
+          "result": "结果表明，电子关联会显著重构低能谱和费米面，并可能改变主导配对通道。",
+          "methods": "重整化群分析、Hubbard 模型分析。",
+          "why": "涉及 cuprate 超导，是强关联与非常规超导的核心方向。",
+          "summary": "本文关注 铜氧化物体系 中的费米面结构与超导配对机制。",
+          "abstract": "We study the normal-state, doping-driven phase diagram of the square-lattice Hubbard model using the dynamical cluster approximation combined with the numerical renormalization group as a cluster solver, which gives direct access to real-frequency dynamics at essentially zero temperature. In a parameter regime relevant for cuprates, $U=7t$ and $t'=-0.3t$, we find a critical doping $p^{\\ast}$ that marks a continuous quantum phase transition between a pseudogap metal and a normal Fermi liquid. The transition is identified by a continuous collapse, from both sides, of the Fermi-liquid scale extracted from charge, spin, and $d_{x^2-y^2}$-wave pairing susceptibilities. This collapse produces a non-Fermi-liquid regime at intermediate energy scales, which appears to extend to arbitrarily low scales at $p^{\\ast}$. As $p^{\\ast}$ is crossed from the normal Fermi liquid at $p>p^{\\ast}$ into the pseudogap metal at $p<p^{\\ast}$, the coherent low-energy spectral weight in the antinodal region is lost and replaced by a narrow, metallic pseudogap, while the nodal region evolves smoothly and remains comparatively coherent. This gives rise to Fermi arcs in the pseudogap metal at $p<p^{\\ast}$, since the zero-frequency spectral weight remains large in the nodal region but is strongly suppressed in the antinodal region.",
+          "priorityReason": "涉及 cuprate 超导，是强关联与非常规超导的核心方向。",
+          "comments": "17 pages, 15 figures",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.15059"
+        },
+        {
+          "id": "2605.14225",
+          "title": "The thermopower properties of interacting systems",
+          "authors": "M. A. Habitzreuter , Willdauany C. de Freitas da Silva , Rodrigo A. Fontenele , Natanael C. Costa , Thereza Paiva",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": true,
+          "score": 15,
+          "oneLine": "本文关注 铜氧化物体系 中的费米面结构与拓扑性质。",
+          "problem": "铜氧化物体系 中的费米面结构与拓扑性质如何由相互作用、晶格效应或对称性共同决定？",
+          "result": "结果表明，电子关联会显著重构低能谱和费米面，并可能改变主导配对通道。",
+          "methods": "Hubbard 模型分析。",
+          "why": "涉及 cuprate 超导，是强关联与非常规超导的核心方向。",
+          "summary": "本文关注 铜氧化物体系 中的费米面结构与拓扑性质。",
+          "abstract": "The quest for efficient devices has fueled research in thermoelectric materials. In these materials, the goal is to maximize the Figure of Merit $ZT$. One of the components of this quantity is the Seebeck coefficient, which measures the voltage generated in response to a temperature gradient. Recent studies have revealed that strong electronic correlations can enhance the Seebeck coefficient, leading to anomalous behavior near half-filling. However, the impact of interactions beyond the on-site Hubbard remains mostly unexplored. In this work, we investigate the Seebeck coefficient considering attractive interactions, nearest-neighbor interactions, sublattice potentials and electron-phonon coupling. We find that additional interaction scales can enhance the Seebeck coefficient, while also leading to multiple anomalous changes of sign as a function of doping. We also show that the anomalous behavior is connected to a gap opening in the ground state. Moreover, electron-phonon coupling also lead to a Seebeck anomaly, even without on-site repulsion. We connect these changes of sign in the Seebeck coefficient with a restructuring of the Fermi surface and a change in its topology, an effect commonly seen in cuprates.",
+          "priorityReason": "涉及 cuprate 超导，是强关联与非常规超导的核心方向。",
+          "comments": "",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.14225"
+        },
+        {
+          "id": "2605.14909",
+          "title": "Revealing Hidden Correlations in a Fermi-Hubbard system via Interaction Ramps",
+          "authors": "Botond Oreg , Carter Turnbaugh , Jens Hertkorn , Ningyuan Jia , Martin Zwierlein",
+          "category": [
+            "str-el",
+            "supr-con"
+          ],
+          "categories": [
+            "cond-mat.str-el",
+            "cond-mat.supr-con"
+          ],
+          "important": true,
+          "score": 14,
+          "oneLine": "本文关注 Hubbard 模型 中的超导配对机制与磁性和自旋涨落。",
+          "problem": "Hubbard 模型 中的超导配对机制与磁性和自旋涨落由哪些相互作用或对称性因素控制？",
+          "result": "结果分析了磁性相互作用、自旋涨落或磁有序结构对低能行为的影响。",
+          "methods": "Hubbard 模型分析。",
+          "why": "同时出现在 str-el 与 supr-con，适合优先看强关联与超导交叉。",
+          "summary": "本文关注 Hubbard 模型 中的超导配对机制与磁性和自旋涨落。",
+          "abstract": "We observe an enhanced visibility of charge-density-wave correlations in a cold-atom realization of the attractive Hubbard model following a rapid boost of the interaction strength. The interaction boost associates nonlocal pairs into doublons which mark the center of mass of the original pairs. The enhancement is largest in the strongly correlated regime where pairing is nonlocal. We distinguish the unpaired Fermi liquid from the pseudogap phase of preformed pairs by analyzing atom-resolved spin-charge correlations after the ramp. The technique we establish here may facilitate the observation of exotic forms of pair order in spin-imbalanced systems, and of stripe order in the dual case of the doped repulsive Hubbard model.",
+          "priorityReason": "同时出现在 str-el 与 supr-con，适合优先看强关联与超导交叉。",
+          "comments": "5+1 pages, 4+1 figures",
+          "journalRef": "",
+          "subjects": "Quantum Gases (cond-mat.quant-gas) ; Strongly Correlated Electrons (cond-mat.str-el); Superconductivity (cond-mat.supr-con)",
+          "sourceCategories": [
+            "cond-mat.str-el",
+            "cond-mat.supr-con"
+          ],
+          "url": "https://arxiv.org/abs/2605.14909"
+        },
+        {
+          "id": "2605.14248",
+          "title": "Strong electron correlations and ligand hybridization for altermagnetism",
+          "authors": "Byungkyun Kang , Anderson Janotti , Dai Q. Ho , Myoung-Hwan Kim , Chul Hong Park , Sangkook Choi , Mark R. Pederson , Eunja Kim",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 12,
+          "oneLine": "本文关注 强关联电子体系 中的磁性和自旋涨落与输运性质。",
+          "problem": "强关联电子体系 中的磁性和自旋涨落与输运性质如何反映关联效应和对称性破缺？",
+          "result": "结果分析了磁性相互作用、自旋涨落或磁有序结构对低能行为的影响。",
+          "methods": "结合理论分析、数值计算或实验表征。",
+          "why": "Mott 物理相关，适合优先关注关联绝缘态和相邻有序。",
+          "summary": "本文关注 强关联电子体系 中的磁性和自旋涨落与输运性质。",
+          "abstract": "Spin-band splitting is a hallmark of altermagnetism, intrinsically linked to magnetic ordering driven by electron correlations. However, recent inconsistencies in the detection of altermagnetism in strongly correlated altermagnet candidates have cast doubt on the robustness of this phenomenon and its dependence on many-body effects. Here, using state-of-the-art quantum many-body frameworks, we dissect the electronic origins of altermagnetism in three prototypical candidates: MnF$_2$, MnTe, and RuO$_2$. In MnF$_2$, we identify pronounced local electron correlations within Mn-3$d$ states and uncover a distinct Mott gap in the visible range, rooted in nonlocal screening effects. The strong correlations markedly localize the Mn-3$d$ electrons, leading to a narrowing of the spin-resolved bandwidth and, consequently, a suppression of spin-band splitting. By contrast, MnTe provides an ideal platform for altermagnetism, exhibiting substantial local Mn-3$d$ magnetic moments due to the strong correlations and pronounced spin-band splitting, enabled by robust Mn 3$d$--Te-5$p$ orbital hybridization. RuO$_2$ manifests as a Pauli paramagnet with vanishing local moments, even in its antiferromagnetic phase. Nonetheless, it exhibits significant spin-band splitting, indicative of itinerant altermagnetic behavior. Our results reveal that both strong local electron correlations and judicious ligand selection to promote orbital hybridization are key prerequisites to realizing altermagnetism in strongly correlated systems. These insights pave the way for the rational design and discovery of novel altermagnetic materials.",
+          "priorityReason": "Mott 物理相关，适合优先关注关联绝缘态和相邻有序。",
+          "comments": "",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.14248"
+        },
+        {
+          "id": "2605.14806",
+          "title": "Atomically resolved intrinsic superconducting gap in (La,Pr)3Ni2O7 films",
+          "authors": "Xinxin Wang , Yaqi Chen , Cui Ding , Lizhi Xu , Jian-Jian Miao , Guangdi Zhou , Zhuoyu Chen , Yu-Jie Sun , Jin-Feng Jia , Qi-Kun Xue",
+          "category": [
+            "supr-con"
+          ],
+          "categories": [
+            "cond-mat.supr-con"
+          ],
+          "important": false,
+          "score": 11,
+          "oneLine": "本文关注 镍酸盐体系 中的超导配对机制与输运性质。",
+          "problem": "镍酸盐体系 中的超导配对机制与输运性质由哪些相互作用或对称性因素控制？",
+          "result": "结果分析了配对通道、相干性质或对称性条件对超导态的影响。",
+          "methods": "输运测量、谱学分析。",
+          "why": "有助于跟踪超导材料、配对机制或临界性质的新进展。",
+          "summary": "本文关注 镍酸盐体系 中的超导配对机制与输运性质。",
+          "abstract": "Ruddlesden-Popper bilayer nickelates provide an emerging platform for studying high-temperature superconductivity, yet the superconducting pairing symmetry remains under debate. Here, we use atomic-resolution scanning tunnelling microscopy and spectroscopy to investigate superconducting 1.5-unit-cell (La,Pr)3Ni2O7 films grown on SrLaAlO4. A cryogenic ultrahigh-vacuum (UHV) sample transfer preserves an ordered sqrt(2) * sqrt(2) surface and yields reproducible U-shaped spectra with two gap scales of ~14 and ~20 meV and extended flat zero-conductance bottoms. By contrast, samples exposed for a longer time in UHV without cooling during transfer show V-shaped spectra despite retaining the surface reconstruction and a transport superconducting transition onset above 40 K. Wide-energy-range spectra indicate that oxygen loss can mix density-wave-related spectral weight. Our measurements provide an atomic-scale observation of the intrinsic nodeless superconducting gap in bilayer nickelate ultrathin films.",
+          "priorityReason": "有助于跟踪超导材料、配对机制或临界性质的新进展。",
+          "comments": "",
+          "journalRef": "",
+          "subjects": "Superconductivity (cond-mat.supr-con) ; Materials Science (cond-mat.mtrl-sci)",
+          "sourceCategories": [
+            "cond-mat.supr-con"
+          ],
+          "url": "https://arxiv.org/abs/2605.14806"
+        },
+        {
+          "id": "2605.14238",
+          "title": "Ultrafast decoupling of quasiparticles and spin fluctuations in superconducting cuprates",
+          "authors": "Yuto Taniguchi , Ryo Kato , Tatsuya Amano , Hirotake Itoh , Yohei Kawakam , Yuto Nakamura , Hideo Kishida , Christian Bernhard , Jure Demsar , Takahiko Sasaki , Terukazu Nishizaki , Kenji Yonemitsu , Shinichiro Iwai",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 11,
+          "oneLine": "本文关注 铜氧化物体系 中的超导配对机制与磁性和自旋涨落。",
+          "problem": "铜氧化物体系 中的超导配对机制与磁性和自旋涨落由哪些相互作用或对称性因素控制？",
+          "result": "结果分析了磁性相互作用、自旋涨落或磁有序结构对低能行为的影响。",
+          "methods": "谱学分析。",
+          "why": "涉及 cuprate 超导，是强关联与非常规超导的核心方向。",
+          "summary": "本文关注 铜氧化物体系 中的超导配对机制与磁性和自旋涨落。",
+          "abstract": "Understanding how quasiparticles are generated following a rapid quench of superconductivity in high-Tc cuprates is a key unresolved problem in nonequilibrium superconductivity. Here we resolve these processes in optimally doped YBCO [YBa2Cu3Oy(y=6.94, Tc=92 K)] using broadband (0.16 -4.1 eV, ca. 100 fs) and nearly single-cycle (6 fs) transient reflectivity spectroscopy. We show that within a few femtosecond, enhanced electron-electron Umklapp scattering dominates, signaling a transient modulation of long-range Coulomb interactions on the eV scale. This regime is followed by a rapid suppression of the scattering rate of the mid-infrared absorption associated with carriers dressed by spin fluctuations. We attribute this observation to an ultrafast decoupling of quasiparticles from the spin-fluctuation background, occurring on a 90 fs timescale set by the inverse optical gap. These findings reveal the correlated many-body dynamics underlying quasiparticle generation in cuprates and provide further clues for unconventional pairing mechanism.",
+          "priorityReason": "涉及 cuprate 超导，是强关联与非常规超导的核心方向。",
+          "comments": "24 pages , 5 figure (main text) and 14 pages (supplemental material)",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.14238"
+        },
+        {
+          "id": "2605.14265",
+          "title": "Shear-stress-constrained superconductivity in Ruddlesden-Popper nickelates",
+          "authors": "Liling Sun , Shu Cai , Jinyu Zhao , Qi Wu , Yang Ding , Tao Xiang , Ho-kwang Mao",
+          "category": [
+            "supr-con"
+          ],
+          "categories": [
+            "cond-mat.supr-con"
+          ],
+          "important": false,
+          "score": 8,
+          "oneLine": "本文关注 镍酸盐体系 中的超导配对机制与电子-晶格耦合。",
+          "problem": "镍酸盐体系 中的超导配对机制与电子-晶格耦合由哪些相互作用或对称性因素控制？",
+          "result": "结果讨论了晶格自由度、结构效应或电子-晶格耦合与低能性质之间的关系。",
+          "methods": "实验测量与数据分析。",
+          "why": "有助于跟踪超导材料、配对机制或临界性质的新进展。",
+          "summary": "本文关注 镍酸盐体系 中的超导配对机制与电子-晶格耦合。",
+          "abstract": "Ruddlesden-Popper nickelates exhibit superconductivity under pressure in bulk crystals and under epitaxial constraint in thin films, while remaining highly sensitive to sample quality, oxygen content, defects, and stress conditions. We propose that the metastable RP lattice becomes superconducting only when the local constrained deformation of the Ni-O framework falls within a bounded shear-strain window. This deformation controls octahedral rotations, the interlayer Ni-O-Ni bond angle, and coupling between Ni dz2 and dx2-y2 orbitals. This shear-stress-constrained superconductivity scenario unifies the understanding of the pressure threshold, reversibility, spatial inhomogeneity, pressure-medium dependence, film-substrate sensitivity, and reproducibility.",
+          "priorityReason": "有助于跟踪超导材料、配对机制或临界性质的新进展。",
+          "comments": "11 pages, 1 figure",
+          "journalRef": "",
+          "subjects": "Superconductivity (cond-mat.supr-con)",
+          "sourceCategories": [
+            "cond-mat.supr-con"
+          ],
+          "url": "https://arxiv.org/abs/2605.14265"
+        },
+        {
+          "id": "2605.14124",
+          "title": "Observation of Switchable Chiral Magnons in an Altermagnet",
+          "authors": "Zheyuan Liu , Hodaka Kikuchi , Zijun Wei , Shinichiro Asai , Mechthild Enderle , Ursula B. Hansen , Vasile O. Garlea , Manh D. Le , Gøran J. Nilsen , Igor A. Zaliznyak , Takatsugu Masuda",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 8,
+          "oneLine": "本文关注 强关联电子体系 中的磁性和自旋涨落与输运性质。",
+          "problem": "强关联电子体系 中的磁性和自旋涨落与输运性质如何反映关联效应和对称性破缺？",
+          "result": "结果分析了磁性相互作用、自旋涨落或磁有序结构对低能行为的影响。",
+          "methods": "中子散射实验、输运测量。",
+          "why": "涉及 altermagnetism，适合关注磁性与超导耦合。",
+          "summary": "本文关注 强关联电子体系 中的磁性和自旋涨落与输运性质。",
+          "abstract": "Chiral magnons, the quanta of handed spin waves, transport spin angular momentum without energy loss due to Joule heating. The recently discovered altermagnets were proposed to host chiral magnons arising from a non-relativistic exchange mechanism, similar to that in ferromagnets but without net magnetization, offering a stray-field-free platform for efficient magnon spin-current manipulation. In this work, we directly observed chiral magnons in the altermagnetic prototype MnTe using polarized inelastic neutron scattering. Furthermore, the magnon chirality was found to be reversibly switched by magnetic-field control, establishing a robust foundation for functional altermagnetic magnonics.",
+          "priorityReason": "涉及 altermagnetism，适合关注磁性与超导耦合。",
+          "comments": "7 pages, 3 figures. Accepted for publication in Phys. Rev. Lett. Supplemental Material is included only in the PRL version",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el) ; Materials Science (cond-mat.mtrl-sci)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.14124"
+        },
+        {
+          "id": "2605.15060",
+          "title": "Dynamical scaling near the pseudogap quantum critical point of the two-dimensional Hubbard model",
+          "authors": "Mathias Pelz , Gabriel Kotliar , Jan von Delft , Andreas Gleis",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 7,
+          "oneLine": "本文关注 Hubbard 模型 中的磁性和自旋涨落与输运性质。",
+          "problem": "Hubbard 模型 中的磁性和自旋涨落与输运性质如何反映关联效应和对称性破缺？",
+          "result": "结果分析了磁性相互作用、自旋涨落或磁有序结构对低能行为的影响。",
+          "methods": "重整化群分析、Hubbard 模型分析、输运测量。",
+          "why": "Hubbard 模型相关，适合从模型层面理解关联与配对。",
+          "summary": "本文关注 Hubbard 模型 中的磁性和自旋涨落与输运性质。",
+          "abstract": "We study dynamical scaling in the quantum-critical fan of the pseudogap-metal to Fermi-liquid transition of the two-dimensional Hubbard model. Using a four-patch dynamical cluster approximation with the numerical renormalization group as a cluster impurity solver, we access real-frequency dynamics over several decades at arbitrary temperatures. Close to the critical doping, the local spin and cluster-current susceptibility spectra exhibit $x=\\omega/T$ scaling of the form $\\chi''(\\omega,T)\\sim \\tanh(x/2)$, and the cluster contribution to the optical conductivity obeys $T\\sigma'_{\\mathrm{cl}}(\\omega,T) \\sim \\tanh(x/2)/x$, implying a $1/T$ cluster dc conductivity. In the scaling regime, the vertex contribution to the cluster optical response is much larger than the bubble contribution. We further find evidence for a marginal-Fermi-liquid nodal self-energy. This, together with the $1/T$ vertex contribution to the conductivity, implies strange-metal optical transport in the quantum critical region. Our results describe several qualitative aspects of several experimental observations.",
+          "priorityReason": "Hubbard 模型相关，适合从模型层面理解关联与配对。",
+          "comments": "14 pages, 10 figures",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.15060"
+        },
+        {
+          "id": "2605.14965",
+          "title": "Analyzing the two-dimensional doped Hubbard model with the Worldvolume HMC method",
+          "authors": "Masafumi Fukuma , Yusuke Namekawa",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 7,
+          "oneLine": "本文关注 Hubbard 模型 中的电子-晶格耦合与有效模型。",
+          "problem": "Hubbard 模型 中的电子-晶格耦合与有效模型如何由相互作用、晶格效应或对称性共同决定？",
+          "result": "结果讨论了晶格自由度、结构效应或电子-晶格耦合与低能性质之间的关系。",
+          "methods": "Monte Carlo 模拟、Hubbard 模型分析。",
+          "why": "Hubbard 模型相关，适合从模型层面理解关联与配对。",
+          "summary": "本文关注 Hubbard 模型 中的电子-晶格耦合与有效模型。",
+          "abstract": "We apply the Worldvolume Hybrid Monte Carlo (WV-HMC) method [ arXiv:2012.08468 ] to the two-dimensional Hubbard model, which is known to suffer from a severe sign problem when the system is doped (away from half filling). We show that the method predicts physical observables with controlled statistical errors on an $8 \\times 8$ lattice at temperature $T/t = 1/6.4 \\approx 0.156$ and interaction strength $U/t = 8.0$ ($t$ is the hopping amplitude), for which the standard determinant quantum Monte Carlo fails.",
+          "priorityReason": "Hubbard 模型相关，适合从模型层面理解关联与配对。",
+          "comments": "10 pages, 3 figures, contribution to the 42nd International Symposium on Lattice Field Theory (LATTICE2025), 2-8 November 2025, Mumbai, India",
+          "journalRef": "",
+          "subjects": "High Energy Physics - Lattice (hep-lat) ; Strongly Correlated Electrons (cond-mat.str-el); High Energy Physics - Theory (hep-th)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.14965"
+        },
+        {
+          "id": "2605.14969",
+          "title": "On the Symmetries of Anisotropic Spin Interaction Models",
+          "authors": "Arist Zhenyuan Yang",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 5,
+          "oneLine": "本文关注 扭转或 moiré 体系 中的磁性和自旋涨落与拓扑性质。",
+          "problem": "扭转或 moiré 体系 中的磁性和自旋涨落与拓扑性质如何由相互作用、晶格效应或对称性共同决定？",
+          "result": "结果给出了拓扑结构、边界态或对称性约束的具体判据。",
+          "methods": "模型分析与数值计算。",
+          "why": "涉及扭转结构，适合关注 moire 或层状材料中的新奇相。",
+          "summary": "本文关注 扭转或 moiré 体系 中的磁性和自旋涨落与拓扑性质。",
+          "abstract": "We show that anisotropic spin interactions do not merely break spin-space group (SSG) symmetries, but instead twist them through cohomology invariants, yielding symmetry classes beyond subgroups of $O(3)\\times \\operatorname{Isom}(\\mathbb{R}^3) $. This requires redefining the spin-only group $S_0$ in terms of proper spin rotations. Based on this unitary $S_0$, we formulate a twisted SSG (tSSG) theory that captures the complete set of spin-space symmetries. We then study a spin-1 model with tSSG symmetry using linear flavor wave theory and find topological quadrupolar excitations defined on a spin Brillouin Klein-bottle rather than the conventional torus. Specifically, the bosonic BdG Hamiltonian satisfies a glide reflection sewing relation, the ribbon spectrum exhibits Möbius boundary states. These topological excitations are classified by $ \\mathbb{Z}_2 $, enforced by the nonorientability of the Klein-bottle.",
+          "priorityReason": "涉及扭转结构，适合关注 moire 或层状材料中的新奇相。",
+          "comments": "Revised in response to the referees' comments",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.14969"
+        },
+        {
+          "id": "2605.13945",
+          "title": "Quantum Monte Carlo fermion spectroscopy of a non-compact CP$^1$ model",
+          "authors": "Xu Zhang , Nick Bultinck",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 3,
+          "oneLine": "本文关注 双层体系 中的超导配对机制与磁性和自旋涨落。",
+          "problem": "双层体系 中的超导配对机制与磁性和自旋涨落由哪些相互作用或对称性因素控制？",
+          "result": "结果分析了磁性相互作用、自旋涨落或磁有序结构对低能行为的影响。",
+          "methods": "Monte Carlo 模拟、平均场理论、谱学分析。",
+          "why": "包含谱学信息，可帮助快速判断实验可观测量。",
+          "summary": "本文关注 双层体系 中的超导配对机制与磁性和自旋涨落。",
+          "abstract": "We study a model describing electrons coupled to anti-ferromagnetic spin fluctuations, and consider the situation where hedgehog defects in the order parameter field are suppressed. Without hedgehogs, the bosonic sector of the theory can be taken to realize the physics of the non-compact CP$^1$ theory with a deconfined U$(1)$ gauge field. After strongly coupling the boson to fermion spins, we simulate the single-particle spectral properties of a hedgehog-suppressed electron-boson model defined on a bilayer square lattice with Quantum Monte Carlo, and interpret the results in terms of an effective theory with fractionalized spinon and chargon excitations. As one of our main results we show that the electron gap on top of the half-filled insulator with gapless photon fluctuations closely resembles the mean-field dispersion of an electron in an anti-ferromagnetic spin background, even though the system fully preserves both the translation and spin rotation symmetry. Finally, we discuss potential implications of our results for the high-temperature superconductors.",
+          "priorityReason": "包含谱学信息，可帮助快速判断实验可观测量。",
+          "comments": "13 pages, 10 figures",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.13945"
+        },
+        {
+          "id": "2605.15201",
+          "title": "Mixed-State Long-Range Entanglement from Dimensional Constraints",
+          "authors": "Leonardo A. Lessa , Tsung-Cheng Lu",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "本文关注 强关联电子体系 中的低能电子结构和相行为。",
+          "problem": "强关联电子体系 中的低能电子结构和相行为如何由相互作用、晶格效应或对称性共同决定？",
+          "result": "结果给出了 强关联电子体系 中低能电子结构和相行为与相互作用、晶格效应或对称性之间关系的具体判断。",
+          "methods": "结合理论分析、数值计算或实验表征。",
+          "why": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "summary": "本文关注 强关联电子体系 中的低能电子结构和相行为。",
+          "abstract": "We present a new mechanism for long-range entanglement (LRE) in strongly symmetric many-body mixed states that does not rely on symmetry anomalies or long-range correlations. Our primary example is the maximally mixed state in the translation-invariant subspace on a one-dimensional ring. This state is LRE because translationally symmetric short-range entangled states span a subspace whose dimension grows only polynomially with system size, whereas the full translation-invariant subspace grows exponentially. We further discuss certain unconventional properties of this state, including logarithmically growing conditional mutual information, strong-to-weak spontaneous symmetry-breaking, and Rényi-index-dependent operator-space entanglement. We also construct a geometrically non-local Lindbladian to stabilize this state as the steady state. Our results identify dimensional mismatch as a novel route to LRE that is intrinsic to many-body mixed states.",
+          "priorityReason": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "comments": "27 pages, 2+8 figures",
+          "journalRef": "",
+          "subjects": "Quantum Physics (quant-ph) ; Statistical Mechanics (cond-mat.stat-mech); Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.15201"
+        },
+        {
+          "id": "2605.15200",
+          "title": "Translation symmetry-enforced long-range entanglement in mixed states",
+          "authors": "Ryan Thorngren , Lei Gioia , Carolyn Zhang",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "本文关注 强关联电子体系 中的低能电子结构和相行为。",
+          "problem": "强关联电子体系 中的低能电子结构和相行为如何由相互作用、晶格效应或对称性共同决定？",
+          "result": "结果给出了 强关联电子体系 中低能电子结构和相行为与相互作用、晶格效应或对称性之间关系的具体判断。",
+          "methods": "结合理论分析、数值计算或实验表征。",
+          "why": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "summary": "本文关注 强关联电子体系 中的低能电子结构和相行为。",
+          "abstract": "We show by a counting argument that even though translation symmetry admits symmetric short-range entangled (SRE) eigenstates, there are not enough such SRE eigenstates to span the zero momentum sector. This means that the fixed point strong-to-weak spontaneous symmetry breaking state of translation symmetry is long-range entangled: it cannot be written as a mixture of SRE states. This is a subtle form of long-range entanglement in mixed states that cannot be detected by long-range connected correlation functions.",
+          "priorityReason": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "comments": "5+4 pages, 3 figures",
+          "journalRef": "",
+          "subjects": "Quantum Physics (quant-ph) ; Mesoscale and Nanoscale Physics (cond-mat.mes-hall); Strongly Correlated Electrons (cond-mat.str-el); Mathematical Physics (math-ph)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.15200"
+        },
+        {
+          "id": "2605.15194",
+          "title": "Non-Invertible Symmetries on Tensor-Product Hilbert Spaces and Quantum Cellular Automata",
+          "authors": "Rui Wen , Kansei Inamura , Sakura Schafer-Nameki",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "本文关注 强关联电子体系 中的电子-晶格耦合与有效模型。",
+          "problem": "强关联电子体系 中的电子-晶格耦合与有效模型如何由相互作用、晶格效应或对称性共同决定？",
+          "result": "结果讨论了晶格自由度、结构效应或电子-晶格耦合与低能性质之间的关系。",
+          "methods": "模型分析与数值计算。",
+          "why": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "summary": "本文关注 强关联电子体系 中的电子-晶格耦合与有效模型。",
+          "abstract": "We investigate realizations of (1+1)-dimensional fusion category symmetries on tensor-product Hilbert spaces, allowing for mixing with quantum cellular automata (QCAs). It was argued recently that any such realizable symmetry must be weakly integral. We develop a systematic analysis of QCA-refined realizations of fusion categories and prove two statements. First, we show that, under certain physical assumptions on defects, any QCA-refined realization has QCA and symmetry-operator indices determined by the categorical data, up to the freedom of redefining the symmetry operators. Second, we construct a lattice model that provides a QCA-refined realization for any weakly integral fusion category symmetry on a tensor product Hilbert space. We also compute indices of the QCAs in our lattice model and show agreement with the first result. As an application of the general construction, we give an explicit QCA-refined realization of general Tambara-Yamagami categorical symmetries.",
+          "priorityReason": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "comments": "40 pages",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el) ; High Energy Physics - Theory (hep-th); Category Theory (math.CT); Quantum Physics (quant-ph)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.15194"
+        },
+        {
+          "id": "2605.15150",
+          "title": "Extensive long-range magic in non-Abelian topological orders",
+          "authors": "Yuzhen Zhang , Isaac H. Kim , Yimu Bao , Sagar Vijay",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "本文关注 强关联电子体系 中的拓扑性质与有效模型。",
+          "problem": "强关联电子体系 中的拓扑性质与有效模型如何由相互作用、晶格效应或对称性共同决定？",
+          "result": "结果给出了拓扑结构、边界态或对称性约束的具体判据。",
+          "methods": "模型分析与数值计算。",
+          "why": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "summary": "本文关注 强关联电子体系 中的拓扑性质与有效模型。",
+          "abstract": "We show that the low-energy states of non-Abelian topological orders possess extensive magic which is long-ranged, and cannot be eliminated by a constant-depth local unitary circuit. This refines conventional notions of complexity beyond the linear circuit depth which is required to prepare any topological phase, and provides a new resource-theoretic characterization of topological orders. A central technical result is a no-go theorem establishing that stabilizer states--even up to constant-depth local unitarie--cannot approximate low-energy states of non-Abelian string-net models which satisfy the entanglement bootstrap axioms. Moreover, we show that stabilizer-realizable Abelian string-net phases have mutual braiding phases quantized by the on-site qudit dimension, and that any violation of this condition necessarily implies extensive long-range magic. Extending to higher spatial dimensions, we argue that any state obeying an entanglement area law and hosting excitations with nontrivial fusion spaces must exhibit extensive long-range magic. This applies, in particular, to ground-states and low-energy states of higher-dimensional quantum double models.",
+          "priorityReason": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "comments": "51 pages",
+          "journalRef": "",
+          "subjects": "Quantum Physics (quant-ph) ; Strongly Correlated Electrons (cond-mat.str-el); Computational Complexity (cs.CC); High Energy Physics - Theory (hep-th)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.15150"
+        },
+        {
+          "id": "2605.14985",
+          "title": "Larkin-Ovchinnikov-Fulde-Ferrell state of spin polarized atomic Fermi superfluid on a spherical surface",
+          "authors": "Yan He , Chih-Chun Chien",
+          "category": [
+            "supr-con"
+          ],
+          "categories": [
+            "cond-mat.supr-con"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "本文关注 超导体系 中的超导配对机制与磁性和自旋涨落。",
+          "problem": "超导体系 中的超导配对机制与磁性和自旋涨落由哪些相互作用或对称性因素控制？",
+          "result": "结果分析了磁性相互作用、自旋涨落或磁有序结构对低能行为的影响。",
+          "methods": "结合理论分析、数值计算或实验表征。",
+          "why": "有助于跟踪超导材料、配对机制或临界性质的新进展。",
+          "summary": "本文关注 超导体系 中的超导配对机制与磁性和自旋涨落。",
+          "abstract": "By implementing the Bogoliubov-de Gennes (BdG) formalism of population-imbalanced atomic Fermi gases with pairing interactions in a thin spherical shell, we characterize the Larkin-Ovchinnikov-Fulde-Ferrell (LOFF) state in such a compact geometry. We first construct a phase diagram showing where uniform solutions of spin-polarized Fermi superfluid from the BdG equation cease to exist due to the vanishing order parameter. Near the boundary, various LOFF states with spatially modulating order parameters and density profiles can survive as convergent solutions to the BdG equation. When both uniform and LOFF solutions are present, we compare their grand potentials to determine the energetically favorable state and find that the LOFF states with multiple nodes in the order parameter become more stable at higher spin polarization. However, the LOFF state only survives close to the phase boundary where the uniform solutions vanish, indicating fragility of the LOFF state on a spherical surface. We also briefly discuss possible implications.",
+          "priorityReason": "有助于跟踪超导材料、配对机制或临界性质的新进展。",
+          "comments": "10 pages, 6 figures, submitted",
+          "journalRef": "",
+          "subjects": "Quantum Gases (cond-mat.quant-gas) ; Superconductivity (cond-mat.supr-con); Quantum Physics (quant-ph)",
+          "sourceCategories": [
+            "cond-mat.supr-con"
+          ],
+          "url": "https://arxiv.org/abs/2605.14985"
+        },
+        {
+          "id": "2605.14818",
+          "title": "T-E formulation-based modeling of thin HTS shell magnetization",
+          "authors": "Leonid Prigozhin , Vladimir Sokolovsky",
+          "category": [
+            "supr-con"
+          ],
+          "categories": [
+            "cond-mat.supr-con"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "本文关注 超导体系 中的超导配对机制与磁性和自旋涨落。",
+          "problem": "超导体系 中的超导配对机制与磁性和自旋涨落由哪些相互作用或对称性因素控制？",
+          "result": "结果分析了磁性相互作用、自旋涨落或磁有序结构对低能行为的影响。",
+          "methods": "模型分析与数值计算。",
+          "why": "有助于跟踪超导材料、配对机制或临界性质的新进展。",
+          "summary": "本文关注 超导体系 中的超导配对机制与磁性和自旋涨落。",
+          "abstract": "Numerical methods for modeling thin-film magnetization are primarily focused on computing the current density distribution. The highly nonlinear current-voltage characteristic of type-II superconductors significantly complicates the accurate computation of the electric field. The T-E formulation-based mixed finite element method, previously derived for flat superconducting films, enables the simultaneous, accurate determination of both variables. Another advantage of this method is that the computational domain is limited to the film itself: no meshing of the surrounding space is required. The thin-shell approximation reduces the problem to a two-dimensional one. This work extends the T-E formulation and numerical method to non-flat superconducting shells with a metal substrate. We validate the method with several test examples, including modeling the magnetization of a sphere. The method is then applied to a realistic model of a cylindrical magnetic dynamo pump, and the generated open-circuit voltage is computed.",
+          "priorityReason": "有助于跟踪超导材料、配对机制或临界性质的新进展。",
+          "comments": "15 pages, 12 figures",
+          "journalRef": "",
+          "subjects": "Superconductivity (cond-mat.supr-con) ; Numerical Analysis (math.NA)",
+          "sourceCategories": [
+            "cond-mat.supr-con"
+          ],
+          "url": "https://arxiv.org/abs/2605.14818"
+        },
+        {
+          "id": "2605.14638",
+          "title": "A DFT+DMFT study of the electronic structure of Samarium",
+          "authors": "Shengsong Xu , Zhenfeng Ouyang , Li Huang , Zhong-Yi Lu",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "本文关注 强关联电子体系 中的低能电子结构和相行为。",
+          "problem": "强关联电子体系 中的低能电子结构和相行为如何由相互作用、晶格效应或对称性共同决定？",
+          "result": "结果给出了 强关联电子体系 中低能电子结构和相行为与相互作用、晶格效应或对称性之间关系的具体判断。",
+          "methods": "DFT 计算、DMFT 分析、平均场理论。",
+          "why": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "summary": "本文关注 强关联电子体系 中的低能电子结构和相行为。",
+          "abstract": "The electronic structure of Samarium (Sm) was calculated using the density functional theory combined with the single-site dynamical mean-field theory. In this work, we investigated the electronic properties of {\\alpha}, \\b{eta} and {\\gamma} phases at ambient pressure, including the band structures, density of states, self-energy functions and valence state histograms. Our results agree with the experimental this http URL calculation shows that the 4f electrons in all these phases are well localized, the Kondo peaks are suppressed and the hybridization between the 4f electrons and conduction electrons are quite weak. Our results also show the strong correlation effect is significant in Sm metal.",
+          "priorityReason": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "comments": "7 pages, 5 figures",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.14638"
+        },
+        {
+          "id": "2605.14180",
+          "title": "Carrier-density dependence of magnetotransport in correlated Dirac semimetal CaIrO$_3$",
+          "authors": "Rinsuke Yamada , Jun Fujioka , Minoru Kawamura , Tatsuya Okawa , Yoshio Kaneko , Shiro Sakai , Motoaki Hirayama , Ryotaro Arita , Kiyohiro Adachi , Daisuke Hashizume , Yoshinori Tokura",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "本文关注 强关联电子体系 中的费米面结构与磁性和自旋涨落。",
+          "problem": "强关联电子体系 中的费米面结构与磁性和自旋涨落如何由相互作用、晶格效应或对称性共同决定？",
+          "result": "结果分析了磁性相互作用、自旋涨落或磁有序结构对低能行为的影响。",
+          "methods": "输运测量。",
+          "why": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "summary": "本文关注 强关联电子体系 中的费米面结构与磁性和自旋涨落。",
+          "abstract": "We report the carrier density dependence of the magnetotransport property in the correlated Dirac semimetal CaIrO$_3$. In the dilute carrier density region ($n_{\\rm H}$ $\\sim 2.2 \\times 10^{16} \\,$$\\rm{cm}^{-3}$) at $2 \\, \\mathrm{K}$, the mobility exceeds $1.0 \\times 10^{5} \\,$$\\rm{cm}^{2}/\\rm{Vs}$ at $2 \\, \\mathrm{K}$, and the transverse magnetoresistance (MR) reaches $2,000 \\,$\\% at $12 \\, \\mathrm{T}$. The analysis of quantum oscillations and Hall conductivity shows that the Fermi velocity is nearly independent of the cross-sectional area of the Fermi surface, or equivalently the carrier density, supporting a $k$-linear dispersion of the Dirac node. The field dependence of magnetoresistivity is nearly $B$-linear in the moderate carrier density region ($n_\\mathrm{H} \\geq 4 \\times 10^{16}\\,$cm$^{-3}$), but scales with $B^{\\alpha}$ ($\\alpha > 2$) in the lower carrier density region. The variation of magnetoresistivity is likely affected by the enhanced long-range Coulomb interaction in the quantum limit, where Dirac electrons are subject to the magnetic confinement.",
+          "priorityReason": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "comments": "24 pages, 8 figures",
+          "journalRef": "Phys. Rev. B 113, 205126 (2026)",
+          "subjects": "Materials Science (cond-mat.mtrl-sci) ; Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.14180"
+        },
+        {
+          "id": "2605.14080",
+          "title": "Dual Shapiro steps and fundamental transconductance in dc driven Bloch transistor",
+          "authors": "A. B. Zorin",
+          "category": [
+            "supr-con"
+          ],
+          "categories": [
+            "cond-mat.supr-con"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "本文关注 超导体系 中的超导配对机制与磁性和自旋涨落。",
+          "problem": "超导体系 中的超导配对机制与磁性和自旋涨落由哪些相互作用或对称性因素控制？",
+          "result": "结果分析了磁性相互作用、自旋涨落或磁有序结构对低能行为的影响。",
+          "methods": "Josephson 谱学。",
+          "why": "有助于跟踪超导材料、配对机制或临界性质的新进展。",
+          "summary": "本文关注 超导体系 中的超导配对机制与磁性和自旋涨落。",
+          "abstract": "We propose a superconducting circuit based on the Bloch transistor, a quantum device consisting of two small-capacitance Josephson junctions connected in series and having a small island in between. This device is driven by two dc electrical sources controlling Josephson oscillations of frequency $f_J = 2e\\overline{V_J}/h$, related to the average voltage $\\overline{V_J}$ on the transistor, and Bloch oscillations of frequency $f_B = \\overline{I_B}/2e$, related to the average current $\\overline{I_B}$ injected into the transistor island. Due to the Bloch transistor properties, these two types of oscillations can mutually phase lock, i.e., $f_J = f_B$. This leads to formation of current steps on the current-voltage curve at $\\overline{I}_B = 2ef_J$, which are similar to the dual Shapiro steps appearing at current $\\overline{I}=2ef$ under microwave irradiation of frequency $f$. Moreover, transconductance $\\overline{I_B}/\\overline{V_J}$ takes the fundamental value of $1/R_Q$, where $R_Q = h/4e^2$ is the resistance quantum. The obtained results pave the way to the alternative quantum standard of resistance, based on the superconducting circuit and operating without applying strong magnetic field.",
+          "priorityReason": "有助于跟踪超导材料、配对机制或临界性质的新进展。",
+          "comments": "",
+          "journalRef": "",
+          "subjects": "Superconductivity (cond-mat.supr-con) ; Quantum Physics (quant-ph)",
+          "sourceCategories": [
+            "cond-mat.supr-con"
+          ],
+          "url": "https://arxiv.org/abs/2605.14080"
+        },
+        {
+          "id": "2605.13978",
+          "title": "Generalized Model Fractional Quantum Hall States on Lattices",
+          "authors": "Guangyue Ji , Jie Wang",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "本文关注 强关联电子体系 中的拓扑性质与电子-晶格耦合。",
+          "problem": "强关联电子体系 中的拓扑性质与电子-晶格耦合如何由相互作用、晶格效应或对称性共同决定？",
+          "result": "结果给出了拓扑结构、边界态或对称性约束的具体判据。",
+          "methods": "模型分析与数值计算。",
+          "why": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "summary": "本文关注 强关联电子体系 中的拓扑性质与电子-晶格耦合。",
+          "abstract": "Model wave functions are essential for studying fractional quantum Hall phases, yet lattice model states have so far been limited to bosonic systems with on-site interactions. In this work, by combining analytical and numerical methods, we systematically construct lattice model states for the Laughlin, Moore--Read, and general $\\mathbb{Z}_k$ Read--Rezayi series. Our lattice-specific states are characterized by their idealized energy and entanglement features and are distinguished from their continuum counterparts by a modified clustering behavior. Our theory advances the understanding of the stability of topologically ordered phases and illustrates the organizing principles of the conformal Hilbert space on lattices. Practically, this work paves the way for further studying lattice-specific excitations and offers a constructive route for engineering topological orders within density interactions, with potential immediate implications for cold-atom and synthetic flat-band platforms.",
+          "priorityReason": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "comments": "12 pages, 7 figures, Comments are welcome",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el) ; Mesoscale and Nanoscale Physics (cond-mat.mes-hall)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.13978"
+        },
+        {
+          "id": "2605.13976",
+          "title": "All-Electric Quantum State Transfer via Spin-Orbit Phase Matching",
+          "authors": "Madhumita Sarkar , Roopayan Ghosh , Charles G. Smith , Maksym Myronov , Sougato Bose",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "本文关注 强关联电子体系 中的磁性和自旋涨落与输运性质。",
+          "problem": "强关联电子体系 中的磁性和自旋涨落与输运性质如何反映关联效应和对称性破缺？",
+          "result": "结果分析了磁性相互作用、自旋涨落或磁有序结构对低能行为的影响。",
+          "methods": "输运测量。",
+          "why": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "summary": "本文关注 强关联电子体系 中的磁性和自旋涨落与输运性质。",
+          "abstract": "Semiconductor hole-spin qubits offer a promising route to quantum computation due to their weak hyperfine interaction, and strong intrinsic spin-orbit coupling enabling electric control of qubits. Scalable architectures, however, require coherent long-distance quantum state transfer, which is hindered in these systems by spin-orbit induced anisotropic exchange. Here we show that this limitation can be overcome by using an all-electric control protocol. By tuning the electric field strength, we identify discrete spin-orbit phase-matching conditions that restore near-perfect state transfer, independent of the rotation axis. Complementarily, controlling the electric field direction aligns the spin-orbit axis, suppressing excitation non-conserving processes and enabling robust transfer without fine tuning. Our results establish that electrical control of spin-orbit phases through either magnitude tuning or axis alignment as a practical route for robust quantum information transport in hole-spin quantum dot arrays.",
+          "priorityReason": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "comments": "12 pages, 6 figures",
+          "journalRef": "",
+          "subjects": "Quantum Physics (quant-ph) ; Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.13976"
+        },
+        {
+          "id": "2605.13971",
+          "title": "Corner Charge Fluctuations in Higher Dimensions",
+          "authors": "Xiao-Chuan Wu , Pok Man Tam , Xuyang Liang , Zenan Liu , Dao-Xin Yao , Zheng Yan , Shinsei Ryu",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "本文关注 强关联电子体系 中的电子-晶格耦合与有效模型。",
+          "problem": "强关联电子体系 中的电子-晶格耦合与有效模型如何由相互作用、晶格效应或对称性共同决定？",
+          "result": "结果讨论了晶格自由度、结构效应或电子-晶格耦合与低能性质之间的关系。",
+          "methods": "Monte Carlo 模拟。",
+          "why": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "summary": "本文关注 强关联电子体系 中的电子-晶格耦合与有效模型。",
+          "abstract": "Measuring charge fluctuations within a subregion provides a powerful probe of quantum many-body systems. In two spatial dimensions, the shape dependence of the dimensionless corner contribution encodes universal data of quantum critical points and reveals observables of quantum geometry in various quantum phases. Here, we systematically extend this framework to higher dimensions. In three dimensions, we derive the universal angle dependence associated with trihedral corners of a generic parallelepiped and benchmark the predictions against Monte Carlo simulations of lattice models at the O(3) quantum critical point. We further identify a wedge-corner contribution that directly probes the quantum metric, supported by numerical results for a lattice Weyl semimetal model. More generally, we obtain angle functions for polyhedral corners of arbitrary parallelotopes in general dimensions and clarify the scaling of the corner contribution across phases of matter. While insulators and conformal critical points exhibit similar behavior across dimensions, metals display a characteristic even-odd dimensional effect.",
+          "priorityReason": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "comments": "22 pages, 6 figures",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el) ; Mesoscale and Nanoscale Physics (cond-mat.mes-hall); Statistical Mechanics (cond-mat.stat-mech); High Energy Physics - Theory (hep-th)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.13971"
+        },
+        {
+          "id": "2605.13961",
+          "title": "A Twist on Scattering from Defect Anomalies",
+          "authors": "Andrea Antinucci , Christian Copetti , Giovanni Galati , Giovanni Rizi",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "本文关注 强关联电子体系 中的磁性和自旋涨落与电子-晶格耦合。",
+          "problem": "强关联电子体系 中的磁性和自旋涨落与电子-晶格耦合如何由相互作用、晶格效应或对称性共同决定？",
+          "result": "结果分析了磁性相互作用、自旋涨落或磁有序结构对低能行为的影响。",
+          "methods": "模型分析与数值计算。",
+          "why": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "summary": "本文关注 强关联电子体系 中的磁性和自旋涨落与电子-晶格耦合。",
+          "abstract": "In the presence of extended defects, familiar incoming particles can scatter into exotic outgoing states created by twist operators. We show that one possible mechanism driving these \"categorical scattering\" processes is the presence of localized 't Hooft anomalies on the defect's worldvolume. Defect anomalies trap non-trivial charges at junctions between the symmetry lines and the interface, opening new transmission channels that would naively appear to violate selection rules. After outlining the general mechanism, we investigate several concrete examples with defects, interfaces, and boundaries. For models of massless chiral fermions already studied in the literature, we show that the emergence of twist operators can be understood as a consequence of defect anomalies. We then introduce new massive integrable theories in which a similar phenomenon occurs, and we explicitly solve the associated scattering problem, obtaining new integrable solutions. Finally, we construct lattice spin chains with defects where similar physics is expected to arise.",
+          "priorityReason": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "comments": "50 Pages + Appendices. Comments are welcome",
+          "journalRef": "",
+          "subjects": "High Energy Physics - Theory (hep-th) ; Strongly Correlated Electrons (cond-mat.str-el); High Energy Physics - Phenomenology (hep-ph)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.13961"
+        },
+        {
+          "id": "2605.13952",
+          "title": "Non-Invertible Symmetries and Boundaries for Two-Dimensional Fermions",
+          "authors": "Guillermo Arias-Tamargo , Philip Boyle Smith , Rishi Mouland , Maxwell L. Velásquez Cotini Hutt",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "本文关注 强关联电子体系 中的拓扑性质。",
+          "problem": "强关联电子体系 中的拓扑性质如何由相互作用、晶格效应或对称性共同决定？",
+          "result": "结果给出了拓扑结构、边界态或对称性约束的具体判据。",
+          "methods": "模型分析与数值计算。",
+          "why": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "summary": "本文关注 强关联电子体系 中的拓扑性质。",
+          "abstract": "We study the relation between boundary conditions and categorical symmetries of two-dimensional fermionic conformal field theories. We determine all anomaly-free invertible global symmetries of two free complex Weyl fermions, which take the form $\\mathbb{Z}_k$ for each primitive Pythagorean triple $a^2 + b^2 = k^2$. The theory is self-dual under gauging any of these symmetries, and so to each there is associated a non-invertible topological defect. We study the properties of these lines, and show that any conformal boundary condition of two Dirac fermions that preserves a $U(1)^2$ symmetry can be found by dressing a trivial Dirichlet boundary with one of them. We discuss two microscopic descriptions of these defects: fermions coupled to a quantum-mechanical rotor degree of freedom; and an abelian gauge theory that realises symmetric mass generation in a half-space.",
+          "priorityReason": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "comments": "48 pages + appendices",
+          "journalRef": "",
+          "subjects": "High Energy Physics - Theory (hep-th) ; Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.13952"
+        },
+        {
+          "id": "2605.13951",
+          "title": "Fermi Surface Geometry from Charge Fluctuations in Three-Dimensional Metals",
+          "authors": "Pok Man Tam , Yarden Sheffer , Xiao-Chuan Wu , F. D. M. Haldane , Shinsei Ryu",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "本文关注 强关联电子体系 中的费米面结构与拓扑性质。",
+          "problem": "强关联电子体系 中的费米面结构与拓扑性质如何由相互作用、晶格效应或对称性共同决定？",
+          "result": "结果给出了拓扑结构、边界态或对称性约束的具体判据。",
+          "methods": "结合理论分析、数值计算或实验表征。",
+          "why": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "summary": "本文关注 强关联电子体系 中的费米面结构与拓扑性质。",
+          "abstract": "For three-dimensional non-interacting multi-band metals, we show that important information about the shape and the quantum geometry of Fermi surfaces is encoded in the subleading logarithmic term of bipartite charge fluctuations. This logarithmic term is related to the dimensionless $|\\mathbf{q}|^3$-coefficient of the structure factor in momentum space, and both quantities can be expressed as Fermi surface integrals of the Fermi surface curvature tensor and the quantum metric tensor. When the real-space partition surface is a quadric (i.e., sphere or ellipsoid), the logarithmic coefficient satisfies a topological bound depending only on the Euler characteristic and the Chern number of the Fermi surface, illustrating a non-trivial interplay between topology and quantum topology in multi-band metals.",
+          "priorityReason": "有助于跟踪强关联体系中的新材料、新模型或新实验线索。",
+          "comments": "Main: 4.5 pages, 3 figures; Supplemental: 5 sections, 1 figure",
+          "journalRef": "",
+          "subjects": "Mesoscale and Nanoscale Physics (cond-mat.mes-hall) ; Quantum Gases (cond-mat.quant-gas); Strongly Correlated Electrons (cond-mat.str-el); High Energy Physics - Theory (hep-th); Quantum Physics (quant-ph)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.13951"
+        }
+      ]
+    },
     {
       "date": "2026-05-14",
       "title": "2026 年 5 月 14 日",
