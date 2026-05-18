@@ -658,6 +658,111 @@ function resultFromTitle(paper) {
 function manualSummary(paper) {
   const title = cleanupLatex(paper.title).toLowerCase();
   const entries = [
+    [/flat-bottom u-shaped energy gap.*nickelate|high-tc nickelate.*la,pr/, {
+      oneLine: "在高 Tc 双层镍酸盐 (La,Pr)3Ni2O7 薄膜中观测到平底 U 形超导能隙。",
+      problem: "常压双层镍酸盐薄膜中的高 Tc 超导是否具有清晰、对称且无残余态密度的能隙特征？",
+      result: "结果表明，STM/S 在费米能级附近观测到能量对称的平底 U 形能隙和接近零的残余态密度，支持薄膜中存在较完整的超导能隙。",
+      methods: "超低温 STM/STS、薄膜输运测量与能隙谱分析。",
+      why: "这是常压镍酸盐薄膜超导能隙的直接局域谱学证据，和高温超导机制高度相关。"
+    }],
+    [/magnetic frustration.*elastocaloric/, {
+      oneLine: "提出用 elastocaloric effect 揭示受挫磁体中的熵和相变特征。",
+      problem: "单轴应变下的热力学响应能否作为识别磁受挫和自旋液体区的探针？",
+      result: "结果表明，弹性 Grüneisen 比在最大受挫点附近可显著增强，反映出宏观基态熵和受挫磁体对应变的强响应。",
+      methods: "各向异性三角和 kagome 晶格 Ising/Heisenberg 模型、熵计算与 elastocaloric 分析。",
+      why: "为压力和应变调控量子磁体提供了一个热力学诊断量。"
+    }],
+    [/spherically symmetric approaches.*low-dimensional magnets/, {
+      oneLine: "综述低维磁体理论研究中的球对称自洽方法。",
+      problem: "如何在低维 Heisenberg 类模型中同时处理 Mermin-Wagner 约束、自旋约束和受挫效应？",
+      result: "结果表明，球对称自洽方法可避免传统低维磁性分析中的若干困难，并可推广到含载流子的 Hubbard、t-J 和 Kondo lattice 等模型。",
+      methods: "球对称自洽理论、低维自旋模型和相关算法综述。",
+      why: "为低维受挫磁体和含载流子自旋模型提供方法背景。"
+    }],
+    [/redesigning trotter decomposition.*local symmetry/, {
+      oneLine: "用局域 SU(2) 对称性重新设计 Trotter 分解。",
+      problem: "数字量子模拟中是否能超越简单对易分组，降低 Trotter 误差和线路深度？",
+      result: "结果表明，按局域三站点 SU(2) 对称性分组可把生成元归入少数类型，并给出高效的两比特 SU(4) 实现。",
+      methods: "局域对称性分组、Trotter 分解和量子线路构造。",
+      why: "偏量子模拟算法，可服务复杂多体哈密顿量的数字实现。"
+    }],
+    [/near-degenerate competing magnetic orders.*euagas/, {
+      oneLine: "研究 EuAgAs 中近简并竞争磁序及其通向 altermagnetism 的可调路径。",
+      problem: "EuAgAs 的真实磁基态是否与理论预言的 altermagnetic Dirac semimetal 一致？",
+      result: "结果表明，中子衍射发现体相基态为 q=(0,0,1/2) 的反铁磁结构，而 DFT 显示多个磁序近简并，说明外部调控可能推动其进入 altermagnetic 相。",
+      methods: "中子衍射、DFT 计算与磁结构比较。",
+      why: "把 altermagnetism、拓扑能带和可调竞争磁序联系起来。"
+    }],
+    [/charge-sensitive vibrational modes.*bedt-ttf/, {
+      oneLine: "综述 BEDT-TTF 盐中对电荷敏感的振动模如何表征电荷序和位点电荷。",
+      problem: "C=C 伸缩振动能否可靠量化有机导体中的电荷分布和电荷有序？",
+      result: "结果表明，不同振动模对位点电荷具有明确频移响应，但在判定位点电荷和电荷序时需要注意模式选择和材料环境。",
+      methods: "BEDT-TTF 振动光谱综述与电荷-频率标定分析。",
+      why: "为有机强关联导体中 Mott、电荷序和超导相的谱学判读提供参考。"
+    }],
+    [/field-induced ordered intermediate phase.*na.*co.*te/, {
+      oneLine: "研究 Na2Co2TeO6 中磁场诱导有序中间相的热力学特征。",
+      problem: "Na2Co2TeO6 高场相图中的中间相是否为场诱导量子自旋液体？",
+      result: "结果表明，磁化、比热和磁热效应揭示三个场诱导转变；Bc2 与 Bc3 之间的相缺少量子自旋液体所预期的熵特征，更像有序中间相。",
+      methods: "磁化、比热和磁热效应测量。",
+      why: "为蜂窝 Kitaev 候选材料高场相的本质提供热力学约束。"
+    }],
+    [/lieb-schultz-mattis constraints.*hyperbolic/, {
+      oneLine: "把 Lieb-Schultz-Mattis 约束推广到双曲晶格。",
+      problem: "负曲率二维空间中的规则双曲晶格是否也受 LSM 型填充约束限制？",
+      result: "结果表明，可将 Oshikawa flux-threading 思路推广到具有 Fuchsian 平移对称性的周期双曲晶格，并给出基态简并度下界。",
+      methods: "双曲能带理论、多体 flux-threading 和 LSM 定理推广。",
+      why: "为非欧几何晶格中的强关联相和对称性约束提供基础理论。"
+    }],
+    [/non-relativistic spin-orbit.*triplet superconductors/, {
+      oneLine: "研究三重态超导体中的非相对论自旋-轨道耦合效应。",
+      problem: "三重态序参量能否在没有相对论 SOC 的情况下产生动量依赖自旋纹理和 Edelstein 响应？",
+      result: "结果表明，三重态配对会使 Bogoliubov 准粒子的轨道和自旋运动纠缠，从而允许电场诱导自旋极化和非线性 DC 自旋流。",
+      methods: "三重态超导有效理论、Edelstein 效应和电场驱动自旋泵浦分析。",
+      why: "连接非常规超导、altermagnet 类自旋分裂和超导自旋电子学。"
+    }],
+    [/lattice relaxation flattens chern bands/, {
+      oneLine: "研究晶格弛豫如何在菱方石墨烯堆垛中压平 Chern bands。",
+      problem: "与 hBN 对齐的菱方石墨烯中，层剪切应变形成的 moiré 势如何影响 Chern 带？",
+      result: "结果表明，晶格弛豫产生的应变场虽随层数衰减，但仍可显著压平和隔离 Chern 带，并在相互作用下进一步增强。",
+      methods: "moiré 应变模型、能带计算与相互作用分析。",
+      why: "有助于理解菱方石墨烯中整数和分数 Chern 绝缘态的材料机制。"
+    }],
+    [/born-rule statistical dynamical quantum phase transitions/, {
+      oneLine: "研究测量下遵循 Born rule 的统计动力学量子相变。",
+      problem: "量子淬火后按 Born rule 采样的测量后态是否具有统计意义上的 DQPT？",
+      result: "结果表明，测量后态分布可映射为统计模型，并通过平均动力学自由能刻画非解析行为。",
+      methods: "一维量子 Ising 链淬火、Born rule 采样和统计模型映射。",
+      why: "扩展了动力学量子相变在测量和混合态情形下的定义。"
+    }],
+    [/tunable crossed andreev reflection/, {
+      oneLine: "提出在 bipolar magnetic semiconductor 中可调控的 crossed Andreev reflection。",
+      problem: "如何独立调节两个区域的化学势来控制非局域 Andreev 反射和电子-空穴纠缠？",
+      result: "结果表明，利用导带和价带相反自旋极化的 BMS，可通过门控实现 CAR 强度和自旋选择性的可调控制。",
+      methods: "超导-BMS 杂化结构模型与非局域输运分析。",
+      why: "为超导自旋电子学和非局域纠缠输运提供器件思路。"
+    }],
+    [/critical temperature.*high-entropy electron mixture/, {
+      oneLine: "提出用高熵电子混合有效提升超导临界温度的理论机制。",
+      problem: "能否把导带和价带电子的混合熵转化为提高超导 Tc 的有效贡献？",
+      result: "结果表明，金属 trap 移除准粒子激发后，Cooper 对浓度可成为混合熵的动力学变量，从而有效降低 Ginzburg-Landau 一阶系数并提升 Tc。",
+      methods: "Ginzburg-Landau 理论与高熵电子混合模型。",
+      why: "提供一种利用非平衡或开放环境调控超导临界温度的理论设想。"
+    }],
+    [/equidistant resonance jumps.*coplanar resonators/, {
+      oneLine: "研究 Abrikosov vortices 驱动的超导共面谐振器等间距共振跳变。",
+      problem: "垂直磁场下 Nb 共面谐振器中的阶梯式共振跳变来自什么涡旋过程？",
+      result: "结果表明，超过可逆 Meissner 区后，谐振峰随磁场出现近等间距跳变，可解释为多涡旋进入和退出事件。",
+      methods: "低温微波透射测量、磁场扫描和涡旋进入估算。",
+      why: "为磁场中超导微波器件的涡旋损耗和频率稳定性提供实验线索。"
+    }],
+    [/itinerant antiferromagnetism.*y.*co.*ag/, {
+      oneLine: "报道 antagonistic pair 化合物 Y4Co3Ag 中的巡游反铁磁性。",
+      problem: "低维 Co 链结构是否能在 Y4Co3Ag 中产生巡游反铁磁有序和关联输运行为？",
+      result: "结果表明，Y4Co3Ag 在 14.9 K 发生反铁磁有序，磁熵释放很小，指向巡游磁性而非局域矩完全有序。",
+      methods: "材料合成、输运、磁化和比热测量。",
+      why: "为低维结构单元诱导的巡游磁性和关联电子行为提供新材料。"
+    }],
     [/nagaoka supermetal/, {
       oneLine: "研究粒子掺杂三角晶格 Hubbard 模型中的 Nagaoka supermetal。",
       problem: "几何受挫 Mott 绝缘体在粒子掺杂后会形成怎样的非常规金属态？",
@@ -1540,6 +1645,12 @@ async function main() {
   day.note = buildNote(day);
 
   const existing = await readExistingData();
+  const previousDay = (existing.days || []).find(item => item.date === targetDate);
+  if (previousDay && JSON.stringify(previousDay) === JSON.stringify(day)) {
+    console.log(`No content changes for ${targetDate}; ${DATA_FILE} is already current.`);
+    return;
+  }
+
   const days = [
     day,
     ...(existing.days || []).filter(item => item.date !== targetDate)
