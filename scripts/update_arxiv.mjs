@@ -658,6 +658,209 @@ function resultFromTitle(paper) {
 function manualSummary(paper) {
   const title = cleanupLatex(paper.title).toLowerCase();
   const entries = [
+    [/controlled expansion.*correlated electrons.*concentrated kinematics/, {
+      oneLine: "提出适用于局域强相互作用体系的集中动量学受控展开。",
+      problem: "强关联电子体系中能否构造一个可解析计算有限直流输运和响应函数的受控小参数展开？",
+      result: "结果表明，当动量空间动力学集中在小区域时，长自避免隧穿路径占主导，可统一描述坏金属、热 FL* 小口袋和集中 Berry 曲率 Chern 带中的谱展宽。",
+      methods: "集中色散 Hubbard 模型、关联跃迁模型、Chern 带模型和解析受控展开。",
+      why: "为强关联体系中非费米液体输运和谱函数计算提供了新的可控理论工具。"
+    }],
+    [/nearly perfect fermi surface nesting.*hole-doped la.*ni.*o/, {
+      oneLine: "提出空穴掺杂 La3Ni2O7 可在常压体相中通过近完美费米面嵌套实现超导。",
+      problem: "是否能在不加压力或应变的条件下，在体相 La3Ni2O7 中获得可观测超导？",
+      result: "结果表明，空穴掺杂诱导的 Ni-d3z2-r2 口袋在 x 接近 0.4 时形成近完美费米面嵌套，从而增强反铁磁自旋涨落和超导本征值。",
+      methods: "密度泛函理论、动力学平均场理论、随机相近似和超导能隙方程求解。",
+      why: "给出镍酸盐常压体相超导的一条具体、可实验检验路线。"
+    }],
+    [/imaging stripe dynamics.*trilayer nickelate/, {
+      oneLine: "用自旋极化 STM 在三层镍酸盐 La4Ni3O10 中成像条纹序及其动力学。",
+      problem: "镍酸盐中是否存在类似铜氧化物的实空间条纹序，并能否直接观察其动态相滑移？",
+      result: "结果表明，La4Ni3O10 中出现四个晶胞周期的条纹序并打开约 66 meV 能隙，隧穿电子还能触发离散相滑移，实现原子尺度条纹动力学成像。",
+      methods: "自旋极化扫描隧穿显微镜和局域谱学成像。",
+      why: "把镍酸盐和铜氧化物中关联驱动的条纹物理直接联系起来。"
+    }],
+    [/itinerant nature.*spin-density-wave.*ruddlesden-popper nickelates/, {
+      oneLine: "提出多层 Ruddlesden-Popper 镍酸盐自旋密度波的巡游电子图像。",
+      problem: "La3Ni2O7 和 La4Ni3O10 中的磁性更接近局域矩，还是由费米面嵌套驱动的巡游自旋密度波？",
+      result: "结果表明，NiO2 多层镜面对称性把低能态分成镜面对称部门，镜面相反能带之间的嵌套可驱动选择性的巡游 SDW，并自然产生类自旋波谱。",
+      methods: "多层镍酸盐低能模型、能带嵌套分析和集体模计算。",
+      why: "为镍酸盐磁关联和伴随电荷纹理提供统一的巡游机制。"
+    }],
+    [/vortex order.*geni.*geco.*spinels/, {
+      oneLine: "在受挫尖晶石 GeNi2O4 和 GeCo2O4 中识别由各向异性稳定的自旋涡旋晶体。",
+      problem: "复杂交换和磁各向异性能否在 pyrochlore 晶格尖晶石中稳定短周期多 k 涡旋磁结构？",
+      result: "结果表明，GeB2O4 家族可稳定 2-k 磁结构，对应由各向异性诱导的短周期自旋涡旋晶体，并可视为 3-k Bloch-point 结构的变体。",
+      methods: "非弹性中子散射、单晶中子衍射和交换相图联合建模。",
+      why: "为受挫反铁磁体中的奇异自旋纹理和各向异性调控提供实验案例。"
+    }],
+    [/detecting vortex motion.*spatially correlated nonequilibrium noise/, {
+      oneLine: "提出用空间关联非平衡磁噪声区分涡旋运动和普通准粒子输运。",
+      problem: "接近超导相时，如何无歧义判断电阻输运来自涡旋运动还是正常准粒子漂移？",
+      result: "结果表明，电流驱动下普通载流子沿电流方向漂移，而涡旋因 Magnus 力垂直漂移；这种方向指纹可由 NV 中心协方差磁ometry 检出。",
+      methods: "协方差磁测量理论、薄膜超导体噪声关联计算和涡旋动力学分析。",
+      why: "为实验识别高温超导涨落区中的涡旋输运提供了直接判据。"
+    }],
+    [/band structure and topology.*periodically deformed kitaev/, {
+      oneLine: "研究周期形变和磁场如何改变 Kitaev 蜂窝模型的能带与拓扑。",
+      problem: "类似 moire 的周期形变能否在 Kitaev 自旋液体中诱导能隙和拓扑相变？",
+      result: "结果表明，周期形变会折叠布里渊区并在边界打开新能隙；加入破坏时间反演的磁场后可出现多次能隙闭合、重开和非零 Chern 数。",
+      methods: "可解 Kitaev 模型推广、周期形变能带计算和 Chern 数分析。",
+      why: "展示形变工程可作为调控自旋液体拓扑响应的有效手段。"
+    }],
+    [/higher-order weyl nodes.*helical magnetic order.*euagas/, {
+      oneLine: "在 EuAgAs 中发现螺旋磁序并预言其可驱动高阶 Weyl 节点。",
+      problem: "EuAgAs 的真实磁基态是什么，它如何影响拓扑电子能带？",
+      result: "结果表明，EuAgAs 经历两个磁相变并形成沿 c 轴的横向螺旋磁结构；第一性原理预言该螺旋相会产生能带折叠和有效高阶 Weyl 节点。",
+      methods: "中子衍射、共振弹性 X 射线散射、球形中子极化分析、ARPES 和第一性原理计算。",
+      why: "把可测磁结构和磁拓扑半金属中的新型 Weyl 准粒子联系起来。"
+    }],
+    [/stringy t-duality.*twisted villain model/, {
+      oneLine: "构造 twisted Villain 格点模型，实现有限格距上的 stringy T-duality。",
+      problem: "连续场论中的 T-duality 是否能在有限格距格点模型中精确实现？",
+      result: "结果表明，将格点纤维场与描述丛联络和 B 场的 cochain 耦合后，可精确恢复弯曲背景中的丛-通量交换，并得到拓扑缺陷作用量。",
+      methods: "紧玻色子格点对偶、twisted Villain 模型和 half-gauging 构造。",
+      why: "为格点正则化中保持非平庸拓扑对偶性提供场论工具。"
+    }],
+    [/electronic and magnonic properties.*g-wave altermagnetism/, {
+      oneLine: "研究插层 TMD 中 g 波 altermagnetism 的电子和磁振子性质。",
+      problem: "Fe1/4NbS2 和 V1/3NbS2 中的 altermagnetic 自旋劈裂和磁振子手征劈裂由哪些微观因素控制？",
+      result: "结果表明，g 波电子自旋劈裂来自键依赖跃迁各向异性，磁振子手征劈裂由单离子各向异性控制，并会受到 magnon-magnon 相互作用重整化。",
+      methods: "紧束缚模型、自旋模型、第一性原理计算和 1/S 修正。",
+      why: "把插层 TMD 确立为研究非相对论自旋劈裂和 altermagnetism 的候选平台。"
+    }],
+    [/hidden weak-pairing superconductivity.*anyons/, {
+      oneLine: "提出 1/3 统计任意子的隐藏弱配对超导机制。",
+      problem: "掺杂分数 Chern 绝缘体中的 charge-e/3 任意子能否不依赖外加相互作用而形成非常规超导？",
+      result: "结果表明，三重任意子口袋允许平均统计通量抵消，统计规范场涨落可使复合费米子形成 p-ip 弱配对态，对应物理 f-if 手征超导。",
+      methods: "通量附着构造、复合费米子理论和拓扑边界中心荷分析。",
+      why: "为分数 Chern 绝缘体附近出现的超导提供自然理论框架。"
+    }],
+    [/finite-temperature spin diffusion.*two-dimensional xy model/, {
+      oneLine: "定量测量并计算二维量子 XY 模型的有限温自旋扩散。",
+      problem: "二维强相互作用自旋体系的扩散常数能否由理论和量子模拟实验精确一致地确定？",
+      result: "结果表明，高温动力学展开与光晶格硬核玻色子量子模拟给出的自旋扩散常数高度一致，验证了二维自旋输运的定量模拟能力。",
+      methods: "动力学高温展开、光晶格量子模拟和自旋扩散常数提取。",
+      why: "为一维之外的量子自旋输运和量子模拟平台定量验证提供基准。"
+    }],
+    [/spectral and transmission properties.*correlated quantum dots/, {
+      oneLine: "用稳态密度泛函 i-DFT 简化多关联量子点的谱和透射计算。",
+      problem: "能否以低计算成本捕捉从 Coulomb blockade 到 Kondo 区域的多量子点输运性质？",
+      result: "结果表明，为不同相互作用和耦合几何构造的交换-关联泛函可准确给出谱函数和透射，并与多体方法结果吻合。",
+      methods: "稳态 i-DFT、交换-关联泛函构造和多量子点输运基准。",
+      why: "为纳米关联体系输运提供比显式多体方法更便宜的计算路线。"
+    }],
+    [/secondary collective excitations.*strong-coupling superconductors/, {
+      oneLine: "预言中强耦合超导体中的次级相位模和振幅模。",
+      problem: "能量转移依赖的有效电子相互作用会在常规集体模之外产生哪些新的超导激发？",
+      result: "结果表明，中等耦合时振幅模从准粒子连续谱下移，强耦合时会出现位于连续谱下方且寿命较长的次级集体模。",
+      methods: "有效相互作用推导、迭代运动方程和响应函数计算。",
+      why: "为强耦合超导体中可被谱学探测的集体模提供新预言。"
+    }],
+    [/tunable magnetotransport.*kinetically hindered first-order phase transitions/, {
+      oneLine: "利用反铁磁金属 CeCoGe3 中受动力学阻滞的一阶相变实现多级磁阻态。",
+      problem: "能否通过控制磁相共存比例来获得稳定可调的多级电阻状态？",
+      result: "结果表明，在磁场中冷却 CeCoGe3 可形成高低温磁相共存的磁玻璃态，电阻直接反映相分数并产生稳定多级阻态。",
+      methods: "磁场冷却、磁输运测量和一阶磁相变分析。",
+      why: "为多级磁阻存储和类脑计算材料提供候选机制。"
+    }],
+    [/pepskit\.jl.*projected entangled-pair state/, {
+      oneLine: "介绍用于二维量子多体 iPEPS 模拟的 Julia 软件包 PEPSKit.jl。",
+      problem: "如何为具有不同对称性、晶格几何和费米自由度的二维量子多体问题提供统一 iPEPS 工具？",
+      result: "结果展示了 PEPSKit.jl 对基态、时间演化和有限温模拟的支持，并通过示例和基准测试说明其功能。",
+      methods: "无限投影纠缠对态、张量网络算法和 Julia 软件实现。",
+      why: "属于强关联数值工具建设，可服务二维模型和材料有效模型研究。"
+    }],
+    [/accelerated.*coupled-cluster path-integral molecular dynamics/, {
+      oneLine: "提出加速的 on-the-fly coupled-cluster 路径积分分子动力学方法。",
+      problem: "如何在有限温模拟中同时处理电子关联和核量子效应而保持计算可行？",
+      result: "结果表明，qRPC、类 Car-Parrinello 动力学和振幅外推的组合可显著加速关联 PIMD；在非对称氢键中，核量子效应会降低质子偏向甲醛的概率。",
+      methods: "coupled-cluster、路径积分分子动力学、量子 ring-polymer contraction 和核磁屏蔽计算。",
+      why: "为需要同时考虑电子关联与核量子涨落的材料和分子模拟提供方法。"
+    }],
+    [/geometric curvature driven by many-body collective fluctuations/, {
+      oneLine: "提出多体集体涨落可产生可观测的动力学 Berry 曲率贡献。",
+      problem: "量子几何是否只来自裸能带，还是也可由相互作用驱动的集体涨落动态生成？",
+      result: "结果表明，集体模 dressing 的传播子和响应顶角会产生额外 Berry 曲率贡献，并可通过非弹性散射谱中的反对称通道与裸能带几何区分。",
+      methods: "相互作用响应理论、集体模修正和非弹性散射通道分析。",
+      why: "扩展了量子几何在强关联体系中的实验判读方式。"
+    }],
+    [/filling-sensitive spectral complexity.*hilbert-space holonomy/, {
+      oneLine: "用 Hilbert 空间 holonomy 解释碎裂非 Hermitian 多体系统的填充敏感谱实性。",
+      problem: "为什么某些碎裂非 Hermitian 系统只在特定填充扇区出现复谱？",
+      result: "结果表明，非互易跃迁可视为 Krylov 图上的离散规范场；平庸 holonomy 可映射到 Hermitian 极限，而非平庸 holonomy 阻碍该映射并允许复谱。",
+      methods: "碎裂模型、Krylov 图、离散规范场和相似变换分析。",
+      why: "为非 Hermitian 多体谱结构提供区别于常规对称保护的几何组织原则。"
+    }],
+    [/ultrafast superconducting diode effect/, {
+      oneLine: "报道中心对称 NbN 薄膜中的超快超导二极管效应。",
+      problem: "能否实现不依赖慢涡旋运动、速度高得多的超导非互易输运？",
+      result: "结果表明，在准直流超流偏置下，同向皮秒脉冲遇到电阻阻抗而反向脉冲表现为电感响应，可整流 100 GHz 信号，速度比常规超导二极管快三个数量级以上。",
+      methods: "NbN 薄膜超快脉冲输运、非互易阻抗测量和高频整流测试。",
+      why: "为 THz 级超导逻辑和低耗散电子学提供潜在器件机制。"
+    }],
+    [/quantum effective action.*dissipative semiclassical dynamics/, {
+      oneLine: "用 Schwinger-Keldysh 量子有效作用量推导耗散半经典动力学的量子修正。",
+      problem: "宏观耗散自由度的 Langevin 动力学在低温弱阻尼下应如何加入量子涨落修正？",
+      result: "结果表明，量子修正由经典欠阻尼频率处的零点涨落能决定，并可在 Josephson 结和长形玻色结中达到百分量级。",
+      methods: "Schwinger-Keldysh 有效作用量、Ehrenfest 定理分析和 Josephson 结应用。",
+      why: "为超导 Josephson 器件和耗散量子动力学的半经典建模提供系统修正。"
+    }],
+    [/planckian dissipation.*classical hydrodynamics/, {
+      oneLine: "从经典流体力学自洽性推出 Planckian 耗散尺度。",
+      problem: "低温量子系统若仍可由经典流体力学描述，需要满足怎样的弛豫速率约束？",
+      result: "结果表明，量子涨落-耗散定理会在 Planckian 时间尺度上模糊相关函数细节；若低温下仍保留有限经典流体区，弛豫率必须至少达到 Planckian 量级。",
+      methods: "扩散、telegraph 和 diffusive-telegraph 方程的时域涨落-耗散分析。",
+      why: "从有效经典描述的自洽性角度解释扩散和黏滞中的 Planckian 标度。"
+    }],
+    [/fractonic constraints.*magnetic order.*dipole-conserving spin chain/, {
+      oneLine: "研究偶极守恒自旋链中 fractonic 约束与磁有序的竞争。",
+      problem: "强动力学约束阻止孤立自旋激发传播时，一维自旋链还能形成怎样的磁有序？",
+      result: "结果表明，体系可稳定反铁磁偶极有序，并在强 Ising 相互作用下转变为常规自旋反铁磁或铁磁相。",
+      methods: "DMRG、大规模对角化、序参量、纠缠谱和动力学谱函数分析。",
+      why: "揭示 fracton 动力学约束下仍可出现非平庸磁相和相变。"
+    }],
+    [/green's function-free formalism.*projective truncation approximation/, {
+      oneLine: "把投影截断近似重写为不依赖 Green 函数的约化密度矩阵形式。",
+      problem: "PTA 是否可以作为约化密度矩阵的自洽理论来表述，而不是依赖 Green 函数运动方程？",
+      result: "结果表明，PTA 方程可转化为过约束优化问题，并与变分约化密度矩阵理论建立联系，同时澄清动力学矩阵和静态分量问题。",
+      methods: "约化密度矩阵形式化、动力学矩阵分析、广义 virial 定理和广义 Wick 定理。",
+      why: "为多体哈密顿量的系统截断近似提供更清晰的变分框架。"
+    }],
+    [/translation-invariant quantum low-density parity-check codes.*fracton/, {
+      oneLine: "用紧化 fracton 模型统一构造平移不变量子 LDPC 码。",
+      problem: "如何统一理解局域和长程校验的平移不变量子纠错码，尤其是 fracton 码和 A2BGA 码？",
+      result: "结果表明，A2BGA 码可视为高维 hypergraph product fracton 父模型的不同紧化后代，许多同权重 BB 码来自同一个父模型。",
+      methods: "fraton 父模型、balanced product 结构、紧化和码参数界推广。",
+      why: "为 fracton 物理与量子纠错码之间的结构关系提供统一图像。"
+    }],
+    [/heat capacity.*mnge metallic helimagnet/, {
+      oneLine: "从热容分析中提取 MnGe 金属螺旋磁体的自旋涨落贡献。",
+      problem: "MnGe 的零场热容中除电子和声子项外，是否存在可分辨的自旋涨落贡献？",
+      result: "结果表明，自旋涨落项在顺磁和磁有序态的宽温区内存在，尽管幅度小于声子贡献；提取的自旋涨落温度约为 330 K。",
+      methods: "热容分解、电子和声子项拟合以及自旋涨落模型分析。",
+      why: "为金属螺旋磁体 MnGe 中高温自旋涨落提供热力学证据。"
+    }],
+    [/deconfined boundary phase transition.*quantum critical heisenberg/, {
+      oneLine: "研究量子临界 Heisenberg 模型边界上的 deconfined 相变。",
+      problem: "带 dangling 自旋链的二维量子临界 Heisenberg 模型边界能否从反铁磁序连续转变到 VBS 序？",
+      result: "结果表明，边界 Q 项可驱动连续边界相变，并得到反铁磁和 VBS 序参量的临界指数；临界体态介导的准长程相互作用稳定边界弱反铁磁序。",
+      methods: "大规模量子 Monte Carlo、边界多自旋 Q 项和有限尺寸标度。",
+      why: "为低维量子临界体的边界相和拓扑项效应提供数值证据。"
+    }],
+    [/magnetic phases.*j.*j.*antiferromagnetic xy model.*honeycomb/, {
+      oneLine: "绘制蜂窝晶格 J1-J2 反铁磁 XY 模型的基态磁相图。",
+      problem: "竞争性 J2 相互作用如何改变蜂窝晶格 XY 反铁磁体的基态有序？",
+      result: "结果识别出 Néel、Ising、共线和非公度螺旋相，并表明共线相会随 J2/J1 增大通过二阶相变进入非公度螺旋相。",
+      methods: "corner transfer matrix renormalization group 和无限螺旋 PEPS ansatz。",
+      why: "为受挫蜂窝自旋模型中的竞争磁序提供张量网络基准。"
+    }],
+    [/gaussian superconducting fluctuations.*nonlocal noise magnetometry/, {
+      oneLine: "计算非局域噪声磁测量中 Gaussian 超导涨落的信号特征。",
+      problem: "NV 中心等自旋量子比特对能否区分 Gaussian Cooper 对涨落和涡旋液体噪声？",
+      result: "结果给出二维体系和线状体系中由涨落 Cooper 对产生的两点磁噪声谱，并指出高温超导体中信号最强，可与涡旋液体特征对比。",
+      methods: "时间依赖 Ginzburg-Landau 理论、磁噪声谱和非局域噪声磁ometry。",
+      why: "为实验判别超导涨落性质提供另一种空间相关探针。"
+    }],
     [/revealing hund superdispersion/, {
       oneLine: "用隧穿谱在 Sr2RuO4 中识别 Hund 耦合导致的超常色散谱特征。",
       problem: "多轨道 Hund 金属中是否存在区别于 Mott-Hubbard 图像的谱学指纹？",

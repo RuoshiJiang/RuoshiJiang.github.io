@@ -1,5 +1,5 @@
 window.ARXIV_DAILY_DATA = {
-  "updatedAt": "2026-05-19T09:40:25.188Z",
+  "updatedAt": "2026-05-20T09:31:26.709Z",
   "timezone": "Europe/London",
   "categories": [
     {
@@ -12,6 +12,850 @@ window.ARXIV_DAILY_DATA = {
     }
   ],
   "days": [
+    {
+      "date": "2026-05-20",
+      "title": "2026 年 5 月 20 日",
+      "note": "今日 arXiv recent 中文整理：共 29 篇，str-el 25 篇，supr-con 9 篇。",
+      "stats": {
+        "total": 29,
+        "str": 25,
+        "supr": 9
+      },
+      "sourcePages": [
+        "https://arxiv.org/list/cond-mat.str-el/recent",
+        "https://arxiv.org/list/cond-mat.supr-con/recent"
+      ],
+      "focusCount": 3,
+      "papers": [
+        {
+          "id": "2605.20171",
+          "title": "Controlled expansion for correlated electrons with concentrated kinematics",
+          "authors": "Pavel A Nosov , Eslam Khalaf , Patrick Ledwith",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": true,
+          "score": 24,
+          "oneLine": "提出适用于局域强相互作用体系的集中动量学受控展开。",
+          "problem": "强关联电子体系中能否构造一个可解析计算有限直流输运和响应函数的受控小参数展开？",
+          "result": "结果表明，当动量空间动力学集中在小区域时，长自避免隧穿路径占主导，可统一描述坏金属、热 FL* 小口袋和集中 Berry 曲率 Chern 带中的谱展宽。",
+          "methods": "集中色散 Hubbard 模型、关联跃迁模型、Chern 带模型和解析受控展开。",
+          "why": "为强关联体系中非费米液体输运和谱函数计算提供了新的可控理论工具。",
+          "summary": "提出适用于局域强相互作用体系的集中动量学受控展开。",
+          "abstract": "We introduce a systematic expansion tailored to systems with strong local interactions and capable of computing response functions, including finite DC transport, analytically. The expansion is controlled by a small parameter $s^2$ that measures the area of the momentum space region where kinematics of the theory is concentrated. In real space, this corresponds to single-particle or correlated hopping terms with amplitudes that decay over a length scale $1/s$ and scale in magnitude as $s^2$ in two dimensions. In the limit $s^2\\ll 1$, long, self-avoiding tunneling paths dominate over paths revisiting the same site. This enables systematic controlled calculations of various physical quantities. We illustrate the method with three applications. (i) A Hubbard model with concentrated dispersion: we analytically obtain spectral broadening which scales as $s^2$ and identify a high-temperature bad metal with $T$-linear resistivity coexisting with parametrically long-lived quasiparticles, as well as an intermediate-temperature \"thermal FL*\" with a small hole pocket that coexists with thermally disordered fluctuating local moments, all within a single controlled framework. (ii) A correlated-hopping model with interesting electron-trion dynamics. (iii) A model of Chern bands with concentrated Berry curvature, motivated by twisted bilayer graphene, which realizes a Mott semimetal where we compute the broadening for the electron and trion spectral functions. At the end, we discuss how our approach paves the way to addressing various challenging questions in strongly correlated systems and outline its various generalizations.",
+          "priorityReason": "为强关联体系中非费米液体输运和谱函数计算提供了新的可控理论工具。",
+          "comments": "",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.20171"
+        },
+        {
+          "id": "2605.19297",
+          "title": "Nearly perfect Fermi surface nesting in hole-doped La$_3$Ni$_2$O$_7$ enables bulk superconductivity without pressure or strain",
+          "authors": "Chengliang Xia , Jiale Chen , Hongquan Liu , Hanghui Chen",
+          "category": [
+            "supr-con",
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.supr-con",
+            "cond-mat.str-el"
+          ],
+          "important": true,
+          "score": 23,
+          "oneLine": "提出空穴掺杂 La3Ni2O7 可在常压体相中通过近完美费米面嵌套实现超导。",
+          "problem": "是否能在不加压力或应变的条件下，在体相 La3Ni2O7 中获得可观测超导？",
+          "result": "结果表明，空穴掺杂诱导的 Ni-d3z2-r2 口袋在 x 接近 0.4 时形成近完美费米面嵌套，从而增强反铁磁自旋涨落和超导本征值。",
+          "methods": "密度泛函理论、动力学平均场理论、随机相近似和超导能隙方程求解。",
+          "why": "给出镍酸盐常压体相超导的一条具体、可实验检验路线。",
+          "summary": "提出空穴掺杂 La3Ni2O7 可在常压体相中通过近完美费米面嵌套实现超导。",
+          "abstract": "The discovery of high-temperature superconductivity in Ruddlesden-Popper nickelates has drawn great attention. However, unlike cuprates and iron-based superconductors, Ruddlesden-Popper nickelates exhibit superconductivity either under high pressure in bulk samples or under compressive strain in thin films. Genuine bulk superconductivity under ambient pressure has remained elusive in these materials, precluding key measurements such as specific heat and superfluid density. In this work, we combine density-functional-theory, dynamical-mean-field-theory, and random-phase-approximation to solve the superconducting gap equation for bulk hole-doped bilayer nickelate La$_{3-x}$Sr$_x$Ni$_2$O$_7$ at ambient pressure. We find that hole doping induces a Ni-$d_{3z^2-r^2}$-derived $\\gamma$ pocket on the Fermi surface, and serves as a tuning parameter for both its size and \\textit{shape}. As $x$ approaches 0.4, the $\\gamma$ pocket evolves from circular to diamond-shaped and expands to span half of the Brillouin zone, resulting in nearly perfect Fermi surface nesting with the optimal nesting vector $\\textbf{Q} = (\\pi, \\pi)$. This, in turn, strongly enhances antiferromagnetic spin fluctuations and substantially increases the leading superconducting eigenvalue to a level at which superconductivity becomes experimentally observable. Our work provides both a robust mechanism and an experimentally feasible route to inducing the long-sought bulk superconductivity in La$_3$Ni$_2$O$_7$ without pressure or strain.",
+          "priorityReason": "给出镍酸盐常压体相超导的一条具体、可实验检验路线。",
+          "comments": "15 pages, 4 figures",
+          "journalRef": "",
+          "subjects": "Superconductivity (cond-mat.supr-con) ; Materials Science (cond-mat.mtrl-sci); Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el",
+            "cond-mat.supr-con"
+          ],
+          "url": "https://arxiv.org/abs/2605.19297"
+        },
+        {
+          "id": "2605.18954",
+          "title": "Imaging stripe dynamics in trilayer nickelate La$_4$Ni$_3$O$_{10}$",
+          "authors": "Uladzislau Mikhailau , Luke Rhodes , Siri A. Berge , Matthias Hepting , Masahiko Isobe , Carolina A. Marques , Pascal Puphal , Peter Wahl",
+          "category": [
+            "str-el",
+            "supr-con"
+          ],
+          "categories": [
+            "cond-mat.str-el",
+            "cond-mat.supr-con"
+          ],
+          "important": true,
+          "score": 23,
+          "oneLine": "用自旋极化 STM 在三层镍酸盐 La4Ni3O10 中成像条纹序及其动力学。",
+          "problem": "镍酸盐中是否存在类似铜氧化物的实空间条纹序，并能否直接观察其动态相滑移？",
+          "result": "结果表明，La4Ni3O10 中出现四个晶胞周期的条纹序并打开约 66 meV 能隙，隧穿电子还能触发离散相滑移，实现原子尺度条纹动力学成像。",
+          "methods": "自旋极化扫描隧穿显微镜和局域谱学成像。",
+          "why": "把镍酸盐和铜氧化物中关联驱动的条纹物理直接联系起来。",
+          "summary": "用自旋极化 STM 在三层镍酸盐 La4Ni3O10 中成像条纹序及其动力学。",
+          "abstract": "Since the discovery of high-temperature superconductivity in nickelate superconductors, it is an open question how closely the superconducting state resembles that of cuprate superconductors. One salient feature of the phase diagram of the high-temperature cuprate superconductors is stripe order. Despite their prevalence, real-space imaging has been limited to the charge sector. Here we use spin-polarised scanning tunnelling microscopy to visualize the local magnetic and charge distribution emerging due to a stripe order in the trilayer nickelate La$_4$Ni$_3$O$_{10}$. The stripe order exhibits a four unit cell periodicity, closely resembling that seen in cuprates, and opens a near-complete $\\sim66\\mathrm{meV}$ gap at the Fermi level. Crucially, discrete phase slips can be triggered by tunneling electrons above a $\\sim 20\\mathrm{meV}$ threshold, allowing imaging of stripe dynamics at the atomic scale. These results highlight the importance of correlation physics driving stripe-like orders in lanthanum nickelates with striking similarities to the cuprates.",
+          "priorityReason": "把镍酸盐和铜氧化物中关联驱动的条纹物理直接联系起来。",
+          "comments": "28 pages, 9 figures, includes supplementary material",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el) ; Superconductivity (cond-mat.supr-con)",
+          "sourceCategories": [
+            "cond-mat.str-el",
+            "cond-mat.supr-con"
+          ],
+          "url": "https://arxiv.org/abs/2605.18954"
+        },
+        {
+          "id": "2605.20148",
+          "title": "Itinerant Nature of Spin-Density-Wave Order in Ruddlesden-Popper Nickelates",
+          "authors": "Jiong Mei , Tianyang Xie , Kun Jiang",
+          "category": [
+            "str-el",
+            "supr-con"
+          ],
+          "categories": [
+            "cond-mat.str-el",
+            "cond-mat.supr-con"
+          ],
+          "important": false,
+          "score": 21,
+          "oneLine": "提出多层 Ruddlesden-Popper 镍酸盐自旋密度波的巡游电子图像。",
+          "problem": "La3Ni2O7 和 La4Ni3O10 中的磁性更接近局域矩，还是由费米面嵌套驱动的巡游自旋密度波？",
+          "result": "结果表明，NiO2 多层镜面对称性把低能态分成镜面对称部门，镜面相反能带之间的嵌套可驱动选择性的巡游 SDW，并自然产生类自旋波谱。",
+          "methods": "多层镍酸盐低能模型、能带嵌套分析和集体模计算。",
+          "why": "为镍酸盐磁关联和伴随电荷纹理提供统一的巡游机制。",
+          "summary": "提出多层 Ruddlesden-Popper 镍酸盐自旋密度波的巡游电子图像。",
+          "abstract": "The nature of magnetism in layered Ruddlesden-Popper nickelates remains a central open question, particularly in light of recent observations of spin-wave-like magnetic excitations in metallic multilayer compounds. Here, we develop a unified itinerant description of spin-density-wave (SDW) order and magnetic excitations in La$_3$Ni$_2$O$_7$ and La$_4$Ni$_3$O$_{10}$. The essential ingredient is the multilayer mirror structure of the NiO$_2$ blocks, which organizes the low-energy electronic states into mirror-even and mirror-odd sectors. We show that dominant interband nesting between mirror-opposite bands drives a mirror-selective itinerant SDW instability, whose collective modes naturally reproduce the experimentally observed spin-wave-like spectra. In La$_4$Ni$_3$O$_{10}$, the SDW further induces a secondary mirror-even charge density wave, yielding intertwined spin and charge textures. Our results demonstrate that magnetism in multilayer nickelates is fundamentally itinerant rather than local-moment in origin, and establish mirror-selective interband SDW order as a unifying organizing principle for magnetic correlations in these systems.",
+          "priorityReason": "为镍酸盐磁关联和伴随电荷纹理提供统一的巡游机制。",
+          "comments": "6 pages, 4 figures",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el) ; Materials Science (cond-mat.mtrl-sci); Superconductivity (cond-mat.supr-con)",
+          "sourceCategories": [
+            "cond-mat.str-el",
+            "cond-mat.supr-con"
+          ],
+          "url": "https://arxiv.org/abs/2605.20148"
+        },
+        {
+          "id": "2605.20029",
+          "title": "Vortex order in magnetic frustrated GeNi$_2$O$_4$ and GeCo$_2$O$_4$ spinels",
+          "authors": "K. Beauvois , J. Robert , M. Songvilay , J. Ollivier , B. Fåk , E. Ressouche , N. Qureshi , R. Ballou , S. Petit , S. Lenne , P. Manuel , S. DeBrion , P. Strobel , V. Simonet",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 8,
+          "oneLine": "在受挫尖晶石 GeNi2O4 和 GeCo2O4 中识别由各向异性稳定的自旋涡旋晶体。",
+          "problem": "复杂交换和磁各向异性能否在 pyrochlore 晶格尖晶石中稳定短周期多 k 涡旋磁结构？",
+          "result": "结果表明，GeB2O4 家族可稳定 2-k 磁结构，对应由各向异性诱导的短周期自旋涡旋晶体，并可视为 3-k Bloch-point 结构的变体。",
+          "methods": "非弹性中子散射、单晶中子衍射和交换相图联合建模。",
+          "why": "为受挫反铁磁体中的奇异自旋纹理和各向异性调控提供实验案例。",
+          "summary": "在受挫尖晶石 GeNi2O4 和 GeCo2O4 中识别由各向异性稳定的自旋涡旋晶体。",
+          "abstract": "In the search for new spin textures based on singular magnetic objects like Bloch-points or vortices, spinel compounds emerge as an interesting playground due to the interplay between magnetic anisotropy and complex interactions that extend well beyond first neighbors on a pyrochlore lattice. Based on an exploration of the exchange interaction phase diagrams of members of the Ge$B_2$O$_4$ family with $B$=Co and Ni, we show, using simultaneous modeling of inelastic neutron scattering measurements and single-crystal neutron diffraction data, that a 2-$k$ magnetic structure may be stabilized in these compounds. This leads to a short period spin vortex crystal, a variant induced by the magnetic anisotropy of the 3-$k$ Bloch-point structure predicted for isotropic spins. Our study rationalizes the formation of these multi-$k$ spin textures in frustrated antiferromagnets, as well as their anisotropy-dependent evolution.",
+          "priorityReason": "为受挫反铁磁体中的奇异自旋纹理和各向异性调控提供实验案例。",
+          "comments": "Main text: 12 pages, 8 figures, 1 table Supp Mat: 7 pages, 6 figures, 4 tables",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.20029"
+        },
+        {
+          "id": "2605.18941",
+          "title": "Detecting vortex motion through spatially correlated nonequilibrium noise",
+          "authors": "Yifan F. Zhang , Rhine Samajdar , Sarang Gopalakrishnan",
+          "category": [
+            "supr-con",
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.supr-con",
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 7,
+          "oneLine": "提出用空间关联非平衡磁噪声区分涡旋运动和普通准粒子输运。",
+          "problem": "接近超导相时，如何无歧义判断电阻输运来自涡旋运动还是正常准粒子漂移？",
+          "result": "结果表明，电流驱动下普通载流子沿电流方向漂移，而涡旋因 Magnus 力垂直漂移；这种方向指纹可由 NV 中心协方差磁ometry 检出。",
+          "methods": "协方差磁测量理论、薄膜超导体噪声关联计算和涡旋动力学分析。",
+          "why": "为实验识别高温超导涨落区中的涡旋输运提供了直接判据。",
+          "summary": "提出用空间关联非平衡磁噪声区分涡旋运动和普通准粒子输运。",
+          "abstract": "Resistive transport near a superconducting phase can arise from the motion of normal-state quasiparticles or that of vortices. The conductivity alone does not distinguish between these mechanisms. We propose an unambiguous method for telling them apart, using the recently developed experimental tool of covariance magnetometry, which uses nitrogen-vacancy centers in diamond to probe real-time spatiotemporal correlations in magnetic noise. Our key insight is that, under an applied current, the underlying charge carriers leave a directional fingerprint in the spatially correlated magnetic noise above the sample: ordinary electric carriers drift parallel to the current, whereas vortices, owing to the Magnus force, drift perpendicular to it. The noise covariance detects this anisotropy and identifies the vortex-driven nature of transport. We compute the noise correlations expected for a representative thin-film superconductor and demonstrate that the anisotropic signal is well within the reach of current experimental capabilities.",
+          "priorityReason": "为实验识别高温超导涨落区中的涡旋输运提供了直接判据。",
+          "comments": "7+3 pages, 3 figures",
+          "journalRef": "",
+          "subjects": "Superconductivity (cond-mat.supr-con) ; Mesoscale and Nanoscale Physics (cond-mat.mes-hall); Strongly Correlated Electrons (cond-mat.str-el); Quantum Physics (quant-ph)",
+          "sourceCategories": [
+            "cond-mat.str-el",
+            "cond-mat.supr-con"
+          ],
+          "url": "https://arxiv.org/abs/2605.18941"
+        },
+        {
+          "id": "2605.20181",
+          "title": "Band Structure and topology of a periodically deformed Kitaev honeycomb model",
+          "authors": "Abdullah AlJishi , Ali AlSwaid , Moayad Ekhwan , Hocine Bahlouli , Raditya Weda Bomantara , Michael Vogl",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 6,
+          "oneLine": "研究周期形变和磁场如何改变 Kitaev 蜂窝模型的能带与拓扑。",
+          "problem": "类似 moire 的周期形变能否在 Kitaev 自旋液体中诱导能隙和拓扑相变？",
+          "result": "结果表明，周期形变会折叠布里渊区并在边界打开新能隙；加入破坏时间反演的磁场后可出现多次能隙闭合、重开和非零 Chern 数。",
+          "methods": "可解 Kitaev 模型推广、周期形变能带计算和 Chern 数分析。",
+          "why": "展示形变工程可作为调控自旋液体拓扑响应的有效手段。",
+          "summary": "研究周期形变和磁场如何改变 Kitaev 蜂窝模型的能带与拓扑。",
+          "abstract": "Motivated by the growing interest in spin liquids and topological phases, as well as the rise of deformation engineering, we study the combined effects of deformation and magnetic fields on the honeycomb Kitaev model. The Kitaev model, as one of the prototypical and exactly solvable spin liquid-hosting models, serves as a simple platform that demonstrates the rich physics one can expect at the intersection of deformation physics and quantum spin liquids. Our work builds on a simplified solution to the undeformed base model that we present. This simplified solution allows for a straightforward extension of our analysis to the deformed case. After incorporating periodic deformations into the Kitaev model (chosen for its similarity to moiré physics), we investigate the effects of a hexagonally symmetric deformation on the band structure. We find that deformation leads to a smaller Brillouin zone with new band gaps at the edges, indicating the potential for topological transitions. Finally, we introduce a magnetic field to break time-reversal symmetry and thereby allow for non-trivial topology. We find that, under specific parameter conditions, the magnetic field leads to multiple band-gap closings and openings. An investigation into topological properties reveals nontrivial Chern numbers and a plethora of topological transitions. Our results suggest possible thermal Hall or Nernst-type responses. We also suggest a potential bulk measurement approach for he Chern numbers and possible path to physical realization. Most importantly, our results serve as a demonstration of the rich phenomenology that can arise due to the interplay between deformation and spin-liquid physics.",
+          "priorityReason": "展示形变工程可作为调控自旋液体拓扑响应的有效手段。",
+          "comments": "",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.20181"
+        },
+        {
+          "id": "2605.19347",
+          "title": "Higher-order Weyl nodes driven by helical magnetic order in EuAgAs",
+          "authors": "Jian-Rui Soh , Ziming Zhu , Louis Withers , J. Alberto Rodríguez-Velamazán , Timur K. Kim , Oscar Fabelo , Anne Stunault , Daniil Yevtushynsky , Dharmalingam Prabhakaran , Shengyuan A. Yang , Andrew T. Boothroyd",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 6,
+          "oneLine": "在 EuAgAs 中发现螺旋磁序并预言其可驱动高阶 Weyl 节点。",
+          "problem": "EuAgAs 的真实磁基态是什么，它如何影响拓扑电子能带？",
+          "result": "结果表明，EuAgAs 经历两个磁相变并形成沿 c 轴的横向螺旋磁结构；第一性原理预言该螺旋相会产生能带折叠和有效高阶 Weyl 节点。",
+          "methods": "中子衍射、共振弹性 X 射线散射、球形中子极化分析、ARPES 和第一性原理计算。",
+          "why": "把可测磁结构和磁拓扑半金属中的新型 Weyl 准粒子联系起来。",
+          "summary": "在 EuAgAs 中发现螺旋磁序并预言其可驱动高阶 Weyl 节点。",
+          "abstract": "Magnetic topological semimetals provide a fertile ground for exploring how long-range magnetic order can alter electronic band structures and generate novel quasiparticles such as Weyl fermions. Here, we investigate the coupled magnetic and electronic structure of single-crystalline EuAgAs, a hexagonal pnictide whose magnetic ground state has remained elusive. Using neutron diffraction and resonant elastic X-ray scattering, we identify an unusual magnetic ordering sequence with two successive phase transitions at $T_\\mathrm{N1} = 12$ K and $T_\\mathrm{N2} = 8$ K. We observe two slightly different magnetic propagation vectors, one associated with $T_\\mathrm{N1}$ and the other with $T_\\mathrm{N2}$. Spherical neutron polarimetry reveals that the magnetic structure is a transverse helix aligned along the $c$ axis with a period that is approximately twice the $c$ lattice parameter. First-principles calculations for the helical phase predict subtle band folding effects and the emergence of effective higher-order Weyl nodes. These topological features appear near the calculated Fermi energy $E_{\\mathrm{F}}$ which, however, lies above the position of $E_{\\mathrm{F}}$ obtained from angle-resolved photoemission spectroscopy so could not be probed in this study.",
+          "priorityReason": "把可测磁结构和磁拓扑半金属中的新型 Weyl 准粒子联系起来。",
+          "comments": "",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.19347"
+        },
+        {
+          "id": "2605.19925",
+          "title": "Stringy T-duality on the lattice and the twisted Villain model",
+          "authors": "Coraline Bacq , Alessio Caddeo , Saskia Demulder , Johanna Erdmenger",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 5,
+          "oneLine": "构造 twisted Villain 格点模型，实现有限格距上的 stringy T-duality。",
+          "problem": "连续场论中的 T-duality 是否能在有限格距格点模型中精确实现？",
+          "result": "结果表明，将格点纤维场与描述丛联络和 B 场的 cochain 耦合后，可精确恢复弯曲背景中的丛-通量交换，并得到拓扑缺陷作用量。",
+          "methods": "紧玻色子格点对偶、twisted Villain 模型和 half-gauging 构造。",
+          "why": "为格点正则化中保持非平庸拓扑对偶性提供场论工具。",
+          "summary": "构造 twisted Villain 格点模型，实现有限格距上的 stringy T-duality。",
+          "abstract": "We address the question of whether dualities formulated in continuum field theory can be realised exactly at finite lattice spacing, rather than only emerging in the infrared. In this context, we construct a lattice framework for a genuinely stringy form of T-duality. We extend the exact lattice T-duality of the compact boson to curved backgrounds with non-trivial circle fibrations, where the duality is no longer exhausted by the familiar exchange of momentum and winding, but also involves global topological data. To this end, we define the twisted Villain model, which couples the lattice fibre field to cochains encoding the bundle connection and the fibre-horizontal component of the $B$-field. We realise this structure in lattice models for several fibred backgrounds and recover the characteristic bundle-flux exchange of T-duality. Using a half-gauging procedure, we derive the associated lattice defect action and show that it defines a topological defect. This establishes that the distinctive topological features of T-duality on curved manifolds can be captured exactly in a lattice model, implying that this duality is not tied to a particular continuum representation is present in lattice-regularised models.",
+          "priorityReason": "为格点正则化中保持非平庸拓扑对偶性提供场论工具。",
+          "comments": "39 pages, 3 figures",
+          "journalRef": "",
+          "subjects": "High Energy Physics - Theory (hep-th) ; Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.19925"
+        },
+        {
+          "id": "2605.19162",
+          "title": "Electronic and Magnonic Properties of $g$-Wave Altermagnetism in Intercalated Transition Metal Dichalcogenides",
+          "authors": "Shuyi Li , Adrian Bahri , Chunjing Jia",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 5,
+          "oneLine": "研究插层 TMD 中 g 波 altermagnetism 的电子和磁振子性质。",
+          "problem": "Fe1/4NbS2 和 V1/3NbS2 中的 altermagnetic 自旋劈裂和磁振子手征劈裂由哪些微观因素控制？",
+          "result": "结果表明，g 波电子自旋劈裂来自键依赖跃迁各向异性，磁振子手征劈裂由单离子各向异性控制，并会受到 magnon-magnon 相互作用重整化。",
+          "methods": "紧束缚模型、自旋模型、第一性原理计算和 1/S 修正。",
+          "why": "把插层 TMD 确立为研究非相对论自旋劈裂和 altermagnetism 的候选平台。",
+          "summary": "研究插层 TMD 中 g 波 altermagnetism 的电子和磁振子性质。",
+          "abstract": "Altermagnetism is a recently identified class of magnetic order characterized by unconventional momentum-dependent spin splitting in the absence of net magnetization, and understanding its electronic and magnetic properties is essential for revealing its fundamental physics and potential applications. In this work we investigate two intercalated transition-metal dichalcogenides, Fe$_{1/4}$NbS$_2$ and V$_{1/3}$NbS$_2$, as candidate altermagnetic materials by using effective tight-binding and spin models complemented by first-principles calculations. We show that the $g$-wave electronic spin splitting originates from bond-dependent hopping anisotropy, leading to material-dependent nodal structures. For the magnetic excitations, the emergence of chiral splitting in the magnon dispersion is controlled by single-ion anisotropy, which manifests as altermagnetic-like nodal structures when spins are oriented along an easy-axis. Conversely, this altermagnetic signature disappears when the spins are aligned in an easy-plane. Beyond linear spin-wave theory, we find that $1/S$ corrections from magnon--magnon interactions preserve the symmetry and nodal structure of the band splitting while generally reducing its magnitude, with strong antiferromagnetic exchange leading to a non-negligible renormalization of the chiral splitting. Our findings establish intercalated transition-metal dichalcogenides as promising platforms for understanding the interplay between crystal symmetry, non-relativistic spin splitting, and magnetic properties in altermagnets.",
+          "priorityReason": "把插层 TMD 确立为研究非相对论自旋劈裂和 altermagnetism 的候选平台。",
+          "comments": "",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el) ; Materials Science (cond-mat.mtrl-sci)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.19162"
+        },
+        {
+          "id": "2605.19036",
+          "title": "Hidden weak-pairing superconductivity of non-interacting anyons obeying $\\frac{1}{3}$ statistics",
+          "authors": "Zheng-Duo Fan , Ashvin Vishwanath , Zijian Wang",
+          "category": [
+            "str-el",
+            "supr-con"
+          ],
+          "categories": [
+            "cond-mat.str-el",
+            "cond-mat.supr-con"
+          ],
+          "important": false,
+          "score": 4,
+          "oneLine": "提出 1/3 统计任意子的隐藏弱配对超导机制。",
+          "problem": "掺杂分数 Chern 绝缘体中的 charge-e/3 任意子能否不依赖外加相互作用而形成非常规超导？",
+          "result": "结果表明，三重任意子口袋允许平均统计通量抵消，统计规范场涨落可使复合费米子形成 p-ip 弱配对态，对应物理 f-if 手征超导。",
+          "methods": "通量附着构造、复合费米子理论和拓扑边界中心荷分析。",
+          "why": "为分数 Chern 绝缘体附近出现的超导提供自然理论框架。",
+          "summary": "提出 1/3 统计任意子的隐藏弱配对超导机制。",
+          "abstract": "We show that a non-interacting gas of charge-$e/3$ anyons with exchange statistics $\\theta=-\\pi/3$ can superconduct through a hidden weak-pairing mechanism. Such an anyon gas arises naturally in doped fractional Chern insulators at filling $1/3$ or $2/3$, where projective lattice translations enforce three degenerate anyon pockets. Exploiting this three-pocket structure, we develop a flux-attachment construction in which the average statistical flux vanishes, thereby mapping the problem to three species of composite fermions (CFs) in zero effective magnetic field. We show that the anyon statistics itself, encoded in statistical gauge field fluctuations, supplies the pairing glue and drives the CFs into a $p-\\mathrm{i}p$ paired state, which corresponds to a $f-\\mathrm{i}f$ physical superconductor. The CF strong-pairing phase is adiabatically connected to Laughlin's picture of anyon superconductivity, where charge-$e/3$ anyons bind into charge-$2e/3$ molecules, which then lead to superconductivity. By contrast, the more natural weak-pairing phase of CFs realizes a distinct superconducting phase - its edge is characterized by a chiral central charge $c_-=-1/2$, in contrast to the prediction of integer $c_-$ for the anyon superconductor based on Laughlin's picture, thereby resolving the discrepancy between previous theories and recent numerical results. Our theory provides a natural framework for understanding superconductivity near fractional Chern insulators, as observed in recent experiments. Finally, we discuss extensions of our theory that predict new chiral superconductors adjacent to FCIs at other fillings.",
+          "priorityReason": "为分数 Chern 绝缘体附近出现的超导提供自然理论框架。",
+          "comments": "",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el) ; Superconductivity (cond-mat.supr-con); Quantum Physics (quant-ph)",
+          "sourceCategories": [
+            "cond-mat.str-el",
+            "cond-mat.supr-con"
+          ],
+          "url": "https://arxiv.org/abs/2605.19036"
+        },
+        {
+          "id": "2605.20124",
+          "title": "Finite-temperature spin diffusion in the two-dimensional XY model",
+          "authors": "Erik Fitzner , Byungjin Lee , Junhyeok Hur , Minseok Kim , Benedikt Schneider , Jae-yoon Choi , Björn Sbierski",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "定量测量并计算二维量子 XY 模型的有限温自旋扩散。",
+          "problem": "二维强相互作用自旋体系的扩散常数能否由理论和量子模拟实验精确一致地确定？",
+          "result": "结果表明，高温动力学展开与光晶格硬核玻色子量子模拟给出的自旋扩散常数高度一致，验证了二维自旋输运的定量模拟能力。",
+          "methods": "动力学高温展开、光晶格量子模拟和自旋扩散常数提取。",
+          "why": "为一维之外的量子自旋输运和量子模拟平台定量验证提供基准。",
+          "summary": "定量测量并计算二维量子 XY 模型的有限温自旋扩散。",
+          "abstract": "We present a combined theory-experiment study to quantify spin diffusion in the square lattice quantum spin-1/2 XY model at finite temperature. On the theory side, we leverage a recently developed dynamical high-temperature expansion method to faithfully capture the long spatiotemporal scales of the hydrodynamic regime. Experimental results are obtained from an optical lattice hard-core boson quantum simulator. The excellent agreement of spin diffusion constants marks a breakthrough in spin-transport beyond one dimension and for the quantitative validation of state-of-the-art quantum simulation platforms. We also provide theory predictions for future experiments on dynamic spin conductivity or anisotropy-induced integrability breaking.",
+          "priorityReason": "为一维之外的量子自旋输运和量子模拟平台定量验证提供基准。",
+          "comments": "6+3 pages, comments are welcome!",
+          "journalRef": "",
+          "subjects": "Quantum Gases (cond-mat.quant-gas) ; Statistical Mechanics (cond-mat.stat-mech); Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.20124"
+        },
+        {
+          "id": "2605.20083",
+          "title": "Spectral and transmission properties of multiple correlated quantum dots made simple",
+          "authors": "Nahual Sobrino , Stefan Kurth",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "用稳态密度泛函 i-DFT 简化多关联量子点的谱和透射计算。",
+          "problem": "能否以低计算成本捕捉从 Coulomb blockade 到 Kondo 区域的多量子点输运性质？",
+          "result": "结果表明，为不同相互作用和耦合几何构造的交换-关联泛函可准确给出谱函数和透射，并与多体方法结果吻合。",
+          "methods": "稳态 i-DFT、交换-关联泛函构造和多量子点输运基准。",
+          "why": "为纳米关联体系输运提供比显式多体方法更便宜的计算路线。",
+          "summary": "用稳态密度泛函 i-DFT 简化多关联量子点的谱和透射计算。",
+          "abstract": "Steady-state density functional theory, called i-DFT, is employed to compute spectral and transmission properties of general interacting nanoscale regions coupled to electronic reservoirs. Exchange-correlation functionals are constructed for different interactions and coupling geometries. The potential of the method is illustrated by applications to various multiple quantum dots from the Coulomb blockade to the Kondo regime, capturing phenomena such as quantum phase transitions. The results are in excellent agreement with many-body approaches at a fraction of the computational cost.",
+          "priorityReason": "为纳米关联体系输运提供比显式多体方法更便宜的计算路线。",
+          "comments": "21 pages, 4 figures",
+          "journalRef": "",
+          "subjects": "Mesoscale and Nanoscale Physics (cond-mat.mes-hall) ; Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.20083"
+        },
+        {
+          "id": "2605.20059",
+          "title": "Secondary Collective Excitations in Intermediate to Strong-Coupling Superconductors",
+          "authors": "Joshua Althüser , Götz S. Uhrig",
+          "category": [
+            "supr-con"
+          ],
+          "categories": [
+            "cond-mat.supr-con"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "预言中强耦合超导体中的次级相位模和振幅模。",
+          "problem": "能量转移依赖的有效电子相互作用会在常规集体模之外产生哪些新的超导激发？",
+          "result": "结果表明，中等耦合时振幅模从准粒子连续谱下移，强耦合时会出现位于连续谱下方且寿命较长的次级集体模。",
+          "methods": "有效相互作用推导、迭代运动方程和响应函数计算。",
+          "why": "为强耦合超导体中可被谱学探测的集体模提供新预言。",
+          "summary": "预言中强耦合超导体中的次级相位模和振幅模。",
+          "abstract": "Considering systematically derived energy-transfer-dependent effective electron-electron interactions leads to the appearance of secondary phase and amplitude modes in isotropic superconductors in the intermediate-to-strong-coupling regime. We study the implications of such interactions on Bravais lattices by computing the corresponding response functions using the iterated equations of motion (iEoM) approach. In the weak-coupling regime, we find the conventional, primary amplitude and phase modes at $\\omega=2\\Delta$ and $\\omega=0$, respectively. For intermediate coupling, the amplitude mode detaches from the quasiparticle continuum towards lower energies. Increasing the coupling further leads to additional, long-lived secondary collective excitations below the continuum. This phenomenon is largely independent of the underlying lattice and the specific Fermi level. The amplitude and phase modes couple if the system is not particle-hole symmetric. Additionally, we extend the method to compute eigenoperators, i.e., linear combinations of operators that excite each secondary mode specifically. We identify nodal structures in the coefficients for these eigenoperators reminiscent of wave functions in the Hydrogen problem.",
+          "priorityReason": "为强耦合超导体中可被谱学探测的集体模提供新预言。",
+          "comments": "22 pages, 11 figures",
+          "journalRef": "",
+          "subjects": "Superconductivity (cond-mat.supr-con)",
+          "sourceCategories": [
+            "cond-mat.supr-con"
+          ],
+          "url": "https://arxiv.org/abs/2605.20059"
+        },
+        {
+          "id": "2605.20020",
+          "title": "Tunable magnetotransport through kinetically hindered first-order phase transitions in an antiferromagnetic metal",
+          "authors": "Jaime M. Moya , Scott B. Lee , Sudipta Chatterjee , Nitish Mathur , Grigorii Skorupskii , Connor J. Pollak , Leslie M. Schoop",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "利用反铁磁金属 CeCoGe3 中受动力学阻滞的一阶相变实现多级磁阻态。",
+          "problem": "能否通过控制磁相共存比例来获得稳定可调的多级电阻状态？",
+          "result": "结果表明，在磁场中冷却 CeCoGe3 可形成高低温磁相共存的磁玻璃态，电阻直接反映相分数并产生稳定多级阻态。",
+          "methods": "磁场冷却、磁输运测量和一阶磁相变分析。",
+          "why": "为多级磁阻存储和类脑计算材料提供候选机制。",
+          "summary": "利用反铁磁金属 CeCoGe3 中受动力学阻滞的一阶相变实现多级磁阻态。",
+          "abstract": "Controllable multilevel resistance states are of interest for memory technologies like neuromorphic computing, but robust materials platforms toward such behavior remain limited. Here, we show that the non-centrosymmetric antiferromagnetic metal CeCoGe$_3$ suggests one such route through a kinetically hindered first-order magnetic transition. Cooling through the kinetically hindered first-order transition in an applied magnetic field produces a magnetic glass state in which high- and low-temperature magnetic phases coexist. The relative fraction of these phases can be controlled by the applied field in which the sample is cooled, and the electrical resistance is directly sensitive to that fraction. As a result, it is demonstrated that CeCoGe$_3$ supports stable multilevel resistive states. These results identify kinetically hindered first-order phase transitions as a promising route towards controllable multilevel magnetoresistive states.",
+          "priorityReason": "为多级磁阻存储和类脑计算材料提供候选机制。",
+          "comments": "",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.20020"
+        },
+        {
+          "id": "2605.19960",
+          "title": "PEPSKit.jl: A Julia package for projected entangled-pair state simulations",
+          "authors": "Paul Brehmer , Lander Burgelman , Zheng-Yuan Yue , Gleb Fedorovich , Jutho Haegeman , Lukas Devos",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "介绍用于二维量子多体 iPEPS 模拟的 Julia 软件包 PEPSKit.jl。",
+          "problem": "如何为具有不同对称性、晶格几何和费米自由度的二维量子多体问题提供统一 iPEPS 工具？",
+          "result": "结果展示了 PEPSKit.jl 对基态、时间演化和有限温模拟的支持，并通过示例和基准测试说明其功能。",
+          "methods": "无限投影纠缠对态、张量网络算法和 Julia 软件实现。",
+          "why": "属于强关联数值工具建设，可服务二维模型和材料有效模型研究。",
+          "summary": "介绍用于二维量子多体 iPEPS 模拟的 Julia 软件包 PEPSKit.jl。",
+          "abstract": "We present this http URL , a Julia package for simulating two-dimensional quantum many-body systems with infinite projected entangled-pair states (iPEPS). this http URL builds on the this http URL package for tensor computations and provides high-level algorithms for iPEPS simulations that support both Abelian and non-Abelian symmetries, as well as fermionic systems. This work gives an overview of the main package features, which include support for ground-state, time-evolution, and finite-temperature simulations in systems with different physical symmetries and lattice geometries. These capabilities are illustrated through various examples and technical benchmarks.",
+          "priorityReason": "属于强关联数值工具建设，可服务二维模型和材料有效模型研究。",
+          "comments": "24 pages, 8 figures",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el) ; Computational Physics (physics.comp-ph); Quantum Physics (quant-ph)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.19960"
+        },
+        {
+          "id": "2605.19858",
+          "title": "Accelerated \"on-the-fly\" coupled-cluster path-integral molecular dynamics: Impact of nuclear quantum effects on an asymmetric proton",
+          "authors": "Thomas Spura , Hossam Elgabarty , Thomas D. Kühne",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "提出加速的 on-the-fly coupled-cluster 路径积分分子动力学方法。",
+          "problem": "如何在有限温模拟中同时处理电子关联和核量子效应而保持计算可行？",
+          "result": "结果表明，qRPC、类 Car-Parrinello 动力学和振幅外推的组合可显著加速关联 PIMD；在非对称氢键中，核量子效应会降低质子偏向甲醛的概率。",
+          "methods": "coupled-cluster、路径积分分子动力学、量子 ring-polymer contraction 和核磁屏蔽计算。",
+          "why": "为需要同时考虑电子关联与核量子涨落的材料和分子模拟提供方法。",
+          "summary": "提出加速的 on-the-fly coupled-cluster 路径积分分子动力学方法。",
+          "abstract": "We present an accelerated ``on-the-fly'' coupled-cluster path-integral molecular dynamics (PIMD) method for finite-temperature simulations in which electron correlation and nuclear quantum effects are treated simultaneously. The approach is based on our quantum ring-polymer contraction (qRPC) technique, in which the inexpensive Hartree-Fock potential is evaluated on the full ring-polymer, while the expensive coupled-cluster correction is evaluated on the centroid only. This qRPC decomposition is combined with a second-generation Car-Parrinello-like dynamics of the Hartree-Fock reference and a basis-consistent extrapolation of the coupled-cluster and de-excitation amplitudes. The combination of all three acceleration layers is essential for making correlated PIMD calculations feasible. We apply the method to a proton shared by water and formaldehyde. Relative to classical nuclei, nuclear quantum effects broaden covalent X--H bond-length distributions, reduce the bias of the shared proton toward formaldehyde, and shift the mean proton-transfer coordinate from 0.206 to 0.135A. The probability of finding the proton closer to formaldehyde decreases from 81.7$\\%$ to 61.1$\\%$. The corresponding nuclear magnetic shielding tensors show that electron correlation and nuclear quantum effects are of comparable magnitude and can act in opposite directions. These results demonstrate that predictive simulations of asymmetric hydrogen bonds require a simultaneous treatment of correlated electronic structure and nuclear quantum fluctuations.",
+          "priorityReason": "为需要同时考虑电子关联与核量子涨落的材料和分子模拟提供方法。",
+          "comments": "",
+          "journalRef": "",
+          "subjects": "Chemical Physics (physics.chem-ph) ; Materials Science (cond-mat.mtrl-sci); Strongly Correlated Electrons (cond-mat.str-el); Atomic and Molecular Clusters (physics.atm-clus); Computational Physics (physics.comp-ph)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.19858"
+        },
+        {
+          "id": "2605.19820",
+          "title": "Geometric curvature driven by many-body collective fluctuations",
+          "authors": "Alejandro S. Miñarro , Gervasi Herranz",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "提出多体集体涨落可产生可观测的动力学 Berry 曲率贡献。",
+          "problem": "量子几何是否只来自裸能带，还是也可由相互作用驱动的集体涨落动态生成？",
+          "result": "结果表明，集体模 dressing 的传播子和响应顶角会产生额外 Berry 曲率贡献，并可通过非弹性散射谱中的反对称通道与裸能带几何区分。",
+          "methods": "相互作用响应理论、集体模修正和非弹性散射通道分析。",
+          "why": "扩展了量子几何在强关联体系中的实验判读方式。",
+          "summary": "提出多体集体涨落可产生可观测的动力学 Berry 曲率贡献。",
+          "abstract": "Quantum geometry characterizes the variation of wavefunctions in momentum space through their overlaps and relative phases, providing a general framework for understanding many transport and optical properties. It is generally formulated in terms of interband matrix elements, which, entering the response functions, allow obtaining experimental access to the quantum geometric tensor. Recently, it has been emphasized that quantum geometry can also be interpreted in terms of quantum dipole fluctuations in the ground state driven by interband mixing. Here, we extend this picture to include contributions from many-body collective fluctuations, in which propagators and response vertices are dressed dynamically by the interaction with collective modes. Focusing on the Berry curvature, we show that contributions from collective fluctuations can be experimentally distinguished from bare band-geometric contributions, via specific antisymmetric channels in inelastic scattering spectra. We further identify the non-commutative properties of transverse quantum fluctuations as well as non-local-time interactions as the generators of this dynamical curvature in the susceptibility response.",
+          "priorityReason": "扩展了量子几何在强关联体系中的实验判读方式。",
+          "comments": "22 pages, 9 figures",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el) ; Quantum Physics (quant-ph)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.19820"
+        },
+        {
+          "id": "2605.19740",
+          "title": "Filling-Sensitive Spectral Complexity from Hilbert-Space Holonomy in Fragmented Non-Hermitian Systems",
+          "authors": "Jiong-Hao Wang , Maria Zelenayova , Christopher Ekman , Emil J. Bergholtz",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "用 Hilbert 空间 holonomy 解释碎裂非 Hermitian 多体系统的填充敏感谱实性。",
+          "problem": "为什么某些碎裂非 Hermitian 系统只在特定填充扇区出现复谱？",
+          "result": "结果表明，非互易跃迁可视为 Krylov 图上的离散规范场；平庸 holonomy 可映射到 Hermitian 极限，而非平庸 holonomy 阻碍该映射并允许复谱。",
+          "methods": "碎裂模型、Krylov 图、离散规范场和相似变换分析。",
+          "why": "为非 Hermitian 多体谱结构提供区别于常规对称保护的几何组织原则。",
+          "summary": "用 Hilbert 空间 holonomy 解释碎裂非 Hermitian 多体系统的填充敏感谱实性。",
+          "abstract": "We show that Hilbert-space holonomy provides a geometric organizing principle for spectral reality in fragmented non-Hermitian many-body systems, complementary to conventional symmetry protection. In two minimal fragmented models, complex spectra can arise only within the most symmetric sectors: half filling in the fermion model and zero magnetization in the spin chain. Adding or removing a single particle, or flipping a single spin, renders the spectra entirely real despite unchanged periodic boundary conditions, reminiscent of boundary-condition sensitivity in systems with a non-Hermitian skin effect. We explain this by viewing nonreciprocal hopping amplitudes as a discrete gauge field on the Krylov graph: trivial holonomy permits a diagonal similarity transformation to the Hermitian limit, whereas nontrivial holonomy obstructs it and allows complex spectra. In certain regimes, trivial holonomy admits an emergent-boundary interpretation, and longer-range models exhibit finite real and complex regions governed by the same criterion.",
+          "priorityReason": "为非 Hermitian 多体谱结构提供区别于常规对称保护的几何组织原则。",
+          "comments": "10 pages, 6 figures, including Supplemental Material",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el) ; Mesoscale and Nanoscale Physics (cond-mat.mes-hall); Statistical Mechanics (cond-mat.stat-mech); Optics (physics.optics); Quantum Physics (quant-ph)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.19740"
+        },
+        {
+          "id": "2605.19675",
+          "title": "The Ultrafast Superconducting Diode Effect",
+          "authors": "E. Wang , M. Chavez-Cervantes , J. Satapathy , T. Matsuyama , G. Meier , X. Zhang , L. You , F. Marijanovic , J.B. Curtis , E. Demler , A. Cavalleri",
+          "category": [
+            "supr-con"
+          ],
+          "categories": [
+            "cond-mat.supr-con"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "报道中心对称 NbN 薄膜中的超快超导二极管效应。",
+          "problem": "能否实现不依赖慢涡旋运动、速度高得多的超导非互易输运？",
+          "result": "结果表明，在准直流超流偏置下，同向皮秒脉冲遇到电阻阻抗而反向脉冲表现为电感响应，可整流 100 GHz 信号，速度比常规超导二极管快三个数量级以上。",
+          "methods": "NbN 薄膜超快脉冲输运、非互易阻抗测量和高频整流测试。",
+          "why": "为 THz 级超导逻辑和低耗散电子学提供潜在器件机制。",
+          "summary": "报道中心对称 NbN 薄膜中的超快超导二极管效应。",
+          "abstract": "Nonreciprocal transport is generally observed in superconductors in which time reversal and inversion symmetries are simultaneously broken. This effect, which may become one of the backbones for future superconducting electronics, arises because of asymmetric vortex transport in a magnetic field. However, vortex transport is also intrinsically dissipative and limited in speed. Here, we report on the discovery of ultrafast non-reciprocal transport in centrosymmetric superconductors. For NbN films biased with a quasi-DC supercurrent, picosecond current pulses with the same sign as the bias experience resistive impedance, whereas pulses of opposite polarity encounter an inductive response. Strikingly, the effect is at least three orders of magnitude faster than in conventional superconducting diodes, limited only by ultrafast current-induced depairing. We demonstrate rectification of a 100 GHz signal, with dissipation levels of a few fJ per cycle. We foresee potential for superconducting logic elements, operating at THz bit rates with aJ energy dissipation per operation.",
+          "priorityReason": "为 THz 级超导逻辑和低耗散电子学提供潜在器件机制。",
+          "comments": "22 pages, 4 figures, with supplementary information",
+          "journalRef": "",
+          "subjects": "Superconductivity (cond-mat.supr-con)",
+          "sourceCategories": [
+            "cond-mat.supr-con"
+          ],
+          "url": "https://arxiv.org/abs/2605.19675"
+        },
+        {
+          "id": "2605.19643",
+          "title": "Quantum effective action for dissipative semiclassical dynamics",
+          "authors": "Cesare Vianello , Andrea Bardin , Luca Salasnich",
+          "category": [
+            "supr-con"
+          ],
+          "categories": [
+            "cond-mat.supr-con"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "用 Schwinger-Keldysh 量子有效作用量推导耗散半经典动力学的量子修正。",
+          "problem": "宏观耗散自由度的 Langevin 动力学在低温弱阻尼下应如何加入量子涨落修正？",
+          "result": "结果表明，量子修正由经典欠阻尼频率处的零点涨落能决定，并可在 Josephson 结和长形玻色结中达到百分量级。",
+          "methods": "Schwinger-Keldysh 有效作用量、Ehrenfest 定理分析和 Josephson 结应用。",
+          "why": "为超导 Josephson 器件和耗散量子动力学的半经典建模提供系统修正。",
+          "summary": "用 Schwinger-Keldysh 量子有效作用量推导耗散半经典动力学的量子修正。",
+          "abstract": "Using the quantum effective action in the Schwinger-Keldysh formalism, we derive quantum corrections to the semiclassical Langevin dynamics of a dissipative system governed by a macroscopic degree of freedom. We discuss the connection with the Ehrenfest theorem and show that, in the low-temperature and weak-damping regime, quantum corrections are determined by the zero-point energy of fluctuations evaluated at the classical underdamped frequency, closely paralleling the conservative case. We apply these general results to the resistively and capacitively shunted superconducting Josephson junction and to an elongated bosonic junction, where quantum corrections can reach the percent level under realistic conditions.",
+          "priorityReason": "为超导 Josephson 器件和耗散量子动力学的半经典建模提供系统修正。",
+          "comments": "12 pages, 1 figure",
+          "journalRef": "",
+          "subjects": "Quantum Gases (cond-mat.quant-gas) ; Statistical Mechanics (cond-mat.stat-mech); Superconductivity (cond-mat.supr-con)",
+          "sourceCategories": [
+            "cond-mat.supr-con"
+          ],
+          "url": "https://arxiv.org/abs/2605.19643"
+        },
+        {
+          "id": "2605.19450",
+          "title": "Planckian dissipation from classical hydrodynamics",
+          "authors": "Laura Foini , Jorge Kurchan , Silvia Pappalardi",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "从经典流体力学自洽性推出 Planckian 耗散尺度。",
+          "problem": "低温量子系统若仍可由经典流体力学描述，需要满足怎样的弛豫速率约束？",
+          "result": "结果表明，量子涨落-耗散定理会在 Planckian 时间尺度上模糊相关函数细节；若低温下仍保留有限经典流体区，弛豫率必须至少达到 Planckian 量级。",
+          "methods": "扩散、telegraph 和 diffusive-telegraph 方程的时域涨落-耗散分析。",
+          "why": "从有效经典描述的自洽性角度解释扩散和黏滞中的 Planckian 标度。",
+          "summary": "从经典流体力学自洽性推出 Planckian 耗散尺度。",
+          "abstract": "In this work we ask what the self-consistency of a classical hydrodynamic description imposes on a quantum system. The quantum fluctuation-dissipation theorem, when read in the time domain, acts as a blurring of the fine details of the correlation functions on a Plankian time-scale. We track this blurring along rays inside the light cone for three phenomenological hydrodynamic equations -- diffusion, telegraph and diffusive-telegraph -- and find that the interior of the cone splits into a classical region, where correlation and response satisfy the classical fluctuation-dissipation relation, and a quantum region, where they deviate sharply from it. Preserving a finite classical region as the temperature is lowered forces the effective relaxation rate to be at least Planckian, recovering bounds on diffusivity, equilibration time and shear viscosity. In this way, Planckian scaling of the diffusion constant emerges not as a quantum constraint on microscopic dynamics, but as the price a system pays to remain describable by classical hydrodynamics down to low temperatures.",
+          "priorityReason": "从有效经典描述的自洽性角度解释扩散和黏滞中的 Planckian 标度。",
+          "comments": "23 pages",
+          "journalRef": "",
+          "subjects": "Statistical Mechanics (cond-mat.stat-mech) ; Quantum Gases (cond-mat.quant-gas); Strongly Correlated Electrons (cond-mat.str-el); High Energy Physics - Theory (hep-th)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.19450"
+        },
+        {
+          "id": "2605.19421",
+          "title": "Fractonic Constraints and Magnetic Order in a Dipole-Conserving Spin Chain",
+          "authors": "Prabhakar , Giuseppe De Tomasi , Soumya Bera",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "研究偶极守恒自旋链中 fractonic 约束与磁有序的竞争。",
+          "problem": "强动力学约束阻止孤立自旋激发传播时，一维自旋链还能形成怎样的磁有序？",
+          "result": "结果表明，体系可稳定反铁磁偶极有序，并在强 Ising 相互作用下转变为常规自旋反铁磁或铁磁相。",
+          "methods": "DMRG、大规模对角化、序参量、纠缠谱和动力学谱函数分析。",
+          "why": "揭示 fracton 动力学约束下仍可出现非平庸磁相和相变。",
+          "summary": "研究偶极守恒自旋链中 fractonic 约束与磁有序的竞争。",
+          "abstract": "This work investigates the competition between dipole conservation, which imposes strong dynamical constraints and prevents the propagation of isolated spin excitations, and Ising-type interactions that favor ordering. Specifically, we explore the ground state phase diagram of a one-dimensional spin chain in the presence of both fractonic constraints and interactions. Despite the kinetic constraints, the system stabilizes an antiferromagnetic dipole-ordered ground state, where the ordering occurs at the level of spin pairs rather than individual spins. At a large Ising interaction strength, the model undergoes a phase transition from a dipole-ordered phase to a spin antiferromagnetic phase. In contrast, for ferromagnetic Ising interactions, the model exhibits both antiferromagnetic and ferromagnetic dipole ordered phases. At sufficiently large negative interaction strength, the dipole ordered phase transitions to a ferromagnetic phase with conventional spin ferromagnetic order. To characterize these distinct phases, we employ density matrix renormalization group (DMRG) simulations alongside large-scale diagonalization. We analyze appropriate order parameters, along with features of the entanglement spectrum and dynamical spectral functions. In limiting cases, the observed transitions can be understood by mapping the dipole conserving model onto effective XXZ models in a restricted Hilbert space of composite spins.",
+          "priorityReason": "揭示 fracton 动力学约束下仍可出现非平庸磁相和相变。",
+          "comments": "14 pages,14 figures",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.19421"
+        },
+        {
+          "id": "2605.19404",
+          "title": "Green's Function-Free Formalism of Projective Truncation Approximation",
+          "authors": "Kou-Han Ma , Yue-Hong Wu , Ning-Hua Tong",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "把投影截断近似重写为不依赖 Green 函数的约化密度矩阵形式。",
+          "problem": "PTA 是否可以作为约化密度矩阵的自洽理论来表述，而不是依赖 Green 函数运动方程？",
+          "result": "结果表明，PTA 方程可转化为过约束优化问题，并与变分约化密度矩阵理论建立联系，同时澄清动力学矩阵和静态分量问题。",
+          "methods": "约化密度矩阵形式化、动力学矩阵分析、广义 virial 定理和广义 Wick 定理。",
+          "why": "为多体哈密顿量的系统截断近似提供更清晰的变分框架。",
+          "summary": "把投影截断近似重写为不依赖 Green 函数的约化密度矩阵形式。",
+          "abstract": "In previous works, the projected truncation approximation (PTA) was developed as a systematic and controlled method to truncate the equation of motion of Green's functions (GFs) for a given quantum or classical many-body Hamiltonian. The static averages are obtained self-consistently with the GF through the spectral theorem. In this work, PTA is reformulated as a self-consistent theory for the reduced density matrices (RDMs) without reference to GF. We separately discuss the issues of determining the dynamical matrix ${\\bf M}$ and solving the physical quantities from it. The properties of ${\\bf M}$ is clarified and the solution of PTA equations is cast into an over-constrained optimization problem. This makes connection of the present theory to the variational RDM theory. We discuss various issues of PTA under this formalism, including the scheme of alternative inner product, the generalized virial theorem, the generalized Wick's theorem, and the static component problem of PTA.",
+          "priorityReason": "为多体哈密顿量的系统截断近似提供更清晰的变分框架。",
+          "comments": "22 pages, 0 figures",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.19404"
+        },
+        {
+          "id": "2605.19298",
+          "title": "Translation-invariant quantum low-density parity-check codes from compactified fracton models",
+          "authors": "Cassandra M. Hopkin , Victor V. Albert , Dominic J. Williamson",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "用紧化 fracton 模型统一构造平移不变量子 LDPC 码。",
+          "problem": "如何统一理解局域和长程校验的平移不变量子纠错码，尤其是 fracton 码和 A2BGA 码？",
+          "result": "结果表明，A2BGA 码可视为高维 hypergraph product fracton 父模型的不同紧化后代，许多同权重 BB 码来自同一个父模型。",
+          "methods": "fraton 父模型、balanced product 结构、紧化和码参数界推广。",
+          "why": "为 fracton 物理与量子纠错码之间的结构关系提供统一图像。",
+          "summary": "用紧化 fracton 模型统一构造平移不变量子 LDPC 码。",
+          "abstract": "Quantum error-correcting codes with translation symmetry and local checks have been studied extensively, leading to a wide variety of fracton codes in three or more dimensions which lack a complete unifying picture. Recently, the study of translation-invariant codes with long-range checks has revealed impressive performance for small fixed-size instances in two dimensions. Here, we provide a unifying picture for a large family of translation-invariant codes, both local and long-range, that captures many fracton codes and all Abelian Two-Block Group Algebra (A2BGA) codes, including the Bivariate Bicycle (BB) codes. The balanced product structure of A2BGA codes leads to a local parent code that is a hypergraph product fracton model in a higher dimension. Different compactifications of a parent code produce a wide variety of descendant codes which provides a unifying picture for their properties. In particular, all BB codes with the same check weight are derived from a single parent hypergraph product fracton model. This construction allows us to extend Wang and Pryadko's code-parameter bounds for Generalized Bicycle codes to A2BGA codes. We conjecture that the transversal gates and energy barriers of the translation-invariant descendant codes are limited by those of their parent fracton models.",
+          "priorityReason": "为 fracton 物理与量子纠错码之间的结构关系提供统一图像。",
+          "comments": "15 pages, 3 figures",
+          "journalRef": "",
+          "subjects": "Quantum Physics (quant-ph) ; Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.19298"
+        },
+        {
+          "id": "2605.19088",
+          "title": "The analysis of heat capacity of MnGe metallic helimagnet",
+          "authors": "M.A. Anisimov , A.V. Bokov , A.V. Semeno , V.A. Sidorov , A.V. Tsvyashchenko",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "从热容分析中提取 MnGe 金属螺旋磁体的自旋涨落贡献。",
+          "problem": "MnGe 的零场热容中除电子和声子项外，是否存在可分辨的自旋涨落贡献？",
+          "result": "结果表明，自旋涨落项在顺磁和磁有序态的宽温区内存在，尽管幅度小于声子贡献；提取的自旋涨落温度约为 330 K。",
+          "methods": "热容分解、电子和声子项拟合以及自旋涨落模型分析。",
+          "why": "为金属螺旋磁体 MnGe 中高温自旋涨落提供热力学证据。",
+          "summary": "从热容分析中提取 MnGe 金属螺旋磁体的自旋涨落贡献。",
+          "abstract": "Zero-field heat capacity of metallic helimagnet MnGe was analyzed based on the results of resistivity decomposition published previously by our group for the same crystal. Current procedure allowed identifying along with ($i$) electronic ($\\tilde{\\gamma}$ $\\approx$ 7 mJ/mol$\\cdot$K$^2$) and ($ii$) phononic ($\\Theta_D$ $\\approx$ 350 K) components ($iii$) the additional term, caused by the presence of spin fluctuations (SFs). The last contribution was found to exist in a wide range of temperatures in both paramagnetic (PM) and magnetically ordered states. However, its amplitude appears to be significantly lower in comparison with phononic component. The obtained value of spin fluctuation temperature $\\theta_{sf}$(MnGe) $\\approx$ 330 K correlates well with previous estimations, as well as with results of various experiments, which predict the existence of SFs in MnGe at least up to 250 $-$ 300 K.",
+          "priorityReason": "为金属螺旋磁体 MnGe 中高温自旋涨落提供热力学证据。",
+          "comments": "10 pages, 3 figures",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el) ; Materials Science (cond-mat.mtrl-sci)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.19088"
+        },
+        {
+          "id": "2605.19011",
+          "title": "Deconfined Boundary Phase Transition of a Quantum Critical Heisenberg Model",
+          "authors": "Chengxiang Ding , Long Zhang",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "研究量子临界 Heisenberg 模型边界上的 deconfined 相变。",
+          "problem": "带 dangling 自旋链的二维量子临界 Heisenberg 模型边界能否从反铁磁序连续转变到 VBS 序？",
+          "result": "结果表明，边界 Q 项可驱动连续边界相变，并得到反铁磁和 VBS 序参量的临界指数；临界体态介导的准长程相互作用稳定边界弱反铁磁序。",
+          "methods": "大规模量子 Monte Carlo、边界多自旋 Q 项和有限尺寸标度。",
+          "why": "为低维量子临界体的边界相和拓扑项效应提供数值证据。",
+          "summary": "研究量子临界 Heisenberg 模型边界上的 deconfined 相变。",
+          "abstract": "We investigate the boundary phases of a (2+1)-dimensional quantum critical Heisenberg model with a dangling spin chain. By introducing a multispin $Q$-term along the boundary, we drive a continuous boundary transition from an antiferromagnetic (AF) order to a valence-bond solid (VBS) order. Using large-scale quantum Monte Carlo simulations, we locate the critical point at $Q_{c}=0.310(11)$, and obtain the critical exponents at $Q_{c}$, including $y_{s}=0.81(4)$ and the scaling dimensions of AF and VBS order parameters $\\Delta_{s}=0.660(15)$ and $\\Delta_{v}=0.204(14)$. The weak long-range AF order for $Q<Q_{c}$ is stabilized by quasi-long-range effective interactions mediated by the critical bulk state, while the VBS phase restores the ordinary critical behavior. Our findings highlight the synergy between topological terms and quasi-long-range interactions in low-dimensional quantum many-body systems.",
+          "priorityReason": "为低维量子临界体的边界相和拓扑项效应提供数值证据。",
+          "comments": "6+εpages, 5 figures",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el) ; Statistical Mechanics (cond-mat.stat-mech)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.19011"
+        },
+        {
+          "id": "2605.18982",
+          "title": "Magnetic phases in the $J_{1}$-$J_{2}$ antiferromagnetic XY model on the honeycomb lattice",
+          "authors": "I. V. Lukin , M. O. Luhanko , Yu. V. Slyusarenko , A. G. Sotnikov",
+          "category": [
+            "str-el"
+          ],
+          "categories": [
+            "cond-mat.str-el"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "绘制蜂窝晶格 J1-J2 反铁磁 XY 模型的基态磁相图。",
+          "problem": "竞争性 J2 相互作用如何改变蜂窝晶格 XY 反铁磁体的基态有序？",
+          "result": "结果识别出 Néel、Ising、共线和非公度螺旋相，并表明共线相会随 J2/J1 增大通过二阶相变进入非公度螺旋相。",
+          "methods": "corner transfer matrix renormalization group 和无限螺旋 PEPS ansatz。",
+          "why": "为受挫蜂窝自旋模型中的竞争磁序提供张量网络基准。",
+          "summary": "绘制蜂窝晶格 J1-J2 反铁磁 XY 模型的基态磁相图。",
+          "abstract": "We study ground-state properties and phase diagram of the $J_{1}$-$J_{2}$ antiferromagnetic XY model on the honeycomb lattice by means of the developed corner transfer matrix renormalization group algorithm with the two-site unit cell and the infinite spiral projected entangled pair states ansatz. We identify the main phases: Néel, Ising, collinear, and incommensurate spiral phases, as well as the transitions between them, as functions of the ratio $J_{2}/J_{1}$. In the regime of competing types of ordering, we show that the energies of the dimerized states are systematically higher than the energies in the collinear phase. This collinear phase transforms to the incommensurate spiral phase through the second-order phase transition upon a further increase of $J_2/J_1$.",
+          "priorityReason": "为受挫蜂窝自旋模型中的竞争磁序提供张量网络基准。",
+          "comments": "",
+          "journalRef": "",
+          "subjects": "Strongly Correlated Electrons (cond-mat.str-el)",
+          "sourceCategories": [
+            "cond-mat.str-el"
+          ],
+          "url": "https://arxiv.org/abs/2605.18982"
+        },
+        {
+          "id": "2605.18970",
+          "title": "Signatures of Gaussian superconducting fluctuations in nonlocal noise magnetometry",
+          "authors": "Dror Orgad",
+          "category": [
+            "supr-con"
+          ],
+          "categories": [
+            "cond-mat.supr-con"
+          ],
+          "important": false,
+          "score": 0,
+          "oneLine": "计算非局域噪声磁测量中 Gaussian 超导涨落的信号特征。",
+          "problem": "NV 中心等自旋量子比特对能否区分 Gaussian Cooper 对涨落和涡旋液体噪声？",
+          "result": "结果给出二维体系和线状体系中由涨落 Cooper 对产生的两点磁噪声谱，并指出高温超导体中信号最强，可与涡旋液体特征对比。",
+          "methods": "时间依赖 Ginzburg-Landau 理论、磁噪声谱和非局域噪声磁ometry。",
+          "why": "为实验判别超导涨落性质提供另一种空间相关探针。",
+          "summary": "计算非局域噪声磁测量中 Gaussian 超导涨落的信号特征。",
+          "abstract": "We calculate the two-point magnetic noise spectrum arising from Gaussian superconducting fluctuations, a quantity directly measurable by spin qubit pairs such as nitrogen vacancy centers in diamond. The analysis utilizes the time-dependent Ginzburg-Landau theory, reflecting the direct contribution of fluctuating Cooper pairs to the current correlations and consequent magnetic noise. We treat both two-dimensional systems and wires, considering them in equilibrium and under a uniform electric field. The signal is expected to be strongest in high-temperature superconductors, and we contrast our findings with the predicted signatures of a vortex liquid to offer an additional route to elucidate the nature of fluctuations in these systems.",
+          "priorityReason": "为实验判别超导涨落性质提供另一种空间相关探针。",
+          "comments": "14 pages, 12 figures",
+          "journalRef": "",
+          "subjects": "Superconductivity (cond-mat.supr-con) ; Quantum Physics (quant-ph)",
+          "sourceCategories": [
+            "cond-mat.supr-con"
+          ],
+          "url": "https://arxiv.org/abs/2605.18970"
+        }
+      ]
+    },
     {
       "date": "2026-05-19",
       "title": "2026 年 5 月 19 日",
